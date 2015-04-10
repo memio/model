@@ -34,11 +34,11 @@ In order to do so, we'd need to write the following:
 
 require __DIR__.'/vendor/autoload.php';
 
-use Memio\Memio\Model\Argument;
-use Memio\Memio\Model\Method;
-use Memio\Memio\Model\Phpdoc\ApiTag;
-use Memio\Memio\Model\Phpdoc\MethodPhpdoc;
-use Memio\Memio\Model\Phpdoc\ParameterTag;
+use Memio\Model\Argument;
+use Memio\Model\Method;
+use Memio\Model\Phpdoc\ApiTag;
+use Memio\Model\Phpdoc\MethodPhpdoc;
+use Memio\Model\Phpdoc\ParameterTag;
 
 $method = Method::make('doSomething')
     ->setPhpdoc(MethodPhpdoc::make()

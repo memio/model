@@ -1,4 +1,4 @@
-# Memio's Models [![Travis CI](https://travis-ci.org/memio/model.png)](https://travis-ci.org/memio/model)
+# Memio's Models [![Travis CI](https://travis-ci.org/memio/model.png)](https://travis-ci.org/memio/model) [![SensioLabsInsight](https://insight.sensiolabs.com/projects/79504ca3-5a36-44b5-93ef-eedd23a34c08/mini.png)](https://insight.sensiolabs.com/projects/79504ca3-5a36-44b5-93ef-eedd23a34c08)
 
 Describe PHP code (classes/interfaces with their constants, properties, methods,
 method arguments and even PHPdoc) by constructing "Model" objects.

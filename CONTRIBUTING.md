@@ -3,7 +3,7 @@
 Everybody should be able to help. Here's how you can make this project more
 awesome:
 
-1. [Fork it](https://github.com/memio/memio/fork_select)
+1. [Fork it](https://github.com/memio/model/fork_select)
 2. improve it
 3. submit a [pull request](https://help.github.com/articles/creating-a-pull-request)
 
@@ -19,25 +19,25 @@ Here's some tips to make you the best contributor ever:
 ## Standard code
 
 Use [PHP CS fixer](http://cs.sensiolabs.org/) to make your code compliant with
-Medio's coding standards:
+Memio Model's coding standards:
 
     ./vendor/bin/php-cs-fixer fix --config=sf23 .
 
 ## Specifications
 
-Medio drives its development using [phpspec](http://www.phpspec.net/):
+Memio Model drives its development using [phpspec](http://www.phpspec.net/):
 
     # Generate the specification class:
-    phpspec describe 'Gnugat\Medio\MyNewClass'
+    phpspec describe 'Memio\Model\MyNewClass'
 
     # Customize the specification class:
-    $EDITOR tests/spec/Gnugat/Medio/MyNewClass.php
+    $EDITOR tests/spec/Memio/Model/MyNewClass.php
 
     # Generate the specified class:
     phpspec run
 
     # Customize the class:
-    $EDITOR src/Gnugat/Medio/MyNewClass.php
+    $EDITOR src/Memio/Model/MyNewClass.php
 
     phpspec run # Should be green!
 
@@ -46,7 +46,7 @@ Medio drives its development using [phpspec](http://www.phpspec.net/):
 To keep your fork up-to-date, you should track the upstream (original) one
 using the following command:
 
-    git remote add upstream https://github.com/memio/memio.git
+    git remote add upstream https://github.com/memio/model.git
 
 Then get the upstream changes:
 

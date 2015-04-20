@@ -22,6 +22,6 @@
     "require-dev": {
         "ciaranmcnulty/phpspec-typehintedmethods": "~1.1",
         "fabpot/php-cs-fixer": "~1.6",
-        "phpspec/phpspec": "~2.2@beta"
+        "phpspec/phpspec": "~2.2"
     }
 }

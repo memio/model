@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Memio project.
+ * This file is part of the memio/model package.
  *
  * (c) Loïc Chardonnet <loic.chardonnet@gmail.com>
  *

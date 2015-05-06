@@ -19,12 +19,12 @@ class DeprecationTag
     /**
      * @var string
      */
-    private $version;
+    protected $version;
 
     /**
      * @var string
      */
-    private $description;
+    protected $description;
 
     /**
      * @param string $version

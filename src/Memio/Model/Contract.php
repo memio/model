@@ -23,27 +23,27 @@ class Contract implements Structure
     /**
      * @var string
      */
-    private $fullyQualifiedName;
+    protected $fullyQualifiedName;
 
     /**
      * @var StructurePhpdoc
      */
-    private $structurePhpdoc;
+    protected $structurePhpdoc;
 
     /**
      * @var array
      */
-    private $contracts = array();
+    protected $contracts = array();
 
     /**
      * @var array
      */
-    private $constants = array();
+    protected $constants = array();
 
     /**
      * @var array
      */
-    private $methods = array();
+    protected $methods = array();
 
     /**
      * @param string $fullyQualifiedName

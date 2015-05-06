@@ -19,17 +19,17 @@ class LicensePhpdoc
     /**
      * @var string
      */
-    private $projectName;
+    protected $projectName;
 
     /**
      * @var string
      */
-    private $authorName;
+    protected $authorName;
 
     /**
      * @var string
      */
-    private $authorEmail;
+    protected $authorEmail;
 
     /**
      * @param string $projectName

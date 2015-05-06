@@ -23,47 +23,47 @@ class Object implements Structure
     /**
      * @var FullyQualifiedName
      */
-    private $fullyQualifiedName;
+    protected $fullyQualifiedName;
 
     /**
      * @var StructurePhpdoc
      */
-    private $structurePhpdoc;
+    protected $structurePhpdoc;
 
     /**
      * @var bool
      */
-    private $isAbstract = false;
+    protected $isAbstract = false;
 
     /**
      * @var bool
      */
-    private $isFinal = false;
+    protected $isFinal = false;
 
     /**
      * @var Object
      */
-    private $parent;
+    protected $parent;
 
     /**
      * @var array
      */
-    private $contracts = array();
+    protected $contracts = array();
 
     /**
      * @var array
      */
-    private $constants = array();
+    protected $constants = array();
 
     /**
      * @var array
      */
-    private $properties = array();
+    protected $properties = array();
 
     /**
      * @var array
      */
-    private $methods = array();
+    protected $methods = array();
 
     /**
      * @param string $fullyQualifiedName

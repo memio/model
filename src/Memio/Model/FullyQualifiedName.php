@@ -19,22 +19,22 @@ class FullyQualifiedName
     /**
      * @var string
      */
-    private $fullyQualifiedName;
+    protected $fullyQualifiedName;
 
     /**
      * @var string
      */
-    private $name;
+    protected $name;
 
     /**
      * @var string
      */
-    private $namepace;
+    protected $namepace;
 
     /**
      * @var string
      */
-    private $alias;
+    protected $alias;
 
     /**
      * @param string $fullyQualifiedName

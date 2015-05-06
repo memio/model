@@ -19,7 +19,7 @@ class ApiTag
     /**
      * @var string
      */
-    private $since;
+    protected $since;
 
     /**
      * @param string $since

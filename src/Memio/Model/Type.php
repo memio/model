@@ -21,22 +21,22 @@ class Type
     /**
      * @var string
      */
-    private $name;
+    protected $name;
 
     /**
      * @var FullyQualifiedName
      */
-    private $fullyqualifiedName;
+    protected $fullyqualifiedName;
 
     /**
      * @var bool
      */
-    private $isObject;
+    protected $isObject;
 
     /**
      * @var bool
      */
-    private $hasTypeHint;
+    protected $hasTypeHint;
 
     /**
      * @param string $name

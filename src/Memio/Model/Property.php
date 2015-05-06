@@ -21,27 +21,27 @@ class Property
     /**
      * @var string
      */
-    private $name;
+    protected $name;
 
     /**
      * @var PropertyPhpdoc
      */
-    private $propertyPhpdoc;
+    protected $propertyPhpdoc;
 
     /**
      * @var bool
      */
-    private $isStatic = false;
+    protected $isStatic = false;
 
     /**
      * @var string
      */
-    private $visibility = 'private';
+    protected $visibility = 'private';
 
     /**
      * @var string
      */
-    private $defaultValue;
+    protected $defaultValue;
 
     /**
      * @param string $name

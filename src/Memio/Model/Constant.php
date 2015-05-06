@@ -19,12 +19,12 @@ class Constant
     /**
      * @var string
      */
-    private $name;
+    protected $name;
 
     /**
      * @var string
      */
-    private $value;
+    protected $value;
 
     /**
      * @param string $name

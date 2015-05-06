@@ -19,17 +19,17 @@ class StructurePhpdoc
     /**
      * @var ApiTag
      */
-    private $apiTag;
+    protected $apiTag;
 
     /**
      * @var DeprecationTag
      */
-    private $deprecationTag;
+    protected $deprecationTag;
 
     /**
      * @var Description
      */
-    private $description;
+    protected $description;
 
     /**
      * @return StructurePhpdoc

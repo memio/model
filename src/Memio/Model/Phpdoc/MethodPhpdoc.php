@@ -19,22 +19,22 @@ class MethodPhpdoc
     /**
      * @var ApiTag
      */
-    private $apiTag;
+    protected $apiTag;
 
     /**
      * @var DeprecationTag
      */
-    private $deprecationTag;
+    protected $deprecationTag;
 
     /**
      * @var Description
      */
-    private $description;
+    protected $description;
 
     /**
      * @var array
      */
-    private $parameterTags = array();
+    protected $parameterTags = array();
 
     /**
      * @return MethodPhpdoc

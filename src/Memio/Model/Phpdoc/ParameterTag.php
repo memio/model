@@ -21,17 +21,17 @@ class ParameterTag
     /**
      * @var string
      */
-    private $type;
+    protected $type;
 
     /**
      * @var string
      */
-    private $name;
+    protected $name;
 
     /**
      * @var string
      */
-    private $description;
+    protected $description;
 
     /**
      * @param string $type

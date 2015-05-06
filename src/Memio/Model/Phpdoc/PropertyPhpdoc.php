@@ -19,7 +19,7 @@ class PropertyPhpdoc
     /**
      * @var VariableTag
      */
-    private $variableTag;
+    protected $variableTag;
 
     /**
      * @return PropertyPhpdoc

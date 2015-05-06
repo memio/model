@@ -21,42 +21,42 @@ class Method
     /**
      * @var string
      */
-    private $name;
+    protected $name;
 
     /**
      * @var MethodPhpdoc
      */
-    private $methodPhpdoc;
+    protected $methodPhpdoc;
 
     /**
      * @var bool
      */
-    private $isAbstract = false;
+    protected $isAbstract = false;
 
     /**
      * @var bool
      */
-    private $isFinal = false;
+    protected $isFinal = false;
 
     /**
      * @var string
      */
-    private $visibility = 'public';
+    protected $visibility = 'public';
 
     /**
      * @var bool
      */
-    private $isStatic = false;
+    protected $isStatic = false;
 
     /**
      * @var array
      */
-    private $arguments = array();
+    protected $arguments = array();
 
     /**
      * @var string
      */
-    private $body = '';
+    protected $body = '';
 
     /**
      * @param string $name

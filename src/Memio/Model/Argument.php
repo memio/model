@@ -19,17 +19,17 @@ class Argument
     /**
      * @var Type
      */
-    private $type;
+    protected $type;
 
     /**
      * @var string
      */
-    private $name;
+    protected $name;
 
     /**
      * @var string|null
      */
-    private $defaultValue;
+    protected $defaultValue;
 
     /**
      * @param string $type

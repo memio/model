@@ -16,7 +16,7 @@ class Description
     /**
      * @var array
      */
-    private $description = array();
+    protected $description = array();
 
     /**
      * @param string $line

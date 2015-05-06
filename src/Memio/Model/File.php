@@ -21,22 +21,22 @@ class File
     /**
      * @var string
      */
-    private $filename;
+    protected $filename;
 
     /**
      * @var LicensePhpdoc
      */
-    private $licensePhpdoc;
+    protected $licensePhpdoc;
 
     /**
      * @var array
      */
-    private $fullyQualifiedNames = array();
+    protected $fullyQualifiedNames = array();
 
     /**
      * @var Strucutre
      */
-    private $structure;
+    protected $structure;
 
     /**
      * @param string $filename

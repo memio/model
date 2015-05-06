@@ -18,7 +18,7 @@ class VariableTag
     /**
      * @var Type
      */
-    private $type;
+    protected $type;
 
     /**
      * @param string $type

@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.0: Type name normalization
+
+* integer, boolean and NULL will be normalized to int, bool and null
+
 ## 1.0.1: Small doc fixes
 
 * fixed typos in documentation

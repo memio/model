@@ -77,6 +77,14 @@ class TypeSpec extends ObjectBehavior
         $this->isObject()->shouldBe(false);
     }
 
+    function it_normalizes_boolean_name()
+    {
+        $this->beConstructedWith('boolean');
+
+        $this->getName()->shouldBe('bool');
+        $this->isObject()->shouldBe(false);
+    }
+
     function it_can_be_a_resource()
     {
         $this->beConstructedWith('resource');
@@ -93,6 +101,14 @@ class TypeSpec extends ObjectBehavior
         $this->isObject()->shouldBe(false);
     }
 
+    function it_normalizes_integer_name()
+    {
+        $this->beConstructedWith('integer');
+
+        $this->getName()->shouldBe('int');
+        $this->isObject()->shouldBe(false);
+    }
+
     function it_can_be_a_double()
     {
         $this->beConstructedWith('double');
@@ -104,6 +120,14 @@ class TypeSpec extends ObjectBehavior
     function it_can_be_null()
     {
         $this->beConstructedWith('null');
+
+        $this->getName()->shouldBe('null');
+        $this->isObject()->shouldBe(false);
+    }
+
+    function it_normalizes_null_name()
+    {
+        $this->beConstructedWith('NULL');
 
         $this->getName()->shouldBe('null');
         $this->isObject()->shouldBe(false);

@@ -45,6 +45,15 @@ class Type
      */
     public function __construct($name)
     {
+        $normalizations = array(
+            'boolean' => 'bool',
+            'integer' => 'int',
+            'NULL' => 'null',
+        );
+        if (isset($normalizations[$name])) {
+            $name = $normalizations[$name];
+        }
+
         $nonObjectTypes = array('string', 'bool', 'int', 'double', 'callable', 'resource', 'array', 'null', 'mixed');
         $isCallableFromPhp54 = ('callable' === $name && version_compare(PHP_VERSION, '5.4.0') >= 0);
 

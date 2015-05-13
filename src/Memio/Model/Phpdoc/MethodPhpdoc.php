@@ -27,6 +27,11 @@ class MethodPhpdoc
     private $deprecationTag;
 
     /**
+     * @var ReturnTag
+     */
+    private $returnTag;
+
+    /**
      * @var Description
      */
     private $description;
@@ -35,6 +40,11 @@ class MethodPhpdoc
      * @var array
      */
     private $parameterTags = array();
+
+    /**
+     * @var array
+     */
+    private $throwTags = array();
 
     /**
      * @return MethodPhpdoc
@@ -56,6 +66,20 @@ class MethodPhpdoc
     public function setApiTag(ApiTag $apiTag)
     {
         $this->apiTag = $apiTag;
+
+        return $this;
+    }
+
+    /**
+     * @param ReturnTag $returnTag
+     *
+     * @return MethodPhpdoc
+     *
+     * @api
+     */
+    public function setReturnTag(ReturnTag $returnTag)
+    {
+        $this->returnTag = $returnTag;
 
         return $this;
     }
@@ -97,6 +121,14 @@ class MethodPhpdoc
     }
 
     /**
+     * @return ReturnTag
+     */
+    public function getReturnTag()
+    {
+        return $this->returnTag;
+    }
+
+    /**
      * @return Description
      */
     public function getDescription()
@@ -135,6 +167,28 @@ class MethodPhpdoc
     }
 
     /**
+     * @param ThrowTag $throwTag
+     *
+     * @return MethodPhpdoc
+     *
+     * @api
+     */
+    public function addThrowTag(ThrowTag $throwTag)
+    {
+        $this->throwTags[] = $throwTag;
+
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getThrowTags()
+    {
+        return $this->throwTags;
+    }
+
+    /**
      * @return bool
      */
     public function isEmpty()
@@ -142,7 +196,8 @@ class MethodPhpdoc
         $hasApiTag = (null !== $this->apiTag);
         $hasDescription = (null !== $this->description);
         $hasDeprecationTag = (null !== $this->deprecationTag);
+        $hasReturnTag = (null !== $this->returnTag);
 
-        return !$hasApiTag && !$hasDescription && !$hasDeprecationTag && empty($this->parameterTags);
+        return !$hasApiTag && !$hasDescription && !$hasDeprecationTag && !$hasReturnTag && empty($this->parameterTags) && empty($this->throwTags);
     }
 }

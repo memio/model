@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 1.2.0: @return and @throws PHPdoc tags
+
+* added `return` PHPdoc tag
+* added `throws` PHPdoc tag
+
 ## 1.1.0: Type name normalization
 
 * integer, boolean and NULL will be normalized to int, bool and null

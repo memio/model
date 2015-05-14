@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.3.0: Argument type FQCN
+
+* changed Argument.type to  be a Fully Qualified Class Name
+
 ## 1.2.0: @return and @throws PHPdoc tags
 
 * added `return` PHPdoc tag

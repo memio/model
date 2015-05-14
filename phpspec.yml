@@ -1,2 +1,2 @@
 extensions:
-    - Cjm\PhpSpec\Extension\TypeHintedMethodsExtension
+    - Memio\SpecGen\MemioSpecGenExtension

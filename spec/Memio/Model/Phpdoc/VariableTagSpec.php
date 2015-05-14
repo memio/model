@@ -26,6 +26,6 @@ class VariableTagSpec extends ObjectBehavior
     {
         $this->beConstructedWith('Vendor\Project\MyClass');
 
-        $this->getType()->shouldBe('MyClass');
+        $this->getType()->shouldBe('Vendor\Project\MyClass');
     }
 }

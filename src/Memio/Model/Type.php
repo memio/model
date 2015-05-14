@@ -11,8 +11,6 @@
 
 namespace Memio\Model;
 
-use Memio\Model\FullyQualifiedName;
-
 /**
  * @api
  */
@@ -22,11 +20,6 @@ class Type
      * @var string
      */
     private $name;
-
-    /**
-     * @var FullyQualifiedName
-     */
-    private $fullyqualifiedName;
 
     /**
      * @var bool
@@ -59,10 +52,6 @@ class Type
 
         $this->isObject = !in_array($name, $nonObjectTypes, true);
         $this->hasTypeHint =  ($isCallableFromPhp54 || $this->isObject || 'array' === $name);
-        if ($this->isObject) {
-            $this->fullyqualifiedName = new FullyqualifiedName($name);
-            $name = $this->fullyqualifiedName->getName();
-        }
         $this->name = $name;
     }
 
@@ -86,14 +75,6 @@ class Type
     public function getName()
     {
         return $this->name;
-    }
-
-    /**
-     * @return string
-     */
-    public function getFullyQualifiedName()
-    {
-        return $this->fullyqualifiedName->getFullyQualifiedName();
     }
 
     /**

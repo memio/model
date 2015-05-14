@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.3.1: SpecGen
+
+* replaced phpspec extension with SpecGen
+
 ## 1.3.0: Argument type FQCN
 
 * changed Argument.type to  be a Fully Qualified Class Name

@@ -51,7 +51,7 @@ class Type
         $isCallableFromPhp54 = ('callable' === $name && version_compare(PHP_VERSION, '5.4.0') >= 0);
 
         $this->isObject = !in_array($name, $nonObjectTypes, true);
-        $this->hasTypeHint =  ($isCallableFromPhp54 || $this->isObject || 'array' === $name);
+        $this->hasTypeHint = ($isCallableFromPhp54 || $this->isObject || 'array' === $name);
         $this->name = $name;
     }
 

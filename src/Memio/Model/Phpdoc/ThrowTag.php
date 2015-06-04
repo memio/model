@@ -11,7 +11,6 @@
 
 namespace Memio\Model\Phpdoc;
 
-
 class ThrowTag
 {
     /**

@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.3.2: ParameterTag::make()
+
+* fixed `ParameterTag#make`
+
 ## 1.3.1: SpecGen
 
 * replaced phpspec extension with SpecGen

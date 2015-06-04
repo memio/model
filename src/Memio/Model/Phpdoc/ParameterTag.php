@@ -56,7 +56,7 @@ class ParameterTag
      *
      * @api
      */
-    public function make($type, $name, $description = null)
+    public static function make($type, $name, $description = null)
     {
         return new self($type, $name, $description);
     }

@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 1.3.3: Fixed dependencies
+
+* removed SpecGen to fix dependency cycles
+* fixed CS
+
 ## 1.3.2: ParameterTag::make()
 
 * fixed `ParameterTag#make`

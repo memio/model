@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.3.4: Fixed PHPdoc
+
+* fixed PHPdoc
+
 ## 1.3.3: Fixed dependencies
 
 * removed SpecGen to fix dependency cycles

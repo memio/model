@@ -95,7 +95,7 @@ class Argument
     }
 
     /**
-     * @return $this
+     * @return Argument
      *
      * @api
      */

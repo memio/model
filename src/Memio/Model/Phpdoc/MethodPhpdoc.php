@@ -137,7 +137,7 @@ class MethodPhpdoc
     }
 
     /**
-     * @return Deprecation
+     * @return DeprecationTag
      */
     public function getDeprecationTag()
     {

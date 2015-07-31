@@ -50,7 +50,7 @@ class LicensePhpdoc
      * @param string $authorName
      * @param string $authorEmail
      *
-     * @return License
+     * @return LicensePhpdoc
      *
      * @api
      */

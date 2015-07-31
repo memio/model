@@ -100,7 +100,7 @@ class StructurePhpdoc
     }
 
     /**
-     * @return Deprecation
+     * @return DeprecationTag
      */
     public function getDeprecationTag()
     {

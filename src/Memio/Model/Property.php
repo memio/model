@@ -96,7 +96,7 @@ class Property
     }
 
     /**
-     * @return Method
+     * @return Property
      *
      * @api
      */
@@ -116,7 +116,7 @@ class Property
     }
 
     /**
-     * @return Method
+     * @return Property
      *
      * @api
      */
@@ -126,7 +126,7 @@ class Property
     }
 
     /**
-     * @return Method
+     * @return Property
      *
      * @api
      */
@@ -138,7 +138,7 @@ class Property
     }
 
     /**
-     * @return Method
+     * @return Property
      *
      * @api
      */
@@ -150,7 +150,7 @@ class Property
     }
 
     /**
-     * @return Method
+     * @return Property
      *
      * @api
      */

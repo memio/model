@@ -47,7 +47,7 @@ class Argument
      * @param string $type
      * @param string $name
      *
-     * @return Argument
+     * @return self
      *
      * @api
      */
@@ -75,7 +75,7 @@ class Argument
     /**
      * @param string $value
      *
-     * @return Argument
+     * @return self
      *
      * @api
      */
@@ -95,7 +95,7 @@ class Argument
     }
 
     /**
-     * @return Argument
+     * @return self
      *
      * @api
      */

@@ -34,7 +34,7 @@ class ApiTag
     /**
      * @param string $since
      *
-     * @return ApiTag
+     * @return self
      *
      * @api
      */

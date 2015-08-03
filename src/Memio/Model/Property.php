@@ -56,7 +56,7 @@ class Property
     /**
      * @param string $name
      *
-     * @return Property
+     * @return self
      *
      * @api
      */
@@ -76,7 +76,7 @@ class Property
     /**
      * @param PropertyPhpdoc $propertyPhpdoc
      *
-     * @return Property
+     * @return self
      *
      * @api
      */
@@ -96,7 +96,7 @@ class Property
     }
 
     /**
-     * @return Property
+     * @return self
      *
      * @api
      */
@@ -116,7 +116,7 @@ class Property
     }
 
     /**
-     * @return Property
+     * @return self
      *
      * @api
      */
@@ -126,7 +126,7 @@ class Property
     }
 
     /**
-     * @return Property
+     * @return self
      *
      * @api
      */
@@ -138,7 +138,7 @@ class Property
     }
 
     /**
-     * @return Property
+     * @return self
      *
      * @api
      */
@@ -150,7 +150,7 @@ class Property
     }
 
     /**
-     * @return Property
+     * @return self
      *
      * @api
      */
@@ -172,7 +172,7 @@ class Property
     /**
      * @param string $defaultValue
      *
-     * @return Property
+     * @return self
      *
      * @api
      */

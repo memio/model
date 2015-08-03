@@ -46,22 +46,22 @@ class Object implements Structure
     private $parent;
 
     /**
-     * @var array
+     * @var Contract[]
      */
     private $contracts = array();
 
     /**
-     * @var array
+     * @var Constant[]
      */
     private $constants = array();
 
     /**
-     * @var array
+     * @var Property[]
      */
     private $properties = array();
 
     /**
-     * @var array
+     * @var Method[]
      */
     private $methods = array();
 
@@ -78,7 +78,7 @@ class Object implements Structure
     /**
      * @param string $fullyQualifiedName
      *
-     * @return Object
+     * @return self
      *
      * @api
      */
@@ -113,6 +113,7 @@ class Object implements Structure
 
     /**
      * {@inheritDoc}
+     * @return self
      */
     public function setPhpdoc(StructurePhpdoc $structurePhpdoc)
     {
@@ -130,7 +131,7 @@ class Object implements Structure
     }
 
     /**
-     * @return Object
+     * @return self
      *
      * @api
      */
@@ -150,7 +151,7 @@ class Object implements Structure
     }
 
     /**
-     * @return Object
+     * @return self
      *
      * @api
      */
@@ -162,7 +163,7 @@ class Object implements Structure
     }
 
     /**
-     * @return Object
+     * @return self
      *
      * @api
      */
@@ -182,7 +183,7 @@ class Object implements Structure
     }
 
     /**
-     * @return Object
+     * @return self
      *
      * @api
      */
@@ -196,7 +197,7 @@ class Object implements Structure
     /**
      * @param Object $parent
      *
-     * @return Object
+     * @return self
      *
      * @api
      */
@@ -224,19 +225,21 @@ class Object implements Structure
     }
 
     /**
-     * @return Object
+     * @return self
      *
      * @api
      */
     public function removeParent()
     {
         $this->parent = null;
+
+        return $this;
     }
 
     /**
      * @param Contract $contract
      *
-     * @return Contract
+     * @return self
      *
      * @api
      */
@@ -248,7 +251,7 @@ class Object implements Structure
     }
 
     /**
-     * @return array
+     * @return Contract[]
      */
     public function allContracts()
     {
@@ -258,7 +261,7 @@ class Object implements Structure
     /**
      * @param Constant $constant
      *
-     * @return Object
+     * @return self
      *
      * @api
      */
@@ -270,7 +273,7 @@ class Object implements Structure
     }
 
     /**
-     * @return array
+     * @return Constant[]
      */
     public function allConstants()
     {
@@ -280,7 +283,7 @@ class Object implements Structure
     /**
      * @param Property $property
      *
-     * @return Object
+     * @return self
      *
      * @api
      */
@@ -292,7 +295,7 @@ class Object implements Structure
     }
 
     /**
-     * @return array
+     * @return Property[]
      */
     public function allProperties()
     {
@@ -302,7 +305,7 @@ class Object implements Structure
     /**
      * @param Method $method
      *
-     * @return Object
+     * @return self
      *
      * @api
      */
@@ -314,7 +317,7 @@ class Object implements Structure
     }
 
     /**
-     * @return array
+     * @return Method[]
      */
     public function allMethods()
     {

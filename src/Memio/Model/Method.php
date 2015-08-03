@@ -49,7 +49,7 @@ class Method
     private $isStatic = false;
 
     /**
-     * @var array
+     * @var Argument[]
      */
     private $arguments = array();
 
@@ -71,7 +71,7 @@ class Method
     /**
      * @param string $name
      *
-     * @return Method
+     * @return self
      *
      * @api
      */
@@ -91,7 +91,7 @@ class Method
     /**
      * @param MethodPhpdoc $methodPhpdoc
      *
-     * @return Method
+     * @return self
      *
      * @api
      */
@@ -111,7 +111,7 @@ class Method
     }
 
     /**
-     * @return Method
+     * @return self
      *
      * @api
      */
@@ -131,7 +131,7 @@ class Method
     }
 
     /**
-     * @return Method
+     * @return self
      *
      * @api
      */
@@ -143,7 +143,7 @@ class Method
     }
 
     /**
-     * @return Method
+     * @return self
      *
      * @api
      */
@@ -163,7 +163,7 @@ class Method
     }
 
     /**
-     * @return Method
+     * @return self
      *
      * @api
      */
@@ -183,7 +183,7 @@ class Method
     }
 
     /**
-     * @return Method
+     * @return self
      *
      * @api
      */
@@ -195,7 +195,7 @@ class Method
     }
 
     /**
-     * @return Method
+     * @return self
      *
      * @api
      */
@@ -207,7 +207,7 @@ class Method
     }
 
     /**
-     * @return Method
+     * @return self
      *
      * @api
      */
@@ -219,7 +219,7 @@ class Method
     }
 
     /**
-     * @return Method
+     * @return self
      *
      * @api
      */
@@ -231,7 +231,7 @@ class Method
     }
 
     /**
-     * @return Method
+     * @return self
      *
      * @api
      */
@@ -251,7 +251,7 @@ class Method
     }
 
     /**
-     * @return Method
+     * @return self
      *
      * @api
      */
@@ -263,7 +263,7 @@ class Method
     /**
      * @param Argument $argument
      *
-     * @return Method
+     * @return self
      *
      * @api
      */
@@ -275,7 +275,7 @@ class Method
     }
 
     /**
-     * @return array
+     * @return Argument[]
      */
     public function allArguments()
     {
@@ -285,7 +285,7 @@ class Method
     /**
      * @param string $body
      *
-     * @return Method
+     * @return self
      *
      * @api
      */

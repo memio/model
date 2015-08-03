@@ -32,7 +32,7 @@ class StructurePhpdoc
     private $description;
 
     /**
-     * @return StructurePhpdoc
+     * @return self
      *
      * @api
      */
@@ -44,7 +44,7 @@ class StructurePhpdoc
     /**
      * @param ApiTag $apiTag
      *
-     * @return StructurePhpdoc
+     * @return self
      *
      * @api
      */
@@ -58,7 +58,7 @@ class StructurePhpdoc
     /**
      * @param Description $description
      *
-     * @return StructurePhpdoc
+     * @return self
      *
      * @api
      */
@@ -72,7 +72,7 @@ class StructurePhpdoc
     /**
      * @param DeprecationTag $deprecationTag
      *
-     * @return StructurePhpdoc
+     * @return self
      *
      * @api
      */

@@ -31,7 +31,7 @@ class ThrowTag
     /**
      * @param string $exception
      *
-     * @return ThrowTag
+     * @return self
      *
      * @api
      */

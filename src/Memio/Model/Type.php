@@ -58,7 +58,7 @@ class Type
     /**
      * @param string $name
      *
-     * @return Type
+     * @return self
      *
      * @api
      */

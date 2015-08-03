@@ -22,7 +22,7 @@ class PropertyPhpdoc
     private $variableTag;
 
     /**
-     * @return PropertyPhpdoc
+     * @return self
      *
      * @api
      */
@@ -34,7 +34,7 @@ class PropertyPhpdoc
     /**
      * @param VariableTag $variableTag
      *
-     * @return PropertyPhpdoc
+     * @return self
      *
      * @api
      */

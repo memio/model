@@ -52,7 +52,7 @@ class ParameterTag
      * @param string $name
      * @param string $description
      *
-     * @return ParameterTag
+     * @return self
      *
      * @api
      */

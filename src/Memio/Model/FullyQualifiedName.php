@@ -53,7 +53,7 @@ class FullyQualifiedName
     /**
      * @param string $fullyQualifiedName
      *
-     * @return FullyQualifiedName
+     * @return self
      *
      * @api
      */
@@ -89,7 +89,7 @@ class FullyQualifiedName
     /**
      * @param string $alias
      *
-     * @return FullyQualifiedName
+     * @return self
      *
      * @api
      */
@@ -109,7 +109,7 @@ class FullyQualifiedName
     }
 
     /**
-     * @return FullyQualifiedName
+     * @return self
      *
      * @api
      */

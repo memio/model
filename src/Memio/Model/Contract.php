@@ -31,17 +31,17 @@ class Contract implements Structure
     private $structurePhpdoc;
 
     /**
-     * @var array
+     * @var Contract[]
      */
     private $contracts = array();
 
     /**
-     * @var array
+     * @var Constant[]
      */
     private $constants = array();
 
     /**
-     * @var array
+     * @var Method[]
      */
     private $methods = array();
 
@@ -58,7 +58,7 @@ class Contract implements Structure
     /**
      * @param string $fullyQualifiedName
      *
-     * @return Contract
+     * @return self
      *
      * @api
      */
@@ -93,6 +93,7 @@ class Contract implements Structure
 
     /**
      * {@inheritDoc}
+     * @return self
      */
     public function setPhpdoc(StructurePhpdoc $structurePhpdoc)
     {
@@ -112,7 +113,7 @@ class Contract implements Structure
     /**
      * @param Contract $contract
      *
-     * @return Contract
+     * @return self
      *
      * @api
      */
@@ -124,7 +125,7 @@ class Contract implements Structure
     }
 
     /**
-     * @return array
+     * @return Contract[]
      */
     public function allContracts()
     {
@@ -134,7 +135,7 @@ class Contract implements Structure
     /**
      * @param Constant $constant
      *
-     * @return Contract
+     * @return self
      *
      * @api
      */
@@ -146,7 +147,7 @@ class Contract implements Structure
     }
 
     /**
-     * @return array
+     * @return Constant[]
      */
     public function allConstants()
     {
@@ -156,7 +157,7 @@ class Contract implements Structure
     /**
      * @param Method $method
      *
-     * @return Contract
+     * @return self
      *
      * @api
      */
@@ -168,7 +169,7 @@ class Contract implements Structure
     }
 
     /**
-     * @return array
+     * @return Method[]
      */
     public function allMethods()
     {

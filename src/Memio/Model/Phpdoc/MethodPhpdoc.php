@@ -37,17 +37,17 @@ class MethodPhpdoc
     private $description;
 
     /**
-     * @var array
+     * @var ParameterTag[]
      */
     private $parameterTags = array();
 
     /**
-     * @var array
+     * @var ThrowTag[]
      */
     private $throwTags = array();
 
     /**
-     * @return MethodPhpdoc
+     * @return self
      *
      * @api
      */
@@ -59,7 +59,7 @@ class MethodPhpdoc
     /**
      * @param ApiTag $apiTag
      *
-     * @return MethodPhpdoc
+     * @return self
      *
      * @api
      */
@@ -73,7 +73,7 @@ class MethodPhpdoc
     /**
      * @param ReturnTag $returnTag
      *
-     * @return MethodPhpdoc
+     * @return self
      *
      * @api
      */
@@ -87,7 +87,7 @@ class MethodPhpdoc
     /**
      * @param Description $description
      *
-     * @return MethodPhpdoc
+     * @return self
      *
      * @api
      */
@@ -101,7 +101,7 @@ class MethodPhpdoc
     /**
      * @param DeprecationTag $deprecationTag
      *
-     * @return MethodPhpdoc
+     * @return self
      *
      * @api
      */
@@ -147,7 +147,7 @@ class MethodPhpdoc
     /**
      * @param ParameterTag $parameterTag
      *
-     * @return MethodPhpdoc
+     * @return self
      *
      * @api
      */
@@ -159,7 +159,7 @@ class MethodPhpdoc
     }
 
     /**
-     * @return array
+     * @return ParameterTag[]
      */
     public function getParameterTags()
     {
@@ -169,7 +169,7 @@ class MethodPhpdoc
     /**
      * @param ThrowTag $throwTag
      *
-     * @return MethodPhpdoc
+     * @return self
      *
      * @api
      */
@@ -181,7 +181,7 @@ class MethodPhpdoc
     }
 
     /**
-     * @return array
+     * @return ThrowTag[]
      */
     public function getThrowTags()
     {

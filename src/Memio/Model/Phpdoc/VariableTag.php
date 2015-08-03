@@ -33,7 +33,7 @@ class VariableTag
     /**
      * @param string $type
      *
-     * @return VariableTag
+     * @return self
      *
      * @api
      */

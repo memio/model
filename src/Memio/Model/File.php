@@ -51,7 +51,7 @@ class File
     /**
      * @param string $filename
      *
-     * @return File
+     * @return self
      *
      * @api
      */
@@ -71,7 +71,7 @@ class File
     /**
      * @param LicensePhpdoc $licensePhpdoc
      *
-     * @return File
+     * @return self
      *
      * @api
      */
@@ -91,7 +91,7 @@ class File
     }
 
     /**
-     * @return File
+     * @return self
      *
      * @api
      */
@@ -115,7 +115,7 @@ class File
     /**
      * @param FullyQualifiedName $fullyQualifiedName
      *
-     * @return File
+     * @return self
      *
      * @api
      */
@@ -137,7 +137,7 @@ class File
     /**
      * @param Structure $structure
      *
-     * @return File
+     * @return self
      *
      * @api
      */

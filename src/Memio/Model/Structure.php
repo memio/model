@@ -38,7 +38,7 @@ interface Structure
     /**
      * @param StructurePhpdoc $structurePhpdoc
      *
-     * @return Structure
+     * @return self
      *
      * @api
      */

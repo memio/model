@@ -31,7 +31,7 @@ class Description
     /**
      * @param string $line
      *
-     * @return Description
+     * @return self
      *
      * @api
      */
@@ -41,7 +41,7 @@ class Description
     }
 
     /**
-     * @return Description
+     * @return self
      *
      * @api
      */
@@ -55,7 +55,7 @@ class Description
     /**
      * @param string $line
      *
-     * @return Description
+     * @return self
      *
      * @api
      */

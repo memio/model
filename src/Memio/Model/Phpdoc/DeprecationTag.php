@@ -42,7 +42,7 @@ class DeprecationTag
      * @param string $version
      * @param string $description
      *
-     * @return DeprecationTag
+     * @return self
      *
      * @api
      */

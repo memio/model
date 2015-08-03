@@ -31,7 +31,7 @@ class ReturnTag
     /**
      * @param string $type
      *
-     * @return ReturnTag
+     * @return self
      *
      * @api
      */

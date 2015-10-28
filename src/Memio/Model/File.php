@@ -34,7 +34,7 @@ class File
     private $fullyQualifiedNames = array();
 
     /**
-     * @var Strucutre
+     * @var Structure
      */
     private $structure;
 
@@ -106,7 +106,7 @@ class File
     public function getNamespace()
     {
         if (null === $this->structure) {
-            return;
+            return null;
         }
 
         return $this->structure->getNamespace();

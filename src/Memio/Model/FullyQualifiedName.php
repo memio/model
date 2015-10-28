@@ -19,17 +19,22 @@ class FullyQualifiedName
     /**
      * @var string
      */
+    private $qualifiedName;
+
+    /**
+     * @var string
+     */
+    private $unqualifiedName;
+
+    /**
+     * @var string
+     */
     private $fullyQualifiedName;
 
     /**
      * @var string
      */
-    private $name;
-
-    /**
-     * @var string
-     */
-    private $namepace;
+    private $namespace;
 
     /**
      * @var string
@@ -43,11 +48,24 @@ class FullyQualifiedName
      */
     public function __construct($fullyQualifiedName)
     {
-        $namespaces = explode('\\', $fullyQualifiedName);
+        // Lets say that we have 'Foo\Bar' here
+        $parts = explode('\\', trim($fullyQualifiedName, '\\'));
 
-        $this->name = array_pop($namespaces);
-        $this->namepace = implode('\\', $namespaces);
-        $this->fullyQualifiedName = trim($fullyQualifiedName, '\\');
+        // Bar
+        $this->unqualifiedName = end($parts);
+
+        // Foo\Bar
+        $this->qualifiedName = implode('\\', $parts);
+
+        // \Foo\Bar
+        $this->fullyQualifiedName = '\\' . $this->qualifiedName;
+
+        // Build namespace (Foo)
+        array_pop($parts);
+
+        if (count($parts)) {
+            $this->namespace = self::make(implode('\\', $parts));
+        }
     }
 
     /**
@@ -73,9 +91,25 @@ class FullyQualifiedName
     /**
      * @return string
      */
+    public function getQualifiedName()
+    {
+        return $this->qualifiedName;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUnqualifiedName()
+    {
+        return $this->unqualifiedName;
+    }
+
+    /**
+     * @return string
+     */
     public function getName()
     {
-        return (null === $this->alias) ? $this->name : $this->alias;
+        return (null === $this->alias) ? $this->getUnqualifiedName() : $this->alias;
     }
 
     /**
@@ -83,7 +117,7 @@ class FullyQualifiedName
      */
     public function getNamespace()
     {
-        return $this->namepace;
+        return (null === $this->namespace) ? '' : $this->namespace->getFullyQualifiedName();
     }
 
     /**

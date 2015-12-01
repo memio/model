@@ -1,5 +1,10 @@
 # CHANGELOG
 
+
+## 1.4.1: Cancelled FQCN
+
+* reverted the FQCN change
+
 ## 1.4.0: Improved FQCN
 
 * improve `FullyQualifiedName` according to PHP Name resolution rules

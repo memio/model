@@ -22,7 +22,7 @@ class FullyQualifiedNameSpec extends ObjectBehavior
 
     function it_has_fully_qualified_classname()
     {
-        $this->getFullyQualifiedName()->shouldBe('\Vendor\Project\MyClass');
+        $this->getFullyQualifiedName()->shouldBe('Vendor\Project\MyClass');
     }
 
     function it_has_name()
@@ -32,7 +32,7 @@ class FullyQualifiedNameSpec extends ObjectBehavior
 
     function it_has_namespace()
     {
-        $this->getNamespace()->shouldBe('\Vendor\Project');
+        $this->getNamespace()->shouldBe('Vendor\Project');
     }
 
     function it_can_have_an_alias()

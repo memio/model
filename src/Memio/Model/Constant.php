@@ -41,7 +41,6 @@ class Constant
     /**
      * @param string $name
      * @param string $value
-     * @return Constant
      *
      * @api
      */

@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 1.4.0: Improved FQCN
+
+* improve `FullyQualifiedName` according to PHP Name resolution rules
+* added support for PHP 7
+
 ## 1.3.5: Improved PHPdoc
 
 * used `@return self`

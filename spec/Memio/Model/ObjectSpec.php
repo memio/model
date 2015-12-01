@@ -21,9 +21,9 @@ use PhpSpec\ObjectBehavior;
 
 class ObjectSpec extends ObjectBehavior
 {
-    const FULLY_QUALIFIED_NAME = 'Vendor\Project\MyClass';
+    const FULLY_QUALIFIED_NAME = '\Vendor\Project\MyClass';
     const NAME = 'MyClass';
-    const NAMESPACE_ = 'Vendor\Project';
+    const NAMESPACE_ = '\Vendor\Project';
 
     function let()
     {

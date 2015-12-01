@@ -195,7 +195,7 @@ class Object implements Structure
     }
 
     /**
-     * @param Object $parent
+     * @param \Memio\Model\Object $parent
      *
      * @return self
      *

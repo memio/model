@@ -59,6 +59,11 @@ class Method
     private $body = '';
 
     /**
+     * @var string
+     */
+    private $returnType;
+
+    /**
      * @param string $name
      *
      * @api
@@ -303,4 +308,27 @@ class Method
     {
         return $this->body;
     }
+
+    /**
+     * @param string $returnType
+     *
+     * @return self
+     *
+     * @{pi
+     */
+    public function setReturnType($returnType)
+    {
+        $this->returnType = $returnType;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getReturnType()
+    {
+        return $this->returnType;
+    }
+
 }

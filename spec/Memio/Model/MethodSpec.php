@@ -93,6 +93,13 @@ class MethodSpec extends ObjectBehavior
         $this->allArguments()->shouldBe(array($argument));
     }
 
+    function it_can_have_a_return_type()
+    {
+        $this->getReturnType()->shouldBe(null);
+        $this->setReturnType('array');
+        $this->getReturnType()->shouldBe('array');
+    }
+
     function it_can_have_a_body()
     {
         $body =<<<'EOT'

@@ -20,158 +20,97 @@ use Memio\Model\Phpdoc\StructurePhpdoc;
  */
 class Contract implements Structure
 {
-    /**
-     * @var string
-     */
     private $fullyQualifiedName;
-
-    /**
-     * @var StructurePhpdoc
-     */
     private $structurePhpdoc;
+    private $contracts = [];
+    private $constants = [];
+    private $methods = [];
 
     /**
-     * @var Contract[]
-     */
-    private $contracts = array();
-
-    /**
-     * @var Constant[]
-     */
-    private $constants = array();
-
-    /**
-     * @var Method[]
-     */
-    private $methods = array();
-
-    /**
-     * @param string $fullyQualifiedName
-     *
      * @api
      */
-    public function __construct($fullyQualifiedName)
+    public function __construct(string $fullyQualifiedName)
     {
         $this->fullyQualifiedName = new FullyQualifiedName($fullyQualifiedName);
     }
 
     /**
-     * @param string $fullyQualifiedName
-     *
-     * @return self
-     *
      * @api
+     * @deprecated
      */
-    public static function make($fullyQualifiedName)
+    public static function make(string $fullyQualifiedName) : self
     {
         return new self($fullyQualifiedName);
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    public function getFullyQualifiedName()
+    public function getFullyQualifiedName() : string
     {
         return $this->fullyQualifiedName->getFullyQualifiedName();
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    public function getName()
+    public function getName() : string
     {
         return $this->fullyQualifiedName->getName();
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    public function getNamespace()
+    public function getNamespace() : string
     {
         return $this->fullyQualifiedName->getNamespace();
     }
 
-    /**
-     * {@inheritDoc}
-     * @return self
-     */
-    public function setPhpdoc(StructurePhpdoc $structurePhpdoc)
+    public function setPhpdoc(StructurePhpdoc $structurePhpdoc) : self
     {
         $this->structurePhpdoc = $structurePhpdoc;
 
         return $this;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function getPhpdoc()
     {
         return $this->structurePhpdoc;
     }
 
     /**
-     * @param Contract $contract
-     *
-     * @return self
-     *
      * @api
      */
-    public function extend(Contract $contract)
+    public function extend(Contract $contract) : self
     {
         $this->contracts[] = $contract;
 
         return $this;
     }
 
-    /**
-     * @return Contract[]
-     */
-    public function allContracts()
+    public function allContracts() : array
     {
         return $this->contracts;
     }
 
     /**
-     * @param Constant $constant
-     *
-     * @return self
-     *
      * @api
      */
-    public function addConstant(Constant $constant)
+    public function addConstant(Constant $constant) : self
     {
         $this->constants[] = $constant;
 
         return $this;
     }
 
-    /**
-     * @return Constant[]
-     */
-    public function allConstants()
+    public function allConstants() : array
     {
         return $this->constants;
     }
 
     /**
-     * @param Method $method
-     *
-     * @return self
-     *
      * @api
      */
-    public function addMethod(Method $method)
+    public function addMethod(Method $method) : self
     {
         $this->methods[] = $method;
 
         return $this;
     }
 
-    /**
-     * @return Method[]
-     */
-    public function allMethods()
+    public function allMethods() : array
     {
         return $this->methods;
     }

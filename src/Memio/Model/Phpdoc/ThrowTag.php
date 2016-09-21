@@ -13,37 +13,26 @@ namespace Memio\Model\Phpdoc;
 
 class ThrowTag
 {
-    /**
-     * @var string
-     */
     private $exception;
 
     /**
-     * @param string $exception
-     *
      * @api
      */
-    public function __construct($exception)
+    public function __construct(string $exception)
     {
         $this->exception = $exception;
     }
 
     /**
-     * @param string $exception
-     *
-     * @return self
-     *
      * @api
+     * @deprecated
      */
-    public static function make($exception)
+    public static function make(string $exception) : self
     {
         return new self($exception);
     }
 
-    /**
-     * @return string
-     */
-    public function getException()
+    public function getException() : string
     {
         return $this->exception;
     }

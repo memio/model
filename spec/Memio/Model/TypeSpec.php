@@ -37,11 +37,39 @@ class TypeSpec extends ObjectBehavior
         $this->hasTypeHint()->shouldBe(true);
     }
 
-    function it_can_have_a_type_hint_if_it_is_a_callable_from_php_5_4()
+    function it_can_have_a_type_hint_if_it_is_a_callable()
     {
         $this->beConstructedWith('callable');
 
-        $this->hasTypeHint()->shouldBe(version_compare(PHP_VERSION, '5.4.0') >= 0);
+        $this->hasTypeHint()->shouldBe(true);
+    }
+
+    function it_can_have_a_type_hint_if_it_is_a_string()
+    {
+        $this->beConstructedWith('string');
+
+        $this->hasTypeHint()->shouldBe(true);
+    }
+
+    function it_can_have_a_type_hint_if_it_is_an_integer()
+    {
+        $this->beConstructedWith('int');
+
+        $this->hasTypeHint()->shouldBe(true);
+    }
+
+    function it_can_have_a_type_hint_if_it_is_a_float()
+    {
+        $this->beconstructedwith('float');
+
+        $this->hastypehint()->shouldbe(true);
+    }
+
+    function it_can_have_a_type_hint_if_it_is_a_boolean()
+    {
+        $this->beConstructedWith('bool');
+
+        $this->hasTypeHint()->shouldBe(true);
     }
 
     function it_can_be_an_array()
@@ -108,11 +136,19 @@ class TypeSpec extends ObjectBehavior
         $this->isObject()->shouldBe(false);
     }
 
-    function it_can_be_a_double()
+    function it_can_be_a_float()
+    {
+        $this->beConstructedWith('float');
+
+        $this->getName()->shouldBe('float');
+        $this->isObject()->shouldBe(false);
+    }
+
+    function it_normalizes_float_name()
     {
         $this->beConstructedWith('double');
 
-        $this->getName()->shouldBe('double');
+        $this->getName()->shouldBe('float');
         $this->isObject()->shouldBe(false);
     }
 

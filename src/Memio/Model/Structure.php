@@ -20,32 +20,13 @@ use Memio\Model\Phpdoc\StructurePhpdoc;
  */
 interface Structure
 {
-    /**
-     * @return string
-     */
-    public function getFullyQualifiedName();
+    public function getFullyQualifiedName() : string;
+    public function getName() : string;
+    public function getNamespace() : string;
+    public function getPhpdoc();
 
     /**
-     * @return string
-     */
-    public function getName();
-
-    /**
-     * @return string
-     */
-    public function getNamespace();
-
-    /**
-     * @param StructurePhpdoc $structurePhpdoc
-     *
-     * @return self
-     *
      * @api
      */
     public function setPhpdoc(StructurePhpdoc $structurePhpdoc);
-
-    /**
-     * @return StructurePhpdoc
-     */
-    public function getPhpdoc();
 }

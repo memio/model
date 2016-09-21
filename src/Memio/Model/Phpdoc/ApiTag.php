@@ -16,14 +16,9 @@ namespace Memio\Model\Phpdoc;
  */
 class ApiTag
 {
-    /**
-     * @var string
-     */
     private $since;
 
     /**
-     * @param string $since
-     *
      * @api
      */
     public function __construct($since = null)
@@ -32,21 +27,15 @@ class ApiTag
     }
 
     /**
-     * @param string $since
-     *
-     * @return self
-     *
      * @api
+     * @deprecated
      */
-    public static function make($since = null)
+    public static function make($since = null) : self
     {
         return new self($since);
     }
 
-    /**
-     * @return string
-     */
-    public function getSince()
+    public function getSince() : string
     {
         return $this->since;
     }

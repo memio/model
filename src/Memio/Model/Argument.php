@@ -16,90 +16,57 @@ namespace Memio\Model;
  */
 class Argument
 {
-    /**
-     * @var Type
-     */
     private $type;
-
-    /**
-     * @var string
-     */
     private $name;
-
-    /**
-     * @var string|null
-     */
     private $defaultValue;
 
     /**
-     * @param string $type
-     * @param string $name
-     *
      * @api
      */
-    public function __construct($type, $name)
+    public function __construct(string $type, string $name)
     {
         $this->type = new Type($type);
         $this->name = $name;
     }
 
     /**
-     * @param string $type
-     * @param string $name
-     *
-     * @return self
-     *
      * @api
+     * @deprecated
      */
-    public static function make($type, $name)
+    public static function make(string $type, string $name) : self
     {
         return new self($type, $name);
     }
 
-    /**
-     * @return string
-     */
-    public function getType()
+    public function getType() : string
     {
         return $this->type->getName();
     }
 
-    /**
-     * @return string
-     */
-    public function getName()
+    public function getName() : string
     {
         return $this->name;
     }
 
     /**
-     * @param string $value
-     *
-     * @return self
-     *
      * @api
      */
-    public function setDefaultValue($value)
+    public function setDefaultValue(string $value) : self
     {
         $this->defaultValue = $value;
 
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getDefaultValue()
     {
         return $this->defaultValue;
     }
 
     /**
-     * @return self
-     *
      * @api
      */
-    public function removeDefaultValue()
+    public function removeDefaultValue() : self
     {
         $this->defaultValue = null;
 

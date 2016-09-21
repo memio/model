@@ -16,39 +16,23 @@ namespace Memio\Model\Phpdoc;
  */
 class StructurePhpdoc
 {
-    /**
-     * @var ApiTag
-     */
     private $apiTag;
-
-    /**
-     * @var DeprecationTag
-     */
     private $deprecationTag;
-
-    /**
-     * @var Description
-     */
     private $description;
 
     /**
-     * @return self
-     *
      * @api
+     * @deprecated
      */
-    public static function make()
+    public static function make() : self
     {
         return new self();
     }
 
     /**
-     * @param ApiTag $apiTag
-     *
-     * @return self
-     *
      * @api
      */
-    public function setApiTag(ApiTag $apiTag)
+    public function setApiTag(ApiTag $apiTag) : self
     {
         $this->apiTag = $apiTag;
 
@@ -56,13 +40,9 @@ class StructurePhpdoc
     }
 
     /**
-     * @param Description $description
-     *
-     * @return self
-     *
      * @api
      */
-    public function setDescription($description)
+    public function setDescription(Description $description) : self
     {
         $this->description = $description;
 
@@ -70,47 +50,31 @@ class StructurePhpdoc
     }
 
     /**
-     * @param DeprecationTag $deprecationTag
-     *
-     * @return self
-     *
      * @api
      */
-    public function setDeprecationTag(DeprecationTag $deprecationTag)
+    public function setDeprecationTag(DeprecationTag $deprecationTag) : self
     {
         $this->deprecationTag = $deprecationTag;
 
         return $this;
     }
 
-    /**
-     * @return ApiTag
-     */
-    public function getApiTag()
+    public function getApiTag() : ApiTag
     {
         return $this->apiTag;
     }
 
-    /**
-     * @return Description
-     */
-    public function getDescription()
+    public function getDescription() : Description
     {
         return $this->description;
     }
 
-    /**
-     * @return DeprecationTag
-     */
-    public function getDeprecationTag()
+    public function getDeprecationTag() : DeprecationTag
     {
         return $this->deprecationTag;
     }
 
-    /**
-     * @return bool
-     */
-    public function isEmpty()
+    public function isEmpty() : bool
     {
         $hasApiTag = (null !== $this->apiTag);
         $hasDescription = (null !== $this->description);

@@ -20,142 +20,79 @@ use Memio\Model\Phpdoc\StructurePhpdoc;
  */
 class Object implements Structure
 {
-    /**
-     * @var FullyQualifiedName
-     */
     private $fullyQualifiedName;
-
-    /**
-     * @var StructurePhpdoc
-     */
     private $structurePhpdoc;
-
-    /**
-     * @var bool
-     */
     private $isAbstract = false;
-
-    /**
-     * @var bool
-     */
     private $isFinal = false;
-
-    /**
-     * @var Object
-     */
     private $parent;
+    private $contracts = [];
+    private $constants = [];
+    private $properties = [];
+    private $methods = [];
 
     /**
-     * @var Contract[]
-     */
-    private $contracts = array();
-
-    /**
-     * @var Constant[]
-     */
-    private $constants = array();
-
-    /**
-     * @var Property[]
-     */
-    private $properties = array();
-
-    /**
-     * @var Method[]
-     */
-    private $methods = array();
-
-    /**
-     * @param string $fullyQualifiedName
-     *
      * @api
      */
-    public function __construct($fullyQualifiedName)
+    public function __construct(string $fullyQualifiedName)
     {
         $this->fullyQualifiedName = new FullyQualifiedName($fullyQualifiedName);
     }
 
     /**
-     * @param string $fullyQualifiedName
-     *
-     * @return self
-     *
      * @api
+     * @deprecated
      */
-    public static function make($fullyQualifiedName)
+    public static function make(string $fullyQualifiedName) : self
     {
         return new self($fullyQualifiedName);
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    public function getFullyQualifiedName()
+    public function getFullyQualifiedName() : string
     {
         return $this->fullyQualifiedName->getFullyQualifiedName();
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    public function getName()
+    public function getName() : string
     {
         return $this->fullyQualifiedName->getName();
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    public function getNamespace()
+    public function getNamespace() : string
     {
         return $this->fullyQualifiedName->getNamespace();
     }
 
-    /**
-     * {@inheritDoc}
-     * @return self
-     */
-    public function setPhpdoc(StructurePhpdoc $structurePhpdoc)
+    public function setPhpdoc(StructurePhpdoc $structurePhpdoc) : self
     {
         $this->structurePhpdoc = $structurePhpdoc;
 
         return $this;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function getPhpdoc()
     {
         return $this->structurePhpdoc;
     }
 
     /**
-     * @return self
-     *
      * @api
      */
-    public function makeAbstract()
+    public function makeAbstract() : self
     {
         $this->isAbstract = true;
 
         return $this;
     }
 
-    /**
-     * @return bool
-     */
-    public function isAbstract()
+    public function isAbstract() : bool
     {
         return $this->isAbstract;
     }
 
     /**
-     * @return self
-     *
      * @api
      */
-    public function removeAbstract()
+    public function removeAbstract() : self
     {
         $this->isAbstract = false;
 
@@ -163,31 +100,24 @@ class Object implements Structure
     }
 
     /**
-     * @return self
-     *
      * @api
      */
-    public function makeFinal()
+    public function makeFinal() : self
     {
         $this->isFinal = true;
 
         return $this;
     }
 
-    /**
-     * @return bool
-     */
-    public function isFinal()
+    public function isFinal() : bool
     {
         return $this->isFinal;
     }
 
     /**
-     * @return self
-     *
      * @api
      */
-    public function removeFinal()
+    public function removeFinal() : self
     {
         $this->isFinal = false;
 
@@ -195,41 +125,29 @@ class Object implements Structure
     }
 
     /**
-     * @param Object $parent
-     *
-     * @return self
-     *
      * @api
      */
-    public function extend(Object $parent)
+    public function extend(Object $parent) : self
     {
         $this->parent = $parent;
 
         return $this;
     }
 
-    /**
-     * @return bool
-     */
-    public function hasParent()
+    public function hasParent() : bool
     {
         return (null !== $this->parent);
     }
 
-    /**
-     * @return Object
-     */
     public function getParent()
     {
         return $this->parent;
     }
 
     /**
-     * @return self
-     *
      * @api
      */
-    public function removeParent()
+    public function removeParent() : self
     {
         $this->parent = null;
 
@@ -237,89 +155,61 @@ class Object implements Structure
     }
 
     /**
-     * @param Contract $contract
-     *
-     * @return self
-     *
      * @api
      */
-    public function implement(Contract $contract)
+    public function implement(Contract $contract) : self
     {
         $this->contracts[] = $contract;
 
         return $this;
     }
 
-    /**
-     * @return Contract[]
-     */
-    public function allContracts()
+    public function allContracts() : array
     {
         return $this->contracts;
     }
 
     /**
-     * @param Constant $constant
-     *
-     * @return self
-     *
      * @api
      */
-    public function addConstant(Constant $constant)
+    public function addConstant(Constant $constant) : self
     {
         $this->constants[] = $constant;
 
         return $this;
     }
 
-    /**
-     * @return Constant[]
-     */
-    public function allConstants()
+    public function allConstants() : array
     {
         return $this->constants;
     }
 
     /**
-     * @param Property $property
-     *
-     * @return self
-     *
      * @api
      */
-    public function addProperty(Property $property)
+    public function addProperty(Property $property) : self
     {
         $this->properties[] = $property;
 
         return $this;
     }
 
-    /**
-     * @return Property[]
-     */
-    public function allProperties()
+    public function allProperties() : array
     {
         return $this->properties;
     }
 
     /**
-     * @param Method $method
-     *
-     * @return self
-     *
      * @api
      */
-    public function addMethod(Method $method)
+    public function addMethod(Method $method) : self
     {
         $this->methods[] = $method;
 
         return $this;
     }
 
-    /**
-     * @return Method[]
-     */
-    public function allMethods()
+    public function allMethods() : array
     {
         return $this->methods;
     }

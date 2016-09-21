@@ -40,6 +40,7 @@ class Object implements Structure
 
     /**
      * @api
+     *
      * @deprecated
      */
     public static function make(string $fullyQualifiedName) : self
@@ -136,7 +137,7 @@ class Object implements Structure
 
     public function hasParent() : bool
     {
-        return (null !== $this->parent);
+        return null !== $this->parent;
     }
 
     public function getParent()

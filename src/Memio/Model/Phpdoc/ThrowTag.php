@@ -25,6 +25,7 @@ class ThrowTag
 
     /**
      * @api
+     *
      * @deprecated
      */
     public static function make(string $exception) : self

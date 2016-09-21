@@ -12,7 +12,6 @@
 namespace spec\Memio\Model\Phpdoc;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class DescriptionSpec extends ObjectBehavior
 {

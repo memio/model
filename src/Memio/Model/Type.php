@@ -16,84 +16,81 @@ namespace Memio\Model;
  */
 class Type
 {
-    /**
-     * @var string
-     */
+    const NORMALIZATIONS = [
+        'double' => 'float',
+        'boolean' => 'bool',
+        'integer' => 'int',
+        'NULL' => 'null',
+    ];
+    const NON_OBJECT_TYPES = [
+        'string',
+        'bool',
+        'int',
+        'float',
+        'callable',
+        'resource',
+        'array',
+        'null',
+        'mixed',
+    ];
+    const HAS_TYPE_HINT = [
+        'array',
+        'callable',
+        'bool',
+        'float',
+        'int',
+        'string',
+    ];
+
     private $name;
-
-    /**
-     * @var bool
-     */
     private $isObject;
-
-    /**
-     * @var bool
-     */
     private $hasTypeHint;
 
     /**
-     * @param string $name
-     *
      * @api
      */
-    public function __construct($name)
+    public function __construct(string $name)
     {
-        $normalizations = array(
-            'boolean' => 'bool',
-            'integer' => 'int',
-            'double' => 'float',
-            'NULL' => 'null',
-        );
-        if (isset($normalizations[$name])) {
-            $name = $normalizations[$name];
+        if (isset(self::NORMALIZATIONS[$name])) {
+            $name = self::NORMALIZATIONS[$name];
         }
-
-        $nonObjectTypes = array('string', 'bool', 'int', 'float', 'callable', 'resource', 'array', 'null', 'mixed');
-        $scalarTypes = array('string', 'bool', 'float', 'int');
-        $isCallableFromPhp54 = ('callable' === $name && version_compare(PHP_VERSION, '5.4.0') >= 0);
-        $isScalarFromPhp70 = (in_array($name, $scalarTypes) && version_compare(PHP_VERSION, '7.0.0') >= 0);
-
-        $this->isObject = !in_array($name, $nonObjectTypes, true);
-        $this->hasTypeHint = ($isCallableFromPhp54 || $this->isObject || 'array' === $name || $isScalarFromPhp70);
+        $this->isObject = !in_array($name, self::NON_OBJECT_TYPES, true);
+        $this->hasTypeHint = (
+            $this->isObject
+            || in_array($name, self::HAS_TYPE_HINT, true)
+        );
         $this->name = $name;
     }
 
     /**
-     * @param string $name
-     *
-     * @return self
-     *
      * @api
+     * @deprecated
      */
-    public static function make($name)
+    public static function make(string $name) : self
     {
         return new self($name);
     }
 
     /**
-     * @return string
-     *
      * @api
      */
-    public function getName()
+    public function getName() : string
     {
         return $this->name;
     }
 
     /**
-     * @return bool
-     *
      * @api
      */
-    public function isObject()
+    public function isObject() : bool
     {
         return $this->isObject;
     }
 
     /**
-     * @return bool
+     * @api
      */
-    public function hasTypeHint()
+    public function hasTypeHint() : bool
     {
         return $this->hasTypeHint;
     }

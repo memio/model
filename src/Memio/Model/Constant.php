@@ -16,51 +16,33 @@ namespace Memio\Model;
  */
 class Constant
 {
-    /**
-     * @var string
-     */
     private $name;
-
-    /**
-     * @var string
-     */
     private $value;
 
     /**
-     * @param string $name
-     * @param string $value
-     *
      * @api
      */
-    public function __construct($name, $value)
+    public function __construct(string $name, string $value)
     {
         $this->name = $name;
         $this->value = $value;
     }
 
     /**
-     * @param string $name
-     * @param string $value
-     *
      * @api
+     * @deprecated
      */
-    public static function make($name, $value)
+    public static function make(string $name, string $value) : self
     {
         return new self($name, $value);
     }
 
-    /**
-     * @return string
-     */
-    public function getName()
+    public function getName() : string
     {
         return $this->name;
     }
 
-    /**
-     * @return string
-     */
-    public function getValue()
+    public function getValue() : string
     {
         return $this->value;
     }

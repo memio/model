@@ -10,7 +10,7 @@ method arguments and even PHPdoc) by constructing "Model" objects.
 
 Install it using [Composer](https://getcomposer.org/download):
 
-    composer require memio/model:^1.0
+    composer require memio/model:^2.0@alpha
 
 ## Example
 
@@ -20,11 +20,11 @@ Let's say we want to describe the following method:
     /**
      * @param ValueObject $valueObject
      * @param int         $type
-     * @param boolean     $option
+     * @param bool        $option
      *
      * @api
      */
-    public function doSomething(ValueObject $valueObject, $type = self::TYPE_ONE, $option = true);
+    public function doSomething(ValueObject $valueObject, int $type = self::TYPE_ONE, bool $option = true);
 ```
 
 In order to do so, we'd need to write the following:
@@ -40,8 +40,8 @@ use Memio\Model\Phpdoc\ApiTag;
 use Memio\Model\Phpdoc\MethodPhpdoc;
 use Memio\Model\Phpdoc\ParameterTag;
 
-$method = Method::make('doSomething')
-    ->setPhpdoc(MethodPhpdoc::make()
+$method = (new Method('doSomething'))
+    ->setPhpdoc((new MethodPhpdoc())
         ->addParameterTag(new ParameterTag('Vendor\Project\ValueObject', 'valueObject'))
         ->addParameterTag(new ParameterTag('int', 'type'))
         ->addParameterTag(new ParameterTag('bool', 'option'))
@@ -49,10 +49,10 @@ $method = Method::make('doSomething')
         ->addApiTag(new ApiTag())
     )
     ->addArgument(new Argument('Vendor\Project\ValueObject', 'valueObject'))
-    ->addArgument(Argument::make('int', 'type')
+    ->addArgument((new Argument('int', 'type'))
         ->setDefaultValue('self::TYPE_ONE')
     )
-    ->addArgument(Argument::make('bool', 'option')
+    ->addArgument((new Argument('bool', 'option'))
         ->setDefaultValue('true')
     )
 ;
@@ -63,10 +63,10 @@ Usually models aren't described manually like this, they would be built dynamica
 ```php
 // Let's say we've received the following two parameters:
 $methodName = 'doSomething';
-$arguments = array(new \Vendor\Project\ValueObject(), ValueObject::TYPE_ONE, true);
+$arguments = [new \Vendor\Project\ValueObject(), ValueObject::TYPE_ONE, true];
 
 $method = new Method($methodName);
-$phpdoc = MethodPhpdoc::make()->setApiTag(new ApiTag());
+$phpdoc = (new MethodPhpdoc())->setApiTag(new ApiTag());
 $index = 1;
 foreach ($arguments as $rawArgument) {
     $type = is_object($rawArgument) ? get_class($argument) : gettype($rawArgument);
@@ -80,10 +80,10 @@ $method->setPhpdoc($phpdoc);
 ```
 
 We can build dynamically the models using a configuration file, user input, existing
-source code... Possibilities are infinite!
+source code... Possibilities are endless!
 
 Once built these models can be further tweaked, and converted to another format:
-an array, source code, etc... Again, the possibilities are infinite!
+an array, source code, etc... Again, the possibilities are endless!
 
 Have a look at [the main respository](http://github.com/memio/memio) to discover the full power of Medio.
 

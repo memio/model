@@ -1,5 +1,23 @@
 # CHANGELOG
 
+## 2.0.0-alpha1: PHP 7
+
+Dropped support for PHP < 7
+    
+This means we now can use:
+    
+* scalar type hints
+* return type hints
+* callable type hint, without having to check PHP version
+    
+All `make` static constructor were created for PHP < 5.6, they're
+now deprecated. Here's an example of what to use instead:
+    
+```
+(new Method('sayHello'))
+    ->addArgument(new Argument('string', 'name')))
+;
+```
 
 ## 1.4.1: Cancelled FQCN
 

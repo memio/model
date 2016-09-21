@@ -20,6 +20,7 @@ class PropertyPhpdoc
 
     /**
      * @api
+     *
      * @deprecated
      */
     public static function make() : self
@@ -44,6 +45,6 @@ class PropertyPhpdoc
 
     public function isEmpty() : bool
     {
-        return (null === $this->variableTag);
+        return null === $this->variableTag;
     }
 }

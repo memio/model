@@ -36,6 +36,7 @@ class Contract implements Structure
 
     /**
      * @api
+     *
      * @deprecated
      */
     public static function make(string $fullyQualifiedName) : self

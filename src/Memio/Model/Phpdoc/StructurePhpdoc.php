@@ -22,6 +22,7 @@ class StructurePhpdoc
 
     /**
      * @api
+     *
      * @deprecated
      */
     public static function make() : self

@@ -39,7 +39,7 @@ class DescriptionSpec extends ObjectBehavior
         $longDescription = array(
             'Long descriptions can span on many lines',
             '',
-            '    They can also have empty lines and indented ones.'
+            '    They can also have empty lines and indented ones.',
         );
 
         foreach ($longDescription as $line) {

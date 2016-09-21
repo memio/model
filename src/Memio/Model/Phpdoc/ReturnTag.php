@@ -25,6 +25,7 @@ class ReturnTag
 
     /**
      * @api
+     *
      * @deprecated
      */
     public static function make(string $type) : self

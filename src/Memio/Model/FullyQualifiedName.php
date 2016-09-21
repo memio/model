@@ -35,6 +35,7 @@ class FullyQualifiedName
 
     /**
      * @api
+     *
      * @deprecated
      */
     public static function make(string $fullyQualifiedName) : self
@@ -69,7 +70,7 @@ class FullyQualifiedName
 
     public function hasAlias() : bool
     {
-        return (null !== $this->alias);
+        return null !== $this->alias;
     }
 
     /**

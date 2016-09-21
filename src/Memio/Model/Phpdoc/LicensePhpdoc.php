@@ -35,6 +35,7 @@ class LicensePhpdoc
 
     /**
      * @api
+     *
      * @deprecated
      */
     public static function make(

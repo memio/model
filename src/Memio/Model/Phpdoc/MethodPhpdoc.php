@@ -25,6 +25,7 @@ class MethodPhpdoc
 
     /**
      * @api
+     *
      * @deprecated
      */
     public static function make() : self
@@ -129,13 +130,13 @@ class MethodPhpdoc
         $hasDeprecationTag = (null !== $this->deprecationTag);
         $hasReturnTag = (null !== $this->returnTag);
 
-        return (
+        return
             !$hasApiTag
             && !$hasDescription
             && !$hasDeprecationTag
             && !$hasReturnTag
             && empty($this->parameterTags)
             && empty($this->throwTags)
-        );
+        ;
     }
 }

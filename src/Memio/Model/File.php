@@ -33,6 +33,7 @@ class File
 
     /**
      * @api
+     *
      * @deprecated
      */
     public static function make(string $filename) : self

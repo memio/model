@@ -30,8 +30,6 @@ class Argument
     }
 
     /**
-     * @api
-     *
      * @deprecated
      */
     public static function make(string $type, string $name) : self

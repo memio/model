@@ -27,8 +27,6 @@ class ApiTag
     }
 
     /**
-     * @api
-     *
      * @deprecated
      */
     public static function make($since = null) : self

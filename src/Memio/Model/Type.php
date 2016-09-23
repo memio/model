@@ -63,8 +63,6 @@ class Type
     }
 
     /**
-     * @api
-     *
      * @deprecated
      */
     public static function make(string $name) : self

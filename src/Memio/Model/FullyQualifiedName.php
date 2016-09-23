@@ -34,8 +34,6 @@ class FullyQualifiedName
     }
 
     /**
-     * @api
-     *
      * @deprecated
      */
     public static function make(string $fullyQualifiedName) : self

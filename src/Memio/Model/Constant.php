@@ -29,8 +29,6 @@ class Constant
     }
 
     /**
-     * @api
-     *
      * @deprecated
      */
     public static function make(string $name, string $value) : self

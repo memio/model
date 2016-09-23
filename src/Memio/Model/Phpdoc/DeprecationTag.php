@@ -29,8 +29,6 @@ class DeprecationTag
     }
 
     /**
-     * @api
-     *
      * @deprecated
      */
     public static function make($version, $description = null) : self

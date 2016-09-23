@@ -36,8 +36,6 @@ class ParameterTag
     }
 
     /**
-     * @api
-     *
      * @deprecated
      */
     public static function make(

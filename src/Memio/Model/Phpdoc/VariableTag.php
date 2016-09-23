@@ -26,8 +26,6 @@ class VariableTag
     }
 
     /**
-     * @api
-     *
      * @deprecated
      */
     public static function make(string $type) : bool

@@ -24,8 +24,6 @@ class MethodPhpdoc
     private $throwTags = [];
 
     /**
-     * @api
-     *
      * @deprecated
      */
     public static function make() : self

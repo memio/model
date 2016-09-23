@@ -19,8 +19,6 @@ class PropertyPhpdoc
     private $variableTag;
 
     /**
-     * @api
-     *
      * @deprecated
      */
     public static function make() : self

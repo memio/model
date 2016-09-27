@@ -36,7 +36,7 @@ class PropertyPhpdoc
         return $this;
     }
 
-    public function getVariableTag() : VariableTag
+    public function getVariableTag()
     {
         return $this->variableTag;
     }

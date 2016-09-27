@@ -58,17 +58,17 @@ class StructurePhpdoc
         return $this;
     }
 
-    public function getApiTag() : ApiTag
+    public function getApiTag()
     {
         return $this->apiTag;
     }
 
-    public function getDescription() : Description
+    public function getDescription()
     {
         return $this->description;
     }
 
-    public function getDeprecationTag() : DeprecationTag
+    public function getDeprecationTag()
     {
         return $this->deprecationTag;
     }

@@ -34,7 +34,7 @@ class ApiTag
         return new self($since);
     }
 
-    public function getSince() : string
+    public function getSince()
     {
         return $this->since;
     }

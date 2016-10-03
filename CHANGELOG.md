@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2.0.0-alpha3: Return type hints
+
+* added return type hints
+
 ## 2.0.0-alpha2: Fixes
 
 * fixed PHPdoc return type hints

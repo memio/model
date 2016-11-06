@@ -1,5 +1,5 @@
 {
-    "name": "mauretto78/memio/model",
+    "name": "mauretto78/model",
     "license": "MIT",
     "type": "library",
     "description": "Memio's models, used to describe the code to generate",

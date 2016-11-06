@@ -295,6 +295,20 @@ class Object implements Structure
     }
 
     /**
+     * @param array $properties
+     */
+    public function addProperties(array $properties)
+    {
+        foreach ($properties as $property){
+            if(!$property instanceof Property){
+                throw new \RuntimeException('All provided properties must be instances of Memio\Model\Property');
+            }
+
+            $this->addProperty($property);
+        }
+    }
+
+    /**
      * @return Property[]
      */
     public function allProperties()
@@ -314,6 +328,20 @@ class Object implements Structure
         $this->methods[] = $method;
 
         return $this;
+    }
+
+    /**
+     * @param array $methods
+     */
+    public function addMethods(array $methods)
+    {
+        foreach ($methods as $method){
+            if(!$method instanceof Method){
+                throw new \RuntimeException('All provided methods must be instances of Memio\Model\Method');
+            }
+
+            $this->addMethod($method);
+        }
     }
 
     /**

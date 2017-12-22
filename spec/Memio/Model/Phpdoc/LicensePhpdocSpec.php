@@ -3,7 +3,7 @@
 /*
  * This file is part of the memio/model package.
  *
- * (c) Loïc Chardonnet <loic.chardonnet@gmail.com>
+ * (c) Loïc Faugeron <faugeron.loic@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -16,8 +16,8 @@ use PhpSpec\ObjectBehavior;
 class LicensePhpdocSpec extends ObjectBehavior
 {
     const PROJECT_NAME = 'gnugat/medio';
-    const AUTHOR_NAME = 'Loïc Chardonnet';
-    const AUTHOR_EMAIL = 'loic.chardonnet@gmail.com';
+    const AUTHOR_NAME = 'Loïc Faugeron';
+    const AUTHOR_EMAIL = 'faugeron.loic@gmail.com';
 
     function let()
     {

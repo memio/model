@@ -17,10 +17,15 @@
         "Memio\\Model\\": "src/Memio/Model"
     }},
     "require": {
-        "php": "^5.3|^7.0"
+        "php": "^7.0"
     },
     "require-dev": {
-        "fabpot/php-cs-fixer": "^1.6",
-        "phpspec/phpspec": "^2.4"
+        "friendsofphp/php-cs-fixer": "^1.6",
+        "phpspec/phpspec": "^3.0"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.1-dev"
+        }
     }
 }

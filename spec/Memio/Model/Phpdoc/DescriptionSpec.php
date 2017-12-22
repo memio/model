@@ -3,7 +3,7 @@
 /*
  * This file is part of the memio/model package.
  *
- * (c) Loïc Chardonnet <loic.chardonnet@gmail.com>
+ * (c) Loïc Faugeron <faugeron.loic@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -12,7 +12,6 @@
 namespace spec\Memio\Model\Phpdoc;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class DescriptionSpec extends ObjectBehavior
 {
@@ -40,7 +39,7 @@ class DescriptionSpec extends ObjectBehavior
         $longDescription = array(
             'Long descriptions can span on many lines',
             '',
-            '    They can also have empty lines and indented ones.'
+            '    They can also have empty lines and indented ones.',
         );
 
         foreach ($longDescription as $line) {

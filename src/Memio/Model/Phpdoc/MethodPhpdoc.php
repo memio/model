@@ -3,7 +3,7 @@
 /*
  * This file is part of the memio/model package.
  *
- * (c) Loïc Chardonnet <loic.chardonnet@gmail.com>
+ * (c) Loïc Faugeron <faugeron.loic@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -16,54 +16,25 @@ namespace Memio\Model\Phpdoc;
  */
 class MethodPhpdoc
 {
-    /**
-     * @var ApiTag
-     */
     private $apiTag;
-
-    /**
-     * @var DeprecationTag
-     */
     private $deprecationTag;
-
-    /**
-     * @var ReturnTag
-     */
     private $returnTag;
-
-    /**
-     * @var Description
-     */
     private $description;
+    private $parameterTags = [];
+    private $throwTags = [];
 
     /**
-     * @var ParameterTag[]
+     * @deprecated
      */
-    private $parameterTags = array();
-
-    /**
-     * @var ThrowTag[]
-     */
-    private $throwTags = array();
-
-    /**
-     * @return self
-     *
-     * @api
-     */
-    public static function make()
+    public static function make() : self
     {
         return new self();
     }
 
     /**
-     * @param ApiTag $apiTag
-     *
-     * @return self
-     *
      * @api
      */
-    public function setApiTag(ApiTag $apiTag)
+    public function setApiTag(ApiTag $apiTag) : self
     {
         $this->apiTag = $apiTag;
 
@@ -71,13 +42,9 @@ class MethodPhpdoc
     }
 
     /**
-     * @param ReturnTag $returnTag
-     *
-     * @return self
-     *
      * @api
      */
-    public function setReturnTag(ReturnTag $returnTag)
+    public function setReturnTag(ReturnTag $returnTag) : self
     {
         $this->returnTag = $returnTag;
 
@@ -85,13 +52,9 @@ class MethodPhpdoc
     }
 
     /**
-     * @param Description $description
-     *
-     * @return self
-     *
      * @api
      */
-    public function setDescription($description)
+    public function setDescription($description) : self
     {
         $this->description = $description;
 
@@ -99,105 +62,79 @@ class MethodPhpdoc
     }
 
     /**
-     * @param DeprecationTag $deprecationTag
-     *
-     * @return self
-     *
      * @api
      */
-    public function setDeprecationTag(DeprecationTag $deprecationTag)
+    public function setDeprecationTag(DeprecationTag $deprecationTag) : self
     {
         $this->deprecationTag = $deprecationTag;
 
         return $this;
     }
 
-    /**
-     * @return ApiTag
-     */
     public function getApiTag()
     {
         return $this->apiTag;
     }
 
-    /**
-     * @return ReturnTag
-     */
     public function getReturnTag()
     {
         return $this->returnTag;
     }
 
-    /**
-     * @return Description
-     */
     public function getDescription()
     {
         return $this->description;
     }
 
-    /**
-     * @return DeprecationTag
-     */
     public function getDeprecationTag()
     {
         return $this->deprecationTag;
     }
 
     /**
-     * @param ParameterTag $parameterTag
-     *
-     * @return self
-     *
      * @api
      */
-    public function addParameterTag(ParameterTag $parameterTag)
+    public function addParameterTag(ParameterTag $parameterTag) : self
     {
         $this->parameterTags[] = $parameterTag;
 
         return $this;
     }
 
-    /**
-     * @return ParameterTag[]
-     */
-    public function getParameterTags()
+    public function getParameterTags() : array
     {
         return $this->parameterTags;
     }
 
     /**
-     * @param ThrowTag $throwTag
-     *
-     * @return self
-     *
      * @api
      */
-    public function addThrowTag(ThrowTag $throwTag)
+    public function addThrowTag(ThrowTag $throwTag) : self
     {
         $this->throwTags[] = $throwTag;
 
         return $this;
     }
 
-    /**
-     * @return ThrowTag[]
-     */
-    public function getThrowTags()
+    public function getThrowTags() : array
     {
         return $this->throwTags;
     }
 
-    /**
-     * @return bool
-     */
-    public function isEmpty()
+    public function isEmpty() : bool
     {
         $hasApiTag = (null !== $this->apiTag);
         $hasDescription = (null !== $this->description);
         $hasDeprecationTag = (null !== $this->deprecationTag);
         $hasReturnTag = (null !== $this->returnTag);
 
-        return !$hasApiTag && !$hasDescription && !$hasDeprecationTag && !$hasReturnTag && empty($this->parameterTags) && empty($this->throwTags);
+        return
+            !$hasApiTag
+            && !$hasDescription
+            && !$hasDeprecationTag
+            && !$hasReturnTag
+            && empty($this->parameterTags)
+            && empty($this->throwTags)
+        ;
     }
 }

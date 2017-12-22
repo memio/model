@@ -3,7 +3,7 @@
 /*
  * This file is part of the memio/model package.
  *
- * (c) Loïc Chardonnet <loic.chardonnet@gmail.com>
+ * (c) Loïc Faugeron <faugeron.loic@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -13,39 +13,28 @@ namespace Memio\Model\Phpdoc;
 
 class Description
 {
-    /**
-     * @var array
-     */
-    private $description = array();
+    private $description = [];
 
     /**
-     * @param string $line
-     *
      * @api
      */
-    public function __construct($line)
+    public function __construct(string $line)
     {
         $this->description[] = $line;
     }
 
     /**
-     * @param string $line
-     *
-     * @return self
-     *
-     * @api
+     * @deprecated
      */
-    public static function make($line)
+    public static function make(string $line) :self
     {
         return new self($line);
     }
 
     /**
-     * @return self
-     *
      * @api
      */
-    public function addEmptyLine()
+    public function addEmptyLine() : self
     {
         $this->description[] = '';
 
@@ -53,23 +42,16 @@ class Description
     }
 
     /**
-     * @param string $line
-     *
-     * @return self
-     *
      * @api
      */
-    public function addLine($line)
+    public function addLine(string $line) : self
     {
         $this->description[] = $line;
 
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function all()
+    public function all() : array
     {
         return $this->description;
     }

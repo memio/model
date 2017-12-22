@@ -3,7 +3,7 @@
 /*
  * This file is part of the memio/model package.
  *
- * (c) Loïc Chardonnet <loic.chardonnet@gmail.com>
+ * (c) Loïc Faugeron <faugeron.loic@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -16,20 +16,10 @@ namespace Memio\Model\Phpdoc;
  */
 class DeprecationTag
 {
-    /**
-     * @var string
-     */
     private $version;
-
-    /**
-     * @var string
-     */
     private $description;
 
     /**
-     * @param string $version
-     * @param string $description
-     *
      * @api
      */
     public function __construct($version = null, $description = null)
@@ -39,29 +29,18 @@ class DeprecationTag
     }
 
     /**
-     * @param string $version
-     * @param string $description
-     *
-     * @return self
-     *
-     * @api
+     * @deprecated
      */
-    public static function make($version, $description = null)
+    public static function make($version, $description = null) : self
     {
         return new self($version, $description);
     }
 
-    /**
-     * @return string
-     */
     public function getVersion()
     {
         return $this->version;
     }
 
-    /**
-     * @return string
-     */
     public function getDescription()
     {
         return $this->description;

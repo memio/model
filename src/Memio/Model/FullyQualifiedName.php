@@ -3,7 +3,7 @@
 /*
  * This file is part of the memio/model package.
  *
- * (c) Loïc Chardonnet <loic.chardonnet@gmail.com>
+ * (c) Loïc Faugeron <faugeron.loic@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -16,32 +16,15 @@ namespace Memio\Model;
  */
 class FullyQualifiedName
 {
-    /**
-     * @var string
-     */
     private $fullyQualifiedName;
-
-    /**
-     * @var string
-     */
     private $name;
-
-    /**
-     * @var string
-     */
     private $namepace;
-
-    /**
-     * @var string
-     */
     private $alias;
 
     /**
-     * @param string $fullyQualifiedName
-     *
      * @api
      */
-    public function __construct($fullyQualifiedName)
+    public function __construct(string $fullyQualifiedName)
     {
         $namespaces = explode('\\', $fullyQualifiedName);
 
@@ -51,66 +34,44 @@ class FullyQualifiedName
     }
 
     /**
-     * @param string $fullyQualifiedName
-     *
-     * @return self
-     *
-     * @api
+     * @deprecated
      */
-    public static function make($fullyQualifiedName)
+    public static function make(string $fullyQualifiedName) : self
     {
         return new self($fullyQualifiedName);
     }
 
-    /**
-     * @return string
-     */
-    public function getFullyQualifiedName()
+    public function getFullyQualifiedName() : string
     {
         return $this->fullyQualifiedName;
     }
 
-    /**
-     * @return string
-     */
-    public function getName()
+    public function getName() : string
     {
         return (null === $this->alias) ? $this->name : $this->alias;
     }
 
-    /**
-     * @return string
-     */
-    public function getNamespace()
+    public function getNamespace() : string
     {
         return $this->namepace;
     }
 
     /**
-     * @param string $alias
-     *
-     * @return self
-     *
      * @api
      */
-    public function setAlias($alias)
+    public function setAlias(string $alias) : self
     {
         $this->alias = $alias;
 
         return $this;
     }
 
-    /**
-     * @return bool
-     */
-    public function hasAlias()
+    public function hasAlias() : bool
     {
-        return (null !== $this->alias);
+        return null !== $this->alias;
     }
 
     /**
-     * @return self
-     *
      * @api
      */
     public function removeAlias()

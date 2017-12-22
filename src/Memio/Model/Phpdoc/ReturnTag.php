@@ -3,7 +3,7 @@
 /*
  * This file is part of the memio/model package.
  *
- * (c) Loïc Chardonnet <loic.chardonnet@gmail.com>
+ * (c) Loïc Faugeron <faugeron.loic@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -13,37 +13,25 @@ namespace Memio\Model\Phpdoc;
 
 class ReturnTag
 {
-    /**
-     * @var string
-     */
     private $type;
 
     /**
-     * @param string $type
-     *
      * @api
      */
-    public function __construct($type)
+    public function __construct(string $type)
     {
         $this->type = $type;
     }
 
     /**
-     * @param string $type
-     *
-     * @return self
-     *
-     * @api
+     * @deprecated
      */
-    public static function make($type)
+    public static function make(string $type) : self
     {
         return new self($type);
     }
 
-    /**
-     * @return string
-     */
-    public function getType()
+    public function getType() : string
     {
         return $this->type;
     }

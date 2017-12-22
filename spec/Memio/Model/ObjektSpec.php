@@ -14,12 +14,12 @@ namespace spec\Memio\Model;
 use Memio\Model\Constant;
 use Memio\Model\Contract;
 use Memio\Model\Method;
-use Memio\Model\Object;
+use Memio\Model\Objekt;
 use Memio\Model\Phpdoc\StructurePhpdoc;
 use Memio\Model\Property;
 use PhpSpec\ObjectBehavior;
 
-class ObjectSpec extends ObjectBehavior
+class ObjektSpec extends ObjectBehavior
 {
     const FULLY_QUALIFIED_NAME = 'Vendor\Project\MyClass';
     const NAME = 'MyClass';
@@ -75,7 +75,7 @@ class ObjectSpec extends ObjectBehavior
         $this->isFinal()->shouldBe(false);
     }
 
-    function it_can_have_a_parent(Object $parent)
+    function it_can_have_a_parent(Objekt $parent)
     {
         $this->hasParent()->shouldBe(false);
         $this->getParent()->shouldBe(null);

@@ -31,9 +31,9 @@ class DeprecationTagSpec extends ObjectBehavior
 
     function it_can_have_a_description()
     {
-        $this->beConstructedWith('v2.1', 'Use Object#myMethod instead');
+        $this->beConstructedWith('v2.1', 'Use Objekt#myMethod instead');
 
         $this->getVersion()->shouldBe('v2.1');
-        $this->getDescription()->shouldBe('Use Object#myMethod instead');
+        $this->getDescription()->shouldBe('Use Objekt#myMethod instead');
     }
 }

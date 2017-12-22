@@ -39,7 +39,7 @@ now deprecated. Here's an example of what to use instead:
 ## 1.3.5: Improved PHPdoc
 
 * used `@return self`
-* used `Object[]` when dealing with collections of objects
+* used `Objekt[]` when dealing with collections of objects
 
 ## 1.3.4: Fixed PHPdoc
 

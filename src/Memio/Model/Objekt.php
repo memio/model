@@ -14,11 +14,11 @@ namespace Memio\Model;
 use Memio\Model\Phpdoc\StructurePhpdoc;
 
 /**
- * A PHP Class ("class" is a reserved word and cannot be used as classname).
+ * A PHP Class ("class" and "Object" are a reserved words and cannot be used as classname).
  *
  * @api
  */
-class Object implements Structure
+class Objekt implements Structure
 {
     /**
      * @var FullyQualifiedName
@@ -201,7 +201,7 @@ class Object implements Structure
      *
      * @api
      */
-    public function extend(Object $parent)
+    public function extend(Objekt $parent)
     {
         $this->parent = $parent;
 

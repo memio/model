@@ -22,5 +22,10 @@
     "require-dev": {
         "fabpot/php-cs-fixer": "^1.6",
         "phpspec/phpspec": "^2.4"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.2-dev"
+        }
     }
 }

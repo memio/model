@@ -19,6 +19,7 @@ class Argument
     private $type;
     private $name;
     private $defaultValue;
+    private $isVariadic = false;
 
     /**
      * @api
@@ -68,6 +69,34 @@ class Argument
     public function removeDefaultValue() : self
     {
         $this->defaultValue = null;
+
+        return $this;
+    }
+
+    /**
+     * @api
+     */
+    public function isVariadic(): bool
+    {
+        return $this->isVariadic;
+    }
+
+    /**
+     * @api
+     */
+    public function makeVariadic() : self
+    {
+        $this->isVariadic = true;
+
+        return $this;
+    }
+
+    /**
+     * @api
+     */
+    public function removeVariadic() : self
+    {
+        $this->isVariadic = false;
 
         return $this;
     }

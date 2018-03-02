@@ -54,9 +54,9 @@ class FileSpec extends ObjectBehavior
 
     function it_can_have_fully_qualified_names(FullyQualifiedName $fullyQualifiedName)
     {
-        $this->allFullyQualifiedNames()->shouldBe(array());
+        $this->allFullyQualifiedNames()->shouldBe([]);
         $this->addFullyQualifiedName($fullyQualifiedName);
-        $this->allFullyQualifiedNames()->shouldBe(array($fullyQualifiedName));
+        $this->allFullyQualifiedNames()->shouldBe([$fullyQualifiedName]);
     }
 
     function it_has_a_structure(Structure $structure)

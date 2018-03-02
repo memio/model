@@ -33,17 +33,17 @@ class Argument
     /**
      * @deprecated
      */
-    public static function make(string $type, string $name) : self
+    public static function make(string $type, string $name): self
     {
         return new self($type, $name);
     }
 
-    public function getType() : string
+    public function getType(): string
     {
         return $this->type->getName();
     }
 
-    public function getName() : string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -51,7 +51,7 @@ class Argument
     /**
      * @api
      */
-    public function setDefaultValue(string $value) : self
+    public function setDefaultValue(string $value): self
     {
         $this->defaultValue = $value;
 
@@ -66,7 +66,7 @@ class Argument
     /**
      * @api
      */
-    public function removeDefaultValue() : self
+    public function removeDefaultValue(): self
     {
         $this->defaultValue = null;
 
@@ -84,7 +84,7 @@ class Argument
     /**
      * @api
      */
-    public function makeVariadic() : self
+    public function makeVariadic(): self
     {
         $this->isVariadic = true;
 
@@ -94,7 +94,7 @@ class Argument
     /**
      * @api
      */
-    public function removeVariadic() : self
+    public function removeVariadic(): self
     {
         $this->isVariadic = false;
 

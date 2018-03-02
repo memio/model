@@ -88,9 +88,9 @@ class MethodSpec extends ObjectBehavior
 
     function it_can_have_arguments(Argument $argument)
     {
-        $this->allArguments()->shouldBe(array());
+        $this->allArguments()->shouldBe([]);
         $this->addArgument($argument);
-        $this->allArguments()->shouldBe(array($argument));
+        $this->allArguments()->shouldBe([$argument]);
     }
 
     function it_can_have_a_return_type()

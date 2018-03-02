@@ -37,27 +37,27 @@ class Contract implements Structure
     /**
      * @deprecated
      */
-    public static function make(string $fullyQualifiedName) : self
+    public static function make(string $fullyQualifiedName): self
     {
         return new self($fullyQualifiedName);
     }
 
-    public function getFullyQualifiedName() : string
+    public function getFullyQualifiedName(): string
     {
         return $this->fullyQualifiedName->getFullyQualifiedName();
     }
 
-    public function getName() : string
+    public function getName(): string
     {
         return $this->fullyQualifiedName->getName();
     }
 
-    public function getNamespace() : string
+    public function getNamespace(): string
     {
         return $this->fullyQualifiedName->getNamespace();
     }
 
-    public function setPhpdoc(StructurePhpdoc $structurePhpdoc) : self
+    public function setPhpdoc(StructurePhpdoc $structurePhpdoc): self
     {
         $this->structurePhpdoc = $structurePhpdoc;
 
@@ -72,14 +72,14 @@ class Contract implements Structure
     /**
      * @api
      */
-    public function extend(Contract $contract) : self
+    public function extend(Contract $contract): self
     {
         $this->contracts[] = $contract;
 
         return $this;
     }
 
-    public function allContracts() : array
+    public function allContracts(): array
     {
         return $this->contracts;
     }
@@ -87,14 +87,14 @@ class Contract implements Structure
     /**
      * @api
      */
-    public function addConstant(Constant $constant) : self
+    public function addConstant(Constant $constant): self
     {
         $this->constants[] = $constant;
 
         return $this;
     }
 
-    public function allConstants() : array
+    public function allConstants(): array
     {
         return $this->constants;
     }
@@ -102,14 +102,14 @@ class Contract implements Structure
     /**
      * @api
      */
-    public function addMethod(Method $method) : self
+    public function addMethod(Method $method): self
     {
         $this->methods[] = $method;
 
         return $this;
     }
 
-    public function allMethods() : array
+    public function allMethods(): array
     {
         return $this->methods;
     }

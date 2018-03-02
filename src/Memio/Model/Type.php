@@ -65,7 +65,7 @@ class Type
     /**
      * @deprecated
      */
-    public static function make(string $name) : self
+    public static function make(string $name): self
     {
         return new self($name);
     }
@@ -73,7 +73,7 @@ class Type
     /**
      * @api
      */
-    public function getName() : string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -81,7 +81,7 @@ class Type
     /**
      * @api
      */
-    public function isObject() : bool
+    public function isObject(): bool
     {
         return $this->isObject;
     }
@@ -89,7 +89,7 @@ class Type
     /**
      * @api
      */
-    public function hasTypeHint() : bool
+    public function hasTypeHint(): bool
     {
         return $this->hasTypeHint;
     }

@@ -40,21 +40,21 @@ class LicensePhpdoc
         string $projectName,
         string $authorName,
         string $authorEmail
-    ) : self {
+    ): self {
         return new self($projectName, $authorName, $authorEmail);
     }
 
-    public function getProjectName() : string
+    public function getProjectName(): string
     {
         return $this->projectName;
     }
 
-    public function getAuthorName() : string
+    public function getAuthorName(): string
     {
         return $this->authorName;
     }
 
-    public function getAuthorEmail() : string
+    public function getAuthorEmail(): string
     {
         return $this->authorEmail;
     }

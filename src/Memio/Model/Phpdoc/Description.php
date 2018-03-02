@@ -26,7 +26,7 @@ class Description
     /**
      * @deprecated
      */
-    public static function make(string $line) :self
+    public static function make(string $line): self
     {
         return new self($line);
     }
@@ -34,7 +34,7 @@ class Description
     /**
      * @api
      */
-    public function addEmptyLine() : self
+    public function addEmptyLine(): self
     {
         $this->description[] = '';
 
@@ -44,14 +44,14 @@ class Description
     /**
      * @api
      */
-    public function addLine(string $line) : self
+    public function addLine(string $line): self
     {
         $this->description[] = $line;
 
         return $this;
     }
 
-    public function all() : array
+    public function all(): array
     {
         return $this->description;
     }

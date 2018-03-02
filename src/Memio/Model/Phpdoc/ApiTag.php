@@ -29,7 +29,7 @@ class ApiTag
     /**
      * @deprecated
      */
-    public static function make($since = null) : self
+    public static function make($since = null): self
     {
         return new self($since);
     }

@@ -23,7 +23,7 @@ class StructurePhpdoc
     /**
      * @deprecated
      */
-    public static function make() : self
+    public static function make(): self
     {
         return new self();
     }
@@ -31,7 +31,7 @@ class StructurePhpdoc
     /**
      * @api
      */
-    public function setApiTag(ApiTag $apiTag) : self
+    public function setApiTag(ApiTag $apiTag): self
     {
         $this->apiTag = $apiTag;
 
@@ -41,7 +41,7 @@ class StructurePhpdoc
     /**
      * @api
      */
-    public function setDescription(Description $description) : self
+    public function setDescription(Description $description): self
     {
         $this->description = $description;
 
@@ -51,7 +51,7 @@ class StructurePhpdoc
     /**
      * @api
      */
-    public function setDeprecationTag(DeprecationTag $deprecationTag) : self
+    public function setDeprecationTag(DeprecationTag $deprecationTag): self
     {
         $this->deprecationTag = $deprecationTag;
 
@@ -73,7 +73,7 @@ class StructurePhpdoc
         return $this->deprecationTag;
     }
 
-    public function isEmpty() : bool
+    public function isEmpty(): bool
     {
         $hasApiTag = (null !== $this->apiTag);
         $hasDescription = (null !== $this->description);

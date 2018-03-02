@@ -34,7 +34,7 @@ class MethodPhpdocSpec extends ObjectBehavior
     function it_can_have_parameters(ParameterTag $parameterTag)
     {
         $this->addParameterTag($parameterTag);
-        $this->getParameterTags()->shouldBe(array($parameterTag));
+        $this->getParameterTags()->shouldBe([$parameterTag]);
         $this->isEmpty(false);
     }
 

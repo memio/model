@@ -21,7 +21,7 @@ class PropertyPhpdoc
     /**
      * @deprecated
      */
-    public static function make() : self
+    public static function make(): self
     {
         return new self();
     }
@@ -29,7 +29,7 @@ class PropertyPhpdoc
     /**
      * @api
      */
-    public function setVariableTag(VariableTag $variableTag) : self
+    public function setVariableTag(VariableTag $variableTag): self
     {
         $this->variableTag = $variableTag;
 
@@ -41,7 +41,7 @@ class PropertyPhpdoc
         return $this->variableTag;
     }
 
-    public function isEmpty() : bool
+    public function isEmpty(): bool
     {
         return null === $this->variableTag;
     }

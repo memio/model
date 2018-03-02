@@ -35,12 +35,12 @@ class Property
     /**
      * @deprecated
      */
-    public static function make(string $name) : self
+    public static function make(string $name): self
     {
         return new self($name);
     }
 
-    public function getName() : string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -48,7 +48,7 @@ class Property
     /**
      * @api
      */
-    public function setPhpdoc(PropertyPhpdoc $propertyPhpdoc) : self
+    public function setPhpdoc(PropertyPhpdoc $propertyPhpdoc): self
     {
         $this->propertyPhpdoc = $propertyPhpdoc;
 
@@ -63,14 +63,14 @@ class Property
     /**
      * @api
      */
-    public function makeStatic() : self
+    public function makeStatic(): self
     {
         $this->isStatic = true;
 
         return $this;
     }
 
-    public function isStatic() : bool
+    public function isStatic(): bool
     {
         return $this->isStatic;
     }
@@ -86,7 +86,7 @@ class Property
     /**
      * @api
      */
-    public function makePrivate() : self
+    public function makePrivate(): self
     {
         $this->visibility = 'private';
 
@@ -96,7 +96,7 @@ class Property
     /**
      * @api
      */
-    public function makeProtected() : self
+    public function makeProtected(): self
     {
         $this->visibility = 'protected';
 
@@ -106,14 +106,14 @@ class Property
     /**
      * @api
      */
-    public function makePublic() : self
+    public function makePublic(): self
     {
         $this->visibility = 'public';
 
         return $this;
     }
 
-    public function getVisibility() : string
+    public function getVisibility(): string
     {
         return $this->visibility;
     }
@@ -121,7 +121,7 @@ class Property
     /**
      * @api
      */
-    public function setDefaultValue(string $defaultValue) : self
+    public function setDefaultValue(string $defaultValue): self
     {
         $this->defaultValue = $defaultValue;
 

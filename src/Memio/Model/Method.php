@@ -41,12 +41,12 @@ class Method
     /**
      * @deprecated
      */
-    public static function make(string $name) : self
+    public static function make(string $name): self
     {
         return new self($name);
     }
 
-    public function getName() : string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -54,7 +54,7 @@ class Method
     /**
      * @api
      */
-    public function setPhpdoc(MethodPhpdoc $methodPhpdoc) : self
+    public function setPhpdoc(MethodPhpdoc $methodPhpdoc): self
     {
         $this->methodPhpdoc = $methodPhpdoc;
 
@@ -69,14 +69,14 @@ class Method
     /**
      * @api
      */
-    public function makeAbstract() : self
+    public function makeAbstract(): self
     {
         $this->isAbstract = true;
 
         return $this;
     }
 
-    public function isAbstract() : bool
+    public function isAbstract(): bool
     {
         return $this->isAbstract;
     }
@@ -84,7 +84,7 @@ class Method
     /**
      * @api
      */
-    public function removeAbstract() : self
+    public function removeAbstract(): self
     {
         $this->isAbstract = false;
 
@@ -94,14 +94,14 @@ class Method
     /**
      * @api
      */
-    public function makeFinal() : self
+    public function makeFinal(): self
     {
         $this->isFinal = true;
 
         return $this;
     }
 
-    public function isFinal() : bool
+    public function isFinal(): bool
     {
         return $this->isFinal;
     }
@@ -109,14 +109,14 @@ class Method
     /**
      * @api
      */
-    public function removeFinal() : self
+    public function removeFinal(): self
     {
         $this->isFinal = false;
 
         return $this;
     }
 
-    public function getVisibility() : string
+    public function getVisibility(): string
     {
         return $this->visibility;
     }
@@ -124,7 +124,7 @@ class Method
     /**
      * @api
      */
-    public function makePrivate() : self
+    public function makePrivate(): self
     {
         $this->visibility = 'private';
 
@@ -134,7 +134,7 @@ class Method
     /**
      * @api
      */
-    public function makeProtected() : self
+    public function makeProtected(): self
     {
         $this->visibility = 'protected';
 
@@ -144,7 +144,7 @@ class Method
     /**
      * @api
      */
-    public function removeVisibility() : self
+    public function removeVisibility(): self
     {
         $this->visibility = '';
 
@@ -154,7 +154,7 @@ class Method
     /**
      * @api
      */
-    public function makePublic() : self
+    public function makePublic(): self
     {
         $this->visibility = 'public';
 
@@ -164,14 +164,14 @@ class Method
     /**
      * @api
      */
-    public function makeStatic() : self
+    public function makeStatic(): self
     {
         $this->isStatic = true;
 
         return $this;
     }
 
-    public function isStatic() : bool
+    public function isStatic(): bool
     {
         return $this->isStatic;
     }
@@ -187,14 +187,14 @@ class Method
     /**
      * @api
      */
-    public function addArgument(Argument $argument) : self
+    public function addArgument(Argument $argument): self
     {
         $this->arguments[] = $argument;
 
         return $this;
     }
 
-    public function allArguments() : array
+    public function allArguments(): array
     {
         return $this->arguments;
     }
@@ -202,14 +202,14 @@ class Method
     /**
      * @api
      */
-    public function setBody(string $body) : self
+    public function setBody(string $body): self
     {
         $this->body = $body;
 
         return $this;
     }
 
-    public function getBody() : string
+    public function getBody(): string
     {
         return $this->body;
     }
@@ -235,5 +235,4 @@ class Method
     {
         return $this->returnType;
     }
-
 }

@@ -42,16 +42,16 @@ class ParameterTag
         string $type,
         string $name,
         $description = null
-    ) : self {
+    ): self {
         return new self($type, $name, $description);
     }
 
-    public function getType() : string
+    public function getType(): string
     {
         return $this->type->getName();
     }
 
-    public function getName() : string
+    public function getName(): string
     {
         return $this->name;
     }

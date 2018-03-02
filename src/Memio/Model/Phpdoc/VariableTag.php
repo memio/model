@@ -28,12 +28,12 @@ class VariableTag
     /**
      * @deprecated
      */
-    public static function make(string $type) : bool
+    public static function make(string $type): bool
     {
         return new self($type);
     }
 
-    public function getType() : string
+    public function getType(): string
     {
         return $this->type->getName();
     }

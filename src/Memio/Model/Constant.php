@@ -31,17 +31,17 @@ class Constant
     /**
      * @deprecated
      */
-    public static function make(string $name, string $value) : self
+    public static function make(string $name, string $value): self
     {
         return new self($name, $value);
     }
 
-    public function getName() : string
+    public function getName(): string
     {
         return $this->name;
     }
 
-    public function getValue() : string
+    public function getValue(): string
     {
         return $this->value;
     }

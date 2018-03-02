@@ -26,12 +26,12 @@ class ReturnTag
     /**
      * @deprecated
      */
-    public static function make(string $type) : self
+    public static function make(string $type): self
     {
         return new self($type);
     }
 
-    public function getType() : string
+    public function getType(): string
     {
         return $this->type;
     }

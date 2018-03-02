@@ -36,22 +36,22 @@ class FullyQualifiedName
     /**
      * @deprecated
      */
-    public static function make(string $fullyQualifiedName) : self
+    public static function make(string $fullyQualifiedName): self
     {
         return new self($fullyQualifiedName);
     }
 
-    public function getFullyQualifiedName() : string
+    public function getFullyQualifiedName(): string
     {
         return $this->fullyQualifiedName;
     }
 
-    public function getName() : string
+    public function getName(): string
     {
         return (null === $this->alias) ? $this->name : $this->alias;
     }
 
-    public function getNamespace() : string
+    public function getNamespace(): string
     {
         return $this->namepace;
     }
@@ -59,14 +59,14 @@ class FullyQualifiedName
     /**
      * @api
      */
-    public function setAlias(string $alias) : self
+    public function setAlias(string $alias): self
     {
         $this->alias = $alias;
 
         return $this;
     }
 
-    public function hasAlias() : bool
+    public function hasAlias(): bool
     {
         return null !== $this->alias;
     }

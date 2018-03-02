@@ -26,7 +26,7 @@ class MethodPhpdoc
     /**
      * @deprecated
      */
-    public static function make() : self
+    public static function make(): self
     {
         return new self();
     }
@@ -34,7 +34,7 @@ class MethodPhpdoc
     /**
      * @api
      */
-    public function setApiTag(ApiTag $apiTag) : self
+    public function setApiTag(ApiTag $apiTag): self
     {
         $this->apiTag = $apiTag;
 
@@ -44,7 +44,7 @@ class MethodPhpdoc
     /**
      * @api
      */
-    public function setReturnTag(ReturnTag $returnTag) : self
+    public function setReturnTag(ReturnTag $returnTag): self
     {
         $this->returnTag = $returnTag;
 
@@ -54,7 +54,7 @@ class MethodPhpdoc
     /**
      * @api
      */
-    public function setDescription($description) : self
+    public function setDescription($description): self
     {
         $this->description = $description;
 
@@ -64,7 +64,7 @@ class MethodPhpdoc
     /**
      * @api
      */
-    public function setDeprecationTag(DeprecationTag $deprecationTag) : self
+    public function setDeprecationTag(DeprecationTag $deprecationTag): self
     {
         $this->deprecationTag = $deprecationTag;
 
@@ -94,14 +94,14 @@ class MethodPhpdoc
     /**
      * @api
      */
-    public function addParameterTag(ParameterTag $parameterTag) : self
+    public function addParameterTag(ParameterTag $parameterTag): self
     {
         $this->parameterTags[] = $parameterTag;
 
         return $this;
     }
 
-    public function getParameterTags() : array
+    public function getParameterTags(): array
     {
         return $this->parameterTags;
     }
@@ -109,19 +109,19 @@ class MethodPhpdoc
     /**
      * @api
      */
-    public function addThrowTag(ThrowTag $throwTag) : self
+    public function addThrowTag(ThrowTag $throwTag): self
     {
         $this->throwTags[] = $throwTag;
 
         return $this;
     }
 
-    public function getThrowTags() : array
+    public function getThrowTags(): array
     {
         return $this->throwTags;
     }
 
-    public function isEmpty() : bool
+    public function isEmpty(): bool
     {
         $hasApiTag = (null !== $this->apiTag);
         $hasDescription = (null !== $this->description);

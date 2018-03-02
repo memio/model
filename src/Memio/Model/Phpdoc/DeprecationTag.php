@@ -31,7 +31,7 @@ class DeprecationTag
     /**
      * @deprecated
      */
-    public static function make($version, $description = null) : self
+    public static function make($version, $description = null): self
     {
         return new self($version, $description);
     }

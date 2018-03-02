@@ -34,12 +34,12 @@ class File
     /**
      * @deprecated
      */
-    public static function make(string $filename) : self
+    public static function make(string $filename): self
     {
         return new self($filename);
     }
 
-    public function getFilename() : string
+    public function getFilename(): string
     {
         return $this->filename;
     }
@@ -47,7 +47,7 @@ class File
     /**
      * @api
      */
-    public function setLicensePhpdoc(LicensePhpdoc $licensePhpdoc) : self
+    public function setLicensePhpdoc(LicensePhpdoc $licensePhpdoc): self
     {
         $this->licensePhpdoc = $licensePhpdoc;
 
@@ -79,14 +79,14 @@ class File
     /**
      * @api
      */
-    public function addFullyQualifiedName(FullyQualifiedName $fullyQualifiedName) : self
+    public function addFullyQualifiedName(FullyQualifiedName $fullyQualifiedName): self
     {
         $this->fullyQualifiedNames[] = $fullyQualifiedName;
 
         return $this;
     }
 
-    public function allFullyQualifiedNames() : array
+    public function allFullyQualifiedNames(): array
     {
         return $this->fullyQualifiedNames;
     }
@@ -94,7 +94,7 @@ class File
     /**
      * @api
      */
-    public function setStructure(Structure $structure) : self
+    public function setStructure(Structure $structure): self
     {
         $this->structure = $structure;
 

@@ -26,12 +26,12 @@ class ThrowTag
     /**
      * @deprecated
      */
-    public static function make(string $exception) : self
+    public static function make(string $exception): self
     {
         return new self($exception);
     }
 
-    public function getException() : string
+    public function getException(): string
     {
         return $this->exception;
     }

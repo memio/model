@@ -41,27 +41,27 @@ class Objekt implements Structure
     /**
      * @deprecated
      */
-    public static function make(string $fullyQualifiedName) : self
+    public static function make(string $fullyQualifiedName): self
     {
         return new self($fullyQualifiedName);
     }
 
-    public function getFullyQualifiedName() : string
+    public function getFullyQualifiedName(): string
     {
         return $this->fullyQualifiedName->getFullyQualifiedName();
     }
 
-    public function getName() : string
+    public function getName(): string
     {
         return $this->fullyQualifiedName->getName();
     }
 
-    public function getNamespace() : string
+    public function getNamespace(): string
     {
         return $this->fullyQualifiedName->getNamespace();
     }
 
-    public function setPhpdoc(StructurePhpdoc $structurePhpdoc) : self
+    public function setPhpdoc(StructurePhpdoc $structurePhpdoc): self
     {
         $this->structurePhpdoc = $structurePhpdoc;
 
@@ -76,14 +76,14 @@ class Objekt implements Structure
     /**
      * @api
      */
-    public function makeAbstract() : self
+    public function makeAbstract(): self
     {
         $this->isAbstract = true;
 
         return $this;
     }
 
-    public function isAbstract() : bool
+    public function isAbstract(): bool
     {
         return $this->isAbstract;
     }
@@ -91,7 +91,7 @@ class Objekt implements Structure
     /**
      * @api
      */
-    public function removeAbstract() : self
+    public function removeAbstract(): self
     {
         $this->isAbstract = false;
 
@@ -101,14 +101,14 @@ class Objekt implements Structure
     /**
      * @api
      */
-    public function makeFinal() : self
+    public function makeFinal(): self
     {
         $this->isFinal = true;
 
         return $this;
     }
 
-    public function isFinal() : bool
+    public function isFinal(): bool
     {
         return $this->isFinal;
     }
@@ -116,7 +116,7 @@ class Objekt implements Structure
     /**
      * @api
      */
-    public function removeFinal() : self
+    public function removeFinal(): self
     {
         $this->isFinal = false;
 
@@ -126,14 +126,14 @@ class Objekt implements Structure
     /**
      * @api
      */
-    public function extend(Objekt $parent) : self
+    public function extend(Objekt $parent): self
     {
         $this->parent = $parent;
 
         return $this;
     }
 
-    public function hasParent() : bool
+    public function hasParent(): bool
     {
         return null !== $this->parent;
     }
@@ -146,7 +146,7 @@ class Objekt implements Structure
     /**
      * @api
      */
-    public function removeParent() : self
+    public function removeParent(): self
     {
         $this->parent = null;
 
@@ -156,14 +156,14 @@ class Objekt implements Structure
     /**
      * @api
      */
-    public function implement(Contract $contract) : self
+    public function implement(Contract $contract): self
     {
         $this->contracts[] = $contract;
 
         return $this;
     }
 
-    public function allContracts() : array
+    public function allContracts(): array
     {
         return $this->contracts;
     }
@@ -171,14 +171,14 @@ class Objekt implements Structure
     /**
      * @api
      */
-    public function addConstant(Constant $constant) : self
+    public function addConstant(Constant $constant): self
     {
         $this->constants[] = $constant;
 
         return $this;
     }
 
-    public function allConstants() : array
+    public function allConstants(): array
     {
         return $this->constants;
     }
@@ -186,14 +186,14 @@ class Objekt implements Structure
     /**
      * @api
      */
-    public function addProperty(Property $property) : self
+    public function addProperty(Property $property): self
     {
         $this->properties[] = $property;
 
         return $this;
     }
 
-    public function allProperties() : array
+    public function allProperties(): array
     {
         return $this->properties;
     }
@@ -201,14 +201,14 @@ class Objekt implements Structure
     /**
      * @api
      */
-    public function addMethod(Method $method) : self
+    public function addMethod(Method $method): self
     {
         $this->methods[] = $method;
 
         return $this;
     }
 
-    public function allMethods() : array
+    public function allMethods(): array
     {
         return $this->methods;
     }

@@ -40,4 +40,15 @@ class ArgumentSpec extends ObjectBehavior
         $this->removeDefaultValue();
         $this->getDefaultValue()->shouldBe(null);
     }
+
+    function it_can_be_variadic()
+    {
+        $this->isVariadic()->shouldBe(false);
+
+        $this->makeVariadic();
+        $this->isVariadic()->shouldBe(true);
+
+        $this->removeVariadic();
+        $this->isVariadic()->shouldBe(false);
+    }
 }

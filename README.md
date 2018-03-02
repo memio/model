@@ -10,7 +10,7 @@ method arguments and even PHPdoc) by constructing "Model" objects.
 
 Install it using [Composer](https://getcomposer.org/download):
 
-    composer require memio/model:^2.0@alpha
+    composer require memio/model:^2.0
 
 ## Example
 

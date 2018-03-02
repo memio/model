@@ -3,7 +3,7 @@
 /*
  * This file is part of the memio/model package.
  *
- * (c) Loïc Chardonnet <loic.chardonnet@gmail.com>
+ * (c) Loïc Faugeron <faugeron.loic@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -88,9 +88,9 @@ class MethodSpec extends ObjectBehavior
 
     function it_can_have_arguments(Argument $argument)
     {
-        $this->allArguments()->shouldBe(array());
+        $this->allArguments()->shouldBe([]);
         $this->addArgument($argument);
-        $this->allArguments()->shouldBe(array($argument));
+        $this->allArguments()->shouldBe([$argument]);
     }
 
     function it_can_have_a_return_type()
@@ -102,7 +102,7 @@ class MethodSpec extends ObjectBehavior
 
     function it_can_have_a_body()
     {
-        $body =<<<'EOT'
+        $body = <<<'EOT'
         $length = strlen('Nobody expects the spanish inquisition');
 EOT;
         $this->setBody($body);

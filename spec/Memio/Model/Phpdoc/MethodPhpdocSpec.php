@@ -3,7 +3,7 @@
 /*
  * This file is part of the memio/model package.
  *
- * (c) Loïc Chardonnet <loic.chardonnet@gmail.com>
+ * (c) Loïc Faugeron <faugeron.loic@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -34,7 +34,7 @@ class MethodPhpdocSpec extends ObjectBehavior
     function it_can_have_parameters(ParameterTag $parameterTag)
     {
         $this->addParameterTag($parameterTag);
-        $this->getParameterTags()->shouldBe(array($parameterTag));
+        $this->getParameterTags()->shouldBe([$parameterTag]);
         $this->isEmpty(false);
     }
 

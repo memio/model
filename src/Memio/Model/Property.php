@@ -3,7 +3,7 @@
 /*
  * This file is part of the memio/model package.
  *
- * (c) Loïc Chardonnet <loic.chardonnet@gmail.com>
+ * (c) Loïc Faugeron <faugeron.loic@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -18,106 +18,64 @@ use Memio\Model\Phpdoc\PropertyPhpdoc;
  */
 class Property
 {
-    /**
-     * @var string
-     */
     private $name;
-
-    /**
-     * @var PropertyPhpdoc
-     */
     private $propertyPhpdoc;
-
-    /**
-     * @var bool
-     */
     private $isStatic = false;
-
-    /**
-     * @var string
-     */
     private $visibility = 'private';
-
-    /**
-     * @var string
-     */
     private $defaultValue;
 
     /**
-     * @param string $name
-     *
      * @api
      */
-    public function __construct($name)
+    public function __construct(string $name)
     {
         $this->name = $name;
     }
 
     /**
-     * @param string $name
-     *
-     * @return self
-     *
-     * @api
+     * @deprecated
      */
-    public static function make($name)
+    public static function make(string $name): self
     {
         return new self($name);
     }
 
-    /**
-     * @return string
-     */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
 
     /**
-     * @param PropertyPhpdoc $propertyPhpdoc
-     *
-     * @return self
-     *
      * @api
      */
-    public function setPhpdoc(PropertyPhpdoc $propertyPhpdoc)
+    public function setPhpdoc(PropertyPhpdoc $propertyPhpdoc): self
     {
         $this->propertyPhpdoc = $propertyPhpdoc;
 
         return $this;
     }
 
-    /**
-     * @return PropertyPhpdoc
-     */
     public function getPhpdoc()
     {
         return $this->propertyPhpdoc;
     }
 
     /**
-     * @return self
-     *
      * @api
      */
-    public function makeStatic()
+    public function makeStatic(): self
     {
         $this->isStatic = true;
 
         return $this;
     }
 
-    /**
-     * @return bool
-     */
-    public function isStatic()
+    public function isStatic(): bool
     {
         return $this->isStatic;
     }
 
     /**
-     * @return self
-     *
      * @api
      */
     public function removeStatic()
@@ -126,11 +84,9 @@ class Property
     }
 
     /**
-     * @return self
-     *
      * @api
      */
-    public function makePrivate()
+    public function makePrivate(): self
     {
         $this->visibility = 'private';
 
@@ -138,11 +94,9 @@ class Property
     }
 
     /**
-     * @return self
-     *
      * @api
      */
-    public function makeProtected()
+    public function makeProtected(): self
     {
         $this->visibility = 'protected';
 
@@ -150,42 +104,30 @@ class Property
     }
 
     /**
-     * @return self
-     *
      * @api
      */
-    public function makePublic()
+    public function makePublic(): self
     {
         $this->visibility = 'public';
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getVisibility()
+    public function getVisibility(): string
     {
         return $this->visibility;
     }
 
     /**
-     * @param string $defaultValue
-     *
-     * @return self
-     *
      * @api
      */
-    public function setDefaultValue($defaultValue)
+    public function setDefaultValue(string $defaultValue): self
     {
         $this->defaultValue = $defaultValue;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getDefaultValue()
     {
         return $this->defaultValue;

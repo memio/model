@@ -3,7 +3,7 @@
 /*
  * This file is part of the memio/model package.
  *
- * (c) Loïc Chardonnet <loic.chardonnet@gmail.com>
+ * (c) Loïc Faugeron <faugeron.loic@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -18,49 +18,14 @@ use Memio\Model\Phpdoc\MethodPhpdoc;
  */
 class Method
 {
-    /**
-     * @var string
-     */
     private $name;
-
-    /**
-     * @var MethodPhpdoc
-     */
     private $methodPhpdoc;
-
-    /**
-     * @var bool
-     */
     private $isAbstract = false;
-
-    /**
-     * @var bool
-     */
     private $isFinal = false;
-
-    /**
-     * @var string
-     */
     private $visibility = 'public';
-
-    /**
-     * @var bool
-     */
     private $isStatic = false;
-
-    /**
-     * @var Argument[]
-     */
-    private $arguments = array();
-
-    /**
-     * @var string
-     */
+    private $arguments = [];
     private $body = '';
-
-    /**
-     * @var string
-     */
     private $returnType;
 
     /**
@@ -68,79 +33,58 @@ class Method
      *
      * @api
      */
-    public function __construct($name)
+    public function __construct(string $name)
     {
         $this->name = $name;
     }
 
     /**
-     * @param string $name
-     *
-     * @return self
-     *
-     * @api
+     * @deprecated
      */
-    public static function make($name)
+    public static function make(string $name): self
     {
         return new self($name);
     }
 
-    /**
-     * @return string
-     */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
 
     /**
-     * @param MethodPhpdoc $methodPhpdoc
-     *
-     * @return self
-     *
      * @api
      */
-    public function setPhpdoc(MethodPhpdoc $methodPhpdoc)
+    public function setPhpdoc(MethodPhpdoc $methodPhpdoc): self
     {
         $this->methodPhpdoc = $methodPhpdoc;
 
         return $this;
     }
 
-    /**
-     * @return MethodPhpdoc
-     */
     public function getPhpdoc()
     {
         return $this->methodPhpdoc;
     }
 
     /**
-     * @return self
-     *
      * @api
      */
-    public function makeAbstract()
+    public function makeAbstract(): self
     {
         $this->isAbstract = true;
 
         return $this;
     }
 
-    /**
-     * @return bool
-     */
-    public function isAbstract()
+    public function isAbstract(): bool
     {
         return $this->isAbstract;
     }
 
     /**
-     * @return self
-     *
      * @api
      */
-    public function removeAbstract()
+    public function removeAbstract(): self
     {
         $this->isAbstract = false;
 
@@ -148,51 +92,39 @@ class Method
     }
 
     /**
-     * @return self
-     *
      * @api
      */
-    public function makeFinal()
+    public function makeFinal(): self
     {
         $this->isFinal = true;
 
         return $this;
     }
 
-    /**
-     * @return bool
-     */
-    public function isFinal()
+    public function isFinal(): bool
     {
         return $this->isFinal;
     }
 
     /**
-     * @return self
-     *
      * @api
      */
-    public function removeFinal()
+    public function removeFinal(): self
     {
         $this->isFinal = false;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getVisibility()
+    public function getVisibility(): string
     {
         return $this->visibility;
     }
 
     /**
-     * @return self
-     *
      * @api
      */
-    public function makePrivate()
+    public function makePrivate(): self
     {
         $this->visibility = 'private';
 
@@ -200,11 +132,9 @@ class Method
     }
 
     /**
-     * @return self
-     *
      * @api
      */
-    public function makeProtected()
+    public function makeProtected(): self
     {
         $this->visibility = 'protected';
 
@@ -212,11 +142,9 @@ class Method
     }
 
     /**
-     * @return self
-     *
      * @api
      */
-    public function removeVisibility()
+    public function removeVisibility(): self
     {
         $this->visibility = '';
 
@@ -224,11 +152,9 @@ class Method
     }
 
     /**
-     * @return self
-     *
      * @api
      */
-    public function makePublic()
+    public function makePublic(): self
     {
         $this->visibility = 'public';
 
@@ -236,28 +162,21 @@ class Method
     }
 
     /**
-     * @return self
-     *
      * @api
      */
-    public function makeStatic()
+    public function makeStatic(): self
     {
         $this->isStatic = true;
 
         return $this;
     }
 
-    /**
-     * @return bool
-     */
-    public function isStatic()
+    public function isStatic(): bool
     {
         return $this->isStatic;
     }
 
     /**
-     * @return self
-     *
      * @api
      */
     public function removeStatic()
@@ -266,45 +185,31 @@ class Method
     }
 
     /**
-     * @param Argument $argument
-     *
-     * @return self
-     *
      * @api
      */
-    public function addArgument(Argument $argument)
+    public function addArgument(Argument $argument): self
     {
         $this->arguments[] = $argument;
 
         return $this;
     }
 
-    /**
-     * @return Argument[]
-     */
-    public function allArguments()
+    public function allArguments(): array
     {
         return $this->arguments;
     }
 
     /**
-     * @param string $body
-     *
-     * @return self
-     *
      * @api
      */
-    public function setBody($body)
+    public function setBody(string $body): self
     {
         $this->body = $body;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getBody()
+    public function getBody(): string
     {
         return $this->body;
     }
@@ -330,5 +235,4 @@ class Method
     {
         return $this->returnType;
     }
-
 }

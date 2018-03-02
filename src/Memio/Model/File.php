@@ -3,7 +3,7 @@
 /*
  * This file is part of the memio/model package.
  *
- * (c) Loïc Chardonnet <loic.chardonnet@gmail.com>
+ * (c) Loïc Faugeron <faugeron.loic@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -18,81 +18,48 @@ use Memio\Model\Phpdoc\LicensePhpdoc;
  */
 class File
 {
-    /**
-     * @var string
-     */
     private $filename;
-
-    /**
-     * @var LicensePhpdoc
-     */
     private $licensePhpdoc;
-
-    /**
-     * @var array
-     */
-    private $fullyQualifiedNames = array();
-
-    /**
-     * @var Strucutre
-     */
+    private $fullyQualifiedNames = [];
     private $structure;
 
     /**
-     * @param string $filename
-     *
      * @api
      */
-    public function __construct($filename)
+    public function __construct(string $filename)
     {
         $this->filename = $filename;
     }
 
     /**
-     * @param string $filename
-     *
-     * @return self
-     *
-     * @api
+     * @deprecated
      */
-    public static function make($filename)
+    public static function make(string $filename): self
     {
         return new self($filename);
     }
 
-    /**
-     * @return string
-     */
-    public function getFilename()
+    public function getFilename(): string
     {
         return $this->filename;
     }
 
     /**
-     * @param LicensePhpdoc $licensePhpdoc
-     *
-     * @return self
-     *
      * @api
      */
-    public function setLicensePhpdoc(LicensePhpdoc $licensePhpdoc)
+    public function setLicensePhpdoc(LicensePhpdoc $licensePhpdoc): self
     {
         $this->licensePhpdoc = $licensePhpdoc;
 
         return $this;
     }
 
-    /**
-     * @return LicensePhpdoc
-     */
     public function getLicensePhpdoc()
     {
         return $this->licensePhpdoc;
     }
 
     /**
-     * @return self
-     *
      * @api
      */
     public function removeLicensePhpdoc()
@@ -100,9 +67,6 @@ class File
         $this->licensePhpdoc = null;
     }
 
-    /**
-     * @return string
-     */
     public function getNamespace()
     {
         if (null === $this->structure) {
@@ -113,44 +77,30 @@ class File
     }
 
     /**
-     * @param FullyQualifiedName $fullyQualifiedName
-     *
-     * @return self
-     *
      * @api
      */
-    public function addFullyQualifiedName(FullyQualifiedName $fullyQualifiedName)
+    public function addFullyQualifiedName(FullyQualifiedName $fullyQualifiedName): self
     {
         $this->fullyQualifiedNames[] = $fullyQualifiedName;
 
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function allFullyQualifiedNames()
+    public function allFullyQualifiedNames(): array
     {
         return $this->fullyQualifiedNames;
     }
 
     /**
-     * @param Structure $structure
-     *
-     * @return self
-     *
      * @api
      */
-    public function setStructure(Structure $structure)
+    public function setStructure(Structure $structure): self
     {
         $this->structure = $structure;
 
         return $this;
     }
 
-    /**
-     * @return Structure
-     */
     public function getStructure()
     {
         return $this->structure;

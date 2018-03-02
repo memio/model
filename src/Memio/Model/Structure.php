@@ -3,7 +3,7 @@
 /*
  * This file is part of the memio/model package.
  *
- * (c) Loïc Chardonnet <loic.chardonnet@gmail.com>
+ * (c) Loïc Faugeron <faugeron.loic@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -20,32 +20,16 @@ use Memio\Model\Phpdoc\StructurePhpdoc;
  */
 interface Structure
 {
-    /**
-     * @return string
-     */
-    public function getFullyQualifiedName();
+    public function getFullyQualifiedName(): string;
+
+    public function getName(): string;
+
+    public function getNamespace(): string;
+
+    public function getPhpdoc();
 
     /**
-     * @return string
-     */
-    public function getName();
-
-    /**
-     * @return string
-     */
-    public function getNamespace();
-
-    /**
-     * @param StructurePhpdoc $structurePhpdoc
-     *
-     * @return self
-     *
      * @api
      */
     public function setPhpdoc(StructurePhpdoc $structurePhpdoc);
-
-    /**
-     * @return StructurePhpdoc
-     */
-    public function getPhpdoc();
 }

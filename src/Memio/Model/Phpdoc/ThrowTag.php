@@ -3,7 +3,7 @@
 /*
  * This file is part of the memio/model package.
  *
- * (c) Loïc Chardonnet <loic.chardonnet@gmail.com>
+ * (c) Loïc Faugeron <faugeron.loic@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -13,37 +13,25 @@ namespace Memio\Model\Phpdoc;
 
 class ThrowTag
 {
-    /**
-     * @var string
-     */
     private $exception;
 
     /**
-     * @param string $exception
-     *
      * @api
      */
-    public function __construct($exception)
+    public function __construct(string $exception)
     {
         $this->exception = $exception;
     }
 
     /**
-     * @param string $exception
-     *
-     * @return self
-     *
-     * @api
+     * @deprecated
      */
-    public static function make($exception)
+    public static function make(string $exception): self
     {
         return new self($exception);
     }
 
-    /**
-     * @return string
-     */
-    public function getException()
+    public function getException(): string
     {
         return $this->exception;
     }

@@ -3,7 +3,7 @@
 /*
  * This file is part of the memio/model package.
  *
- * (c) Loïc Chardonnet <loic.chardonnet@gmail.com>
+ * (c) Loïc Faugeron <faugeron.loic@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -57,22 +57,22 @@ class ContractSpec extends ObjectBehavior
 
     function it_can_extend_contracts(Contract $contract)
     {
-        $this->allContracts()->shouldBe(array());
+        $this->allContracts()->shouldBe([]);
         $this->extend($contract);
-        $this->allContracts()->shouldBe(array($contract));
+        $this->allContracts()->shouldBe([$contract]);
     }
 
     function it_can_have_constants(Constant $constant)
     {
-        $this->allConstants()->shouldBe(array());
+        $this->allConstants()->shouldBe([]);
         $this->addConstant($constant);
-        $this->allConstants()->shouldBe(array($constant));
+        $this->allConstants()->shouldBe([$constant]);
     }
 
     function it_can_have_methods(Method $method)
     {
-        $this->allMethods()->shouldBe(array());
+        $this->allMethods()->shouldBe([]);
         $this->addMethod($method);
-        $this->allMethods()->shouldBe(array($method));
+        $this->allMethods()->shouldBe([$method]);
     }
 }

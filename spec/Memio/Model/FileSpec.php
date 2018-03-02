@@ -3,7 +3,7 @@
 /*
  * This file is part of the memio/model package.
  *
- * (c) Loïc Chardonnet <loic.chardonnet@gmail.com>
+ * (c) Loïc Faugeron <faugeron.loic@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -54,9 +54,9 @@ class FileSpec extends ObjectBehavior
 
     function it_can_have_fully_qualified_names(FullyQualifiedName $fullyQualifiedName)
     {
-        $this->allFullyQualifiedNames()->shouldBe(array());
+        $this->allFullyQualifiedNames()->shouldBe([]);
         $this->addFullyQualifiedName($fullyQualifiedName);
-        $this->allFullyQualifiedNames()->shouldBe(array($fullyQualifiedName));
+        $this->allFullyQualifiedNames()->shouldBe([$fullyQualifiedName]);
     }
 
     function it_has_a_structure(Structure $structure)

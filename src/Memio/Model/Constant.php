@@ -3,7 +3,7 @@
 /*
  * This file is part of the memio/model package.
  *
- * (c) Loïc Chardonnet <loic.chardonnet@gmail.com>
+ * (c) Loïc Faugeron <faugeron.loic@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -16,51 +16,32 @@ namespace Memio\Model;
  */
 class Constant
 {
-    /**
-     * @var string
-     */
     private $name;
-
-    /**
-     * @var string
-     */
     private $value;
 
     /**
-     * @param string $name
-     * @param string $value
-     *
      * @api
      */
-    public function __construct($name, $value)
+    public function __construct(string $name, string $value)
     {
         $this->name = $name;
         $this->value = $value;
     }
 
     /**
-     * @param string $name
-     * @param string $value
-     *
-     * @api
+     * @deprecated
      */
-    public static function make($name, $value)
+    public static function make(string $name, string $value): self
     {
         return new self($name, $value);
     }
 
-    /**
-     * @return string
-     */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * @return string
-     */
-    public function getValue()
+    public function getValue(): string
     {
         return $this->value;
     }

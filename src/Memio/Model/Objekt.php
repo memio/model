@@ -14,16 +14,20 @@ namespace Memio\Model;
 use Memio\Model\Phpdoc\StructurePhpdoc;
 
 /**
- * A PHP Interface ("interface" is a reserved word and cannot be used as classname).
+ * A PHP Class ("class" and "Object" are a reserved words and cannot be used as classname).
  *
  * @api
  */
-class Contract implements Structure
+class Objekt implements Structure
 {
     private $fullyQualifiedName;
     private $structurePhpdoc;
+    private $isAbstract = false;
+    private $isFinal = false;
+    private $parent;
     private $contracts = [];
     private $constants = [];
+    private $properties = [];
     private $methods = [];
 
     /**
@@ -72,7 +76,87 @@ class Contract implements Structure
     /**
      * @api
      */
-    public function extend(Contract $contract): self
+    public function makeAbstract(): self
+    {
+        $this->isAbstract = true;
+
+        return $this;
+    }
+
+    public function isAbstract(): bool
+    {
+        return $this->isAbstract;
+    }
+
+    /**
+     * @api
+     */
+    public function removeAbstract(): self
+    {
+        $this->isAbstract = false;
+
+        return $this;
+    }
+
+    /**
+     * @api
+     */
+    public function makeFinal(): self
+    {
+        $this->isFinal = true;
+
+        return $this;
+    }
+
+    public function isFinal(): bool
+    {
+        return $this->isFinal;
+    }
+
+    /**
+     * @api
+     */
+    public function removeFinal(): self
+    {
+        $this->isFinal = false;
+
+        return $this;
+    }
+
+    /**
+     * @api
+     */
+    public function extend(Objekt $parent): self
+    {
+        $this->parent = $parent;
+
+        return $this;
+    }
+
+    public function hasParent(): bool
+    {
+        return null !== $this->parent;
+    }
+
+    public function getParent()
+    {
+        return $this->parent;
+    }
+
+    /**
+     * @api
+     */
+    public function removeParent(): self
+    {
+        $this->parent = null;
+
+        return $this;
+    }
+
+    /**
+     * @api
+     */
+    public function implement(Contract $contract): self
     {
         $this->contracts[] = $contract;
 
@@ -97,6 +181,21 @@ class Contract implements Structure
     public function allConstants(): array
     {
         return $this->constants;
+    }
+
+    /**
+     * @api
+     */
+    public function addProperty(Property $property): self
+    {
+        $this->properties[] = $property;
+
+        return $this;
+    }
+
+    public function allProperties(): array
+    {
+        return $this->properties;
     }
 
     /**

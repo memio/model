@@ -3,7 +3,7 @@
 /*
  * This file is part of the memio/model package.
  *
- * (c) Loïc Chardonnet <loic.chardonnet@gmail.com>
+ * (c) Loïc Faugeron <faugeron.loic@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,12 +14,12 @@ namespace spec\Memio\Model;
 use Memio\Model\Constant;
 use Memio\Model\Contract;
 use Memio\Model\Method;
-use Memio\Model\Object;
+use Memio\Model\Objekt;
 use Memio\Model\Phpdoc\StructurePhpdoc;
 use Memio\Model\Property;
 use PhpSpec\ObjectBehavior;
 
-class ObjectSpec extends ObjectBehavior
+class ObjektSpec extends ObjectBehavior
 {
     const FULLY_QUALIFIED_NAME = 'Vendor\Project\MyClass';
     const NAME = 'MyClass';
@@ -75,7 +75,7 @@ class ObjectSpec extends ObjectBehavior
         $this->isFinal()->shouldBe(false);
     }
 
-    function it_can_have_a_parent(Object $parent)
+    function it_can_have_a_parent(Objekt $parent)
     {
         $this->hasParent()->shouldBe(false);
         $this->getParent()->shouldBe(null);
@@ -91,29 +91,29 @@ class ObjectSpec extends ObjectBehavior
 
     function it_can_implement_contracts(Contract $contract)
     {
-        $this->allContracts()->shouldBe(array());
+        $this->allContracts()->shouldBe([]);
         $this->implement($contract);
-        $this->allContracts()->shouldBe(array($contract));
+        $this->allContracts()->shouldBe([$contract]);
     }
 
     function it_can_have_constants(Constant $constant)
     {
-        $this->allConstants()->shouldBe(array());
+        $this->allConstants()->shouldBe([]);
         $this->addConstant($constant);
-        $this->allConstants()->shouldBe(array($constant));
+        $this->allConstants()->shouldBe([$constant]);
     }
 
     function it_can_have_properties(Property $property)
     {
-        $this->allProperties()->shouldBe(array());
+        $this->allProperties()->shouldBe([]);
         $this->addProperty($property);
-        $this->allProperties()->shouldBe(array($property));
+        $this->allProperties()->shouldBe([$property]);
     }
 
     function it_can_have_methods(Method $method)
     {
-        $this->allMethods()->shouldBe(array());
+        $this->allMethods()->shouldBe([]);
         $this->addMethod($method);
-        $this->allMethods()->shouldBe(array($method));
+        $this->allMethods()->shouldBe([$method]);
     }
 }

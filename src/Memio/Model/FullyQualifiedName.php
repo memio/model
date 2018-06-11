@@ -16,6 +16,9 @@ namespace Memio\Model;
  */
 class FullyQualifiedName
 {
+    const NORMALIZATIONS = [
+        'float' => 'double',
+    ];
     private $fullyQualifiedName;
     private $name;
     private $namepace;
@@ -26,6 +29,9 @@ class FullyQualifiedName
      */
     public function __construct(string $fullyQualifiedName)
     {
+        if (isset(self::NORMALIZATIONS[$fullyQualifiedName])) {
+            $fullyQualifiedName = self::NORMALIZATIONS[$fullyQualifiedName];
+        }
         $namespaces = explode('\\', $fullyQualifiedName);
 
         $this->name = array_pop($namespaces);

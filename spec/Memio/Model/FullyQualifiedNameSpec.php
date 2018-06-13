@@ -48,4 +48,11 @@ class FullyQualifiedNameSpec extends ObjectBehavior
         $this->hasAlias()->shouldBe(false);
         $this->getName()->shouldBe('MyClass');
     }
+
+    function it_normalizes_float_name()
+    {
+        $this->beConstructedWith('float');
+
+        $this->getFullyQualifiedName()->shouldBe('double');
+    }
 }

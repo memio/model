@@ -1,5 +1,42 @@
 # CHANGELOG
 
+## 2.0.4: Normalized float to double
+
+Normalization from float to double, thanks to @ItsKelsBoys
+
+## 2.0.3: Updated test suite
+
+* upgraded PHP CS Fixer (from 1.6 to 2.10)
+* upgraded phpspec (from 3.0 to 4.3)
+
+## 2.0.1: PHP 7.2 support
+
+Added support for PHP 7.2, thanks to @roukmoute
+
+BC break: Object has be renamed to Objekt, has it is a reserved keyword.
+
+## 2.0.0: PHP 7 and Return type hints
+
+This release is the same as 2.0.0-alpha3,
+compared to 1.4.1 it brings the following features:
+
+Dropped support for PHP < 7
+    
+This means we now can use:
+    
+* scalar type hints
+* return type hints
+* callable type hint, without having to check PHP version
+    
+All `make` static constructor were created for PHP < 5.6, they're
+now deprecated. Here's an example of what to use instead:
+    
+```
+(new Method('sayHello'))
+    ->addArgument(new Argument('string', 'name')))
+;
+```
+
 ## 2.0.0-alpha3: Return type hints
 
 * added return type hints

@@ -18,10 +18,10 @@ use Memio\Model\Phpdoc\LicensePhpdoc;
  */
 class File
 {
-    private $filename;
-    private $licensePhpdoc;
-    private $fullyQualifiedNames = [];
-    private $structure;
+    public $filename;
+    public $licensePhpdoc;
+    public $fullyQualifiedNames = [];
+    public $structure;
 
     /**
      * @api
@@ -29,19 +29,6 @@ class File
     public function __construct(string $filename)
     {
         $this->filename = $filename;
-    }
-
-    /**
-     * @deprecated
-     */
-    public static function make(string $filename): self
-    {
-        return new self($filename);
-    }
-
-    public function getFilename(): string
-    {
-        return $this->filename;
     }
 
     /**
@@ -54,26 +41,12 @@ class File
         return $this;
     }
 
-    public function getLicensePhpdoc()
-    {
-        return $this->licensePhpdoc;
-    }
-
     /**
      * @api
      */
-    public function removeLicensePhpdoc()
+    public function removeLicensePhpdoc(): void
     {
         $this->licensePhpdoc = null;
-    }
-
-    public function getNamespace()
-    {
-        if (null === $this->structure) {
-            return;
-        }
-
-        return $this->structure->getNamespace();
     }
 
     /**
@@ -86,11 +59,6 @@ class File
         return $this;
     }
 
-    public function allFullyQualifiedNames(): array
-    {
-        return $this->fullyQualifiedNames;
-    }
-
     /**
      * @api
      */
@@ -99,10 +67,5 @@ class File
         $this->structure = $structure;
 
         return $this;
-    }
-
-    public function getStructure()
-    {
-        return $this->structure;
     }
 }

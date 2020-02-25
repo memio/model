@@ -15,7 +15,7 @@ use Memio\Model\Type;
 
 class VariableTag
 {
-    private $type;
+    public $type;
 
     /**
      * @api
@@ -23,18 +23,5 @@ class VariableTag
     public function __construct(string $type)
     {
         $this->type = new Type($type);
-    }
-
-    /**
-     * @deprecated
-     */
-    public static function make(string $type): bool
-    {
-        return new self($type);
-    }
-
-    public function getType(): string
-    {
-        return $this->type->getName();
     }
 }

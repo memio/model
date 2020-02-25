@@ -1,5 +1,18 @@
 # CHANGELOG
 
+## 3.0.0: PHP 7.2 requirement
+
+Dropped support for PHP <7.2
+
+Other upgrades:
+
+* upgraded PHP CS Fixer (from 2.10 to 2.16)
+* upgraded phpspec (from 4.3 to 6.1)
+
+*BC Breaks* - removed deprecated api:
+
+* removed all `make` static constructors
+
 ## 2.0.4: Normalized float to double
 
 Normalization from float to double, thanks to @ItsKelsBoys

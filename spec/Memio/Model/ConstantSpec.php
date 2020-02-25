@@ -25,11 +25,11 @@ class ConstantSpec extends ObjectBehavior
 
     function it_has_a_name()
     {
-        $this->getName()->shouldBe(self::NAME);
+        $this->name->shouldBe(self::NAME);
     }
 
     function it_has_a_value()
     {
-        $this->getValue()->shouldBe(self::VALUE);
+        $this->value->shouldBe(self::VALUE);
     }
 }

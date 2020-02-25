@@ -35,7 +35,7 @@ class ContractSpec extends ObjectBehavior
 
     function it_has_a_fully_qualified_name()
     {
-        $this->getFullyQualifiedName()->shouldBe(self::FULLY_QUALIFIED_NAME);
+        $this->fullyQualifiedName->fullyQualifiedName->shouldBe(self::FULLY_QUALIFIED_NAME);
     }
 
     function it_has_a_name()
@@ -50,29 +50,29 @@ class ContractSpec extends ObjectBehavior
 
     function it_can_have_phpdoc(StructurePhpdoc $phpdoc)
     {
-        $this->getPhpdoc()->shouldBe(null);
+        $this->structurePhpdoc->shouldBe(null);
         $this->setPhpdoc($phpdoc);
-        $this->getPhpdoc()->shouldBe($phpdoc);
+        $this->structurePhpdoc->shouldBe($phpdoc);
     }
 
     function it_can_extend_contracts(Contract $contract)
     {
-        $this->allContracts()->shouldBe([]);
+        $this->contracts->shouldBe([]);
         $this->extend($contract);
-        $this->allContracts()->shouldBe([$contract]);
+        $this->contracts->shouldBe([$contract]);
     }
 
     function it_can_have_constants(Constant $constant)
     {
-        $this->allConstants()->shouldBe([]);
+        $this->constants->shouldBe([]);
         $this->addConstant($constant);
-        $this->allConstants()->shouldBe([$constant]);
+        $this->constants->shouldBe([$constant]);
     }
 
     function it_can_have_methods(Method $method)
     {
-        $this->allMethods()->shouldBe([]);
+        $this->methods->shouldBe([]);
         $this->addMethod($method);
-        $this->allMethods()->shouldBe([$method]);
+        $this->methods->shouldBe([$method]);
     }
 }

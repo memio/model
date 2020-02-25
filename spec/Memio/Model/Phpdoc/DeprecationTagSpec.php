@@ -17,23 +17,23 @@ class DeprecationTagSpec extends ObjectBehavior
 {
     function it_can_be_just_a_tag()
     {
-        $this->getVersion()->shouldBe(null);
-        $this->getDescription()->shouldBe(null);
+        $this->version->shouldBe(null);
+        $this->description->shouldBe(null);
     }
 
     function it_can_have_a_version()
     {
         $this->beConstructedWith('v2.1');
 
-        $this->getVersion()->shouldBe('v2.1');
-        $this->getDescription()->shouldBe(null);
+        $this->version->shouldBe('v2.1');
+        $this->description->shouldBe(null);
     }
 
     function it_can_have_a_description()
     {
         $this->beConstructedWith('v2.1', 'Use Objekt#myMethod instead');
 
-        $this->getVersion()->shouldBe('v2.1');
-        $this->getDescription()->shouldBe('Use Objekt#myMethod instead');
+        $this->version->shouldBe('v2.1');
+        $this->description->shouldBe('Use Objekt#myMethod instead');
     }
 }

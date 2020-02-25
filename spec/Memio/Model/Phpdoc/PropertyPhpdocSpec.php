@@ -24,7 +24,7 @@ class PropertyPhpdocSpec extends ObjectBehavior
     function it_can_have_a_property_tag(VariableTag $variableTag)
     {
         $this->setVariableTag($variableTag);
-        $this->getVariableTag()->shouldBe($variableTag);
+        $this->variableTag->shouldBe($variableTag);
         $this->isEmpty(false);
     }
 }

@@ -13,22 +13,14 @@ namespace Memio\Model\Phpdoc;
 
 class Description
 {
-    private $description = [];
+    public $lines = [];
 
     /**
      * @api
      */
     public function __construct(string $line)
     {
-        $this->description[] = $line;
-    }
-
-    /**
-     * @deprecated
-     */
-    public static function make(string $line): self
-    {
-        return new self($line);
+        $this->lines[] = $line;
     }
 
     /**
@@ -36,7 +28,7 @@ class Description
      */
     public function addEmptyLine(): self
     {
-        $this->description[] = '';
+        $this->lines[] = '';
 
         return $this;
     }
@@ -46,13 +38,8 @@ class Description
      */
     public function addLine(string $line): self
     {
-        $this->description[] = $line;
+        $this->lines[] = $line;
 
         return $this;
-    }
-
-    public function all(): array
-    {
-        return $this->description;
     }
 }

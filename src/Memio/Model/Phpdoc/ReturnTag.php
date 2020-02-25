@@ -13,7 +13,7 @@ namespace Memio\Model\Phpdoc;
 
 class ReturnTag
 {
-    private $type;
+    public $type;
 
     /**
      * @api
@@ -21,18 +21,5 @@ class ReturnTag
     public function __construct(string $type)
     {
         $this->type = $type;
-    }
-
-    /**
-     * @deprecated
-     */
-    public static function make(string $type): self
-    {
-        return new self($type);
-    }
-
-    public function getType(): string
-    {
-        return $this->type;
     }
 }

@@ -37,7 +37,7 @@ class ObjektSpec extends ObjectBehavior
 
     function it_has_a_fully_qualified_name()
     {
-        $this->getFullyQualifiedName()->shouldBe(self::FULLY_QUALIFIED_NAME);
+        $this->getFullyQualifiedName()->fullyQualifiedName->shouldBe(self::FULLY_QUALIFIED_NAME);
     }
 
     function it_has_a_name()
@@ -52,68 +52,68 @@ class ObjektSpec extends ObjectBehavior
 
     function it_can_have_phpdoc(StructurePhpdoc $phpdoc)
     {
-        $this->getPhpdoc()->shouldBe(null);
+        $this->structurePhpdoc->shouldBe(null);
         $this->setPhpdoc($phpdoc);
-        $this->getPhpdoc()->shouldBe($phpdoc);
+        $this->structurePhpdoc->shouldBe($phpdoc);
     }
 
     function it_can_be_abstract()
     {
-        $this->isAbstract()->shouldBe(false);
+        $this->isAbstract->shouldBe(false);
         $this->makeAbstract();
-        $this->isAbstract()->shouldBe(true);
+        $this->isAbstract->shouldBe(true);
         $this->removeAbstract();
-        $this->isAbstract()->shouldBe(false);
+        $this->isAbstract->shouldBe(false);
     }
 
     function it_can_be_final()
     {
-        $this->isFinal()->shouldBe(false);
+        $this->isFinal->shouldBe(false);
         $this->makeFinal();
-        $this->isFinal()->shouldBe(true);
+        $this->isFinal->shouldBe(true);
         $this->removeFinal();
-        $this->isFinal()->shouldBe(false);
+        $this->isFinal->shouldBe(false);
     }
 
     function it_can_have_a_parent(Objekt $parent)
     {
         $this->hasParent()->shouldBe(false);
-        $this->getParent()->shouldBe(null);
+        $this->parent->shouldBe(null);
 
         $this->extend($parent);
         $this->hasParent()->shouldBe(true);
-        $this->getParent()->shouldBe($parent);
+        $this->parent->shouldBe($parent);
 
         $this->removeParent();
         $this->hasParent()->shouldBe(false);
-        $this->getParent()->shouldBe(null);
+        $this->parent->shouldBe(null);
     }
 
     function it_can_implement_contracts(Contract $contract)
     {
-        $this->allContracts()->shouldBe([]);
+        $this->contracts->shouldBe([]);
         $this->implement($contract);
-        $this->allContracts()->shouldBe([$contract]);
+        $this->contracts->shouldBe([$contract]);
     }
 
     function it_can_have_constants(Constant $constant)
     {
-        $this->allConstants()->shouldBe([]);
+        $this->constants->shouldBe([]);
         $this->addConstant($constant);
-        $this->allConstants()->shouldBe([$constant]);
+        $this->constants->shouldBe([$constant]);
     }
 
     function it_can_have_properties(Property $property)
     {
-        $this->allProperties()->shouldBe([]);
+        $this->properties->shouldBe([]);
         $this->addProperty($property);
-        $this->allProperties()->shouldBe([$property]);
+        $this->properties->shouldBe([$property]);
     }
 
     function it_can_have_methods(Method $method)
     {
-        $this->allMethods()->shouldBe([]);
+        $this->methods->shouldBe([]);
         $this->addMethod($method);
-        $this->allMethods()->shouldBe([$method]);
+        $this->methods->shouldBe([$method]);
     }
 }

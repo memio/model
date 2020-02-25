@@ -19,13 +19,13 @@ class VariableTagSpec extends ObjectBehavior
     {
         $this->beConstructedWith('string');
 
-        $this->getType()->shouldBe('string');
+        $this->type->name->shouldBe('string');
     }
 
     function it_can_have_a_fully_qualified_name()
     {
         $this->beConstructedWith('Vendor\Project\MyClass');
 
-        $this->getType()->shouldBe('Vendor\Project\MyClass');
+        $this->type->name->shouldBe('Vendor\Project\MyClass');
     }
 }

@@ -25,45 +25,45 @@ class PropertySpec extends ObjectBehavior
 
     function it_has_a_name()
     {
-        $this->getName()->shouldBe(self::NAME);
+        $this->name->shouldBe(self::NAME);
     }
 
     function it_can_have_phpdoc(PropertyPhpdoc $phpdoc)
     {
-        $this->getPhpdoc()->shouldBe(null);
+        $this->propertyPhpdoc->shouldBe(null);
         $this->setPhpdoc($phpdoc);
-        $this->getPhpdoc()->shouldBe($phpdoc);
+        $this->propertyPhpdoc->shouldBe($phpdoc);
     }
 
     function it_has_visibility()
     {
-        $this->getVisibility()->shouldBe('private');
+        $this->visibility->shouldBe('private');
 
         $this->makePublic();
-        $this->getVisibility()->shouldBe('public');
+        $this->visibility->shouldBe('public');
 
         $this->makeProtected();
-        $this->getVisibility()->shouldBe('protected');
+        $this->visibility->shouldBe('protected');
 
         $this->makePrivate();
-        $this->getVisibility()->shouldBe('private');
+        $this->visibility->shouldBe('private');
     }
 
     function it_can_have_staticness()
     {
-        $this->isStatic()->shouldBe(false);
+        $this->isStatic->shouldBe(false);
 
         $this->makeStatic();
-        $this->isStatic()->shouldBe(true);
+        $this->isStatic->shouldBe(true);
 
         $this->removeStatic();
-        $this->isStatic()->shouldBe(false);
+        $this->isStatic->shouldBe(false);
     }
 
     function it_can_have_a_default_value()
     {
-        $this->getDefaultValue()->shouldBe(null);
+        $this->defaultValue->shouldBe(null);
         $this->setDefaultValue('null');
-        $this->getDefaultValue()->shouldBe('null');
+        $this->defaultValue->shouldBe('null');
     }
 }

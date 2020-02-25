@@ -20,15 +20,15 @@ use Memio\Model\Phpdoc\StructurePhpdoc;
  */
 class Objekt implements Structure
 {
-    private $fullyQualifiedName;
-    private $structurePhpdoc;
-    private $isAbstract = false;
-    private $isFinal = false;
-    private $parent;
-    private $contracts = [];
-    private $constants = [];
-    private $properties = [];
-    private $methods = [];
+    public $fullyQualifiedName;
+    public $structurePhpdoc;
+    public $isAbstract = false;
+    public $isFinal = false;
+    public $parent;
+    public $contracts = [];
+    public $constants = [];
+    public $properties = [];
+    public $methods = [];
 
     /**
      * @api
@@ -38,17 +38,14 @@ class Objekt implements Structure
         $this->fullyQualifiedName = new FullyQualifiedName($fullyQualifiedName);
     }
 
-    /**
-     * @deprecated
-     */
-    public static function make(string $fullyQualifiedName): self
+    public function getFullyQualifiedName(): FullyQualifiedName
     {
-        return new self($fullyQualifiedName);
+        return $this->fullyQualifiedName;
     }
 
-    public function getFullyQualifiedName(): string
+    public function getNamespace(): string
     {
-        return $this->fullyQualifiedName->getFullyQualifiedName();
+        return $this->fullyQualifiedName->namespace;
     }
 
     public function getName(): string
@@ -56,21 +53,14 @@ class Objekt implements Structure
         return $this->fullyQualifiedName->getName();
     }
 
-    public function getNamespace(): string
-    {
-        return $this->fullyQualifiedName->getNamespace();
-    }
-
+    /**
+     * @api
+     */
     public function setPhpdoc(StructurePhpdoc $structurePhpdoc): self
     {
         $this->structurePhpdoc = $structurePhpdoc;
 
         return $this;
-    }
-
-    public function getPhpdoc()
-    {
-        return $this->structurePhpdoc;
     }
 
     /**
@@ -81,11 +71,6 @@ class Objekt implements Structure
         $this->isAbstract = true;
 
         return $this;
-    }
-
-    public function isAbstract(): bool
-    {
-        return $this->isAbstract;
     }
 
     /**
@@ -106,11 +91,6 @@ class Objekt implements Structure
         $this->isFinal = true;
 
         return $this;
-    }
-
-    public function isFinal(): bool
-    {
-        return $this->isFinal;
     }
 
     /**
@@ -138,11 +118,6 @@ class Objekt implements Structure
         return null !== $this->parent;
     }
 
-    public function getParent()
-    {
-        return $this->parent;
-    }
-
     /**
      * @api
      */
@@ -163,11 +138,6 @@ class Objekt implements Structure
         return $this;
     }
 
-    public function allContracts(): array
-    {
-        return $this->contracts;
-    }
-
     /**
      * @api
      */
@@ -176,11 +146,6 @@ class Objekt implements Structure
         $this->constants[] = $constant;
 
         return $this;
-    }
-
-    public function allConstants(): array
-    {
-        return $this->constants;
     }
 
     /**
@@ -193,11 +158,6 @@ class Objekt implements Structure
         return $this;
     }
 
-    public function allProperties(): array
-    {
-        return $this->properties;
-    }
-
     /**
      * @api
      */
@@ -206,10 +166,5 @@ class Objekt implements Structure
         $this->methods[] = $method;
 
         return $this;
-    }
-
-    public function allMethods(): array
-    {
-        return $this->methods;
     }
 }

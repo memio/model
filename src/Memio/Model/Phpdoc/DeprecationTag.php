@@ -16,33 +16,17 @@ namespace Memio\Model\Phpdoc;
  */
 class DeprecationTag
 {
-    private $version;
-    private $description;
+    public $version;
+    public $description;
 
     /**
      * @api
      */
-    public function __construct($version = null, $description = null)
-    {
+    public function __construct(
+        ?string $version = null,
+        ?string $description = null
+    ) {
         $this->version = $version;
         $this->description = $description;
-    }
-
-    /**
-     * @deprecated
-     */
-    public static function make($version, $description = null): self
-    {
-        return new self($version, $description);
-    }
-
-    public function getVersion()
-    {
-        return $this->version;
-    }
-
-    public function getDescription()
-    {
-        return $this->description;
     }
 }

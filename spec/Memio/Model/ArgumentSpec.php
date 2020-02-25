@@ -22,23 +22,23 @@ class ArgumentSpec extends ObjectBehavior
 
     function it_has_a_type()
     {
-        $this->getType()->shouldBe('array');
+        $this->type->name->shouldBe('array');
     }
 
     function it_has_a_name()
     {
-        $this->getName()->shouldBe('lines');
+        $this->name->shouldBe('lines');
     }
 
     function it_can_have_default_value()
     {
-        $this->getDefaultValue()->shouldBe(null);
+        $this->defaultValue->shouldBe(null);
 
         $this->setDefaultValue('null');
-        $this->getDefaultValue()->shouldBe('null');
+        $this->defaultValue->shouldBe('null');
 
         $this->removeDefaultValue();
-        $this->getDefaultValue()->shouldBe(null);
+        $this->defaultValue->shouldBe(null);
     }
 
     function it_can_be_variadic()

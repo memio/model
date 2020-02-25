@@ -16,13 +16,13 @@ namespace Memio\Model;
  */
 class Type
 {
-    const NORMALIZATIONS = [
+    public const NORMALIZATIONS = [
         'double' => 'float',
         'boolean' => 'bool',
         'integer' => 'int',
         'NULL' => 'null',
     ];
-    const NON_OBJECT_TYPES = [
+    public const NON_OBJECT_TYPES = [
         'string',
         'bool',
         'int',
@@ -42,9 +42,9 @@ class Type
         'string',
     ];
 
-    private $name;
-    private $isObject;
-    private $hasTypeHint;
+    public $name;
+    public $isObject;
+    public $hasTypeHint;
 
     /**
      * @api
@@ -60,14 +60,6 @@ class Type
             || in_array($name, self::HAS_TYPE_HINT, true)
         );
         $this->name = $name;
-    }
-
-    /**
-     * @deprecated
-     */
-    public static function make(string $name): self
-    {
-        return new self($name);
     }
 
     /**

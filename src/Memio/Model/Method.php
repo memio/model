@@ -18,37 +18,22 @@ use Memio\Model\Phpdoc\MethodPhpdoc;
  */
 class Method
 {
-    private $name;
-    private $methodPhpdoc;
-    private $isAbstract = false;
-    private $isFinal = false;
-    private $visibility = 'public';
-    private $isStatic = false;
-    private $arguments = [];
-    private $body = '';
-    private $returnType;
+    public $name;
+    public $methodPhpdoc;
+    public $isAbstract = false;
+    public $isFinal = false;
+    public $visibility = 'public';
+    public $isStatic = false;
+    public $arguments = [];
+    public $body = '';
+    public $returnType;
 
     /**
-     * @param string $name
-     *
      * @api
      */
     public function __construct(string $name)
     {
         $this->name = $name;
-    }
-
-    /**
-     * @deprecated
-     */
-    public static function make(string $name): self
-    {
-        return new self($name);
-    }
-
-    public function getName(): string
-    {
-        return $this->name;
     }
 
     /**
@@ -61,11 +46,6 @@ class Method
         return $this;
     }
 
-    public function getPhpdoc()
-    {
-        return $this->methodPhpdoc;
-    }
-
     /**
      * @api
      */
@@ -74,11 +54,6 @@ class Method
         $this->isAbstract = true;
 
         return $this;
-    }
-
-    public function isAbstract(): bool
-    {
-        return $this->isAbstract;
     }
 
     /**
@@ -101,11 +76,6 @@ class Method
         return $this;
     }
 
-    public function isFinal(): bool
-    {
-        return $this->isFinal;
-    }
-
     /**
      * @api
      */
@@ -114,11 +84,6 @@ class Method
         $this->isFinal = false;
 
         return $this;
-    }
-
-    public function getVisibility(): string
-    {
-        return $this->visibility;
     }
 
     /**
@@ -171,15 +136,10 @@ class Method
         return $this;
     }
 
-    public function isStatic(): bool
-    {
-        return $this->isStatic;
-    }
-
     /**
      * @api
      */
-    public function removeStatic()
+    public function removeStatic(): void
     {
         $this->isStatic = false;
     }
@@ -194,11 +154,6 @@ class Method
         return $this;
     }
 
-    public function allArguments(): array
-    {
-        return $this->arguments;
-    }
-
     /**
      * @api
      */
@@ -209,30 +164,13 @@ class Method
         return $this;
     }
 
-    public function getBody(): string
-    {
-        return $this->body;
-    }
-
     /**
-     * @param string $returnType
-     *
-     * @return self
-     *
-     * @{pi
+     * @api
      */
-    public function setReturnType($returnType)
+    public function setReturnType(?string $returnType): self
     {
         $this->returnType = $returnType;
 
         return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getReturnType()
-    {
-        return $this->returnType;
     }
 }

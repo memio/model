@@ -20,11 +20,11 @@ use Memio\Model\Phpdoc\StructurePhpdoc;
  */
 class Contract implements Structure
 {
-    private $fullyQualifiedName;
-    private $structurePhpdoc;
-    private $contracts = [];
-    private $constants = [];
-    private $methods = [];
+    public $fullyQualifiedName;
+    public $structurePhpdoc;
+    public $contracts = [];
+    public $constants = [];
+    public $methods = [];
 
     /**
      * @api
@@ -34,17 +34,14 @@ class Contract implements Structure
         $this->fullyQualifiedName = new FullyQualifiedName($fullyQualifiedName);
     }
 
-    /**
-     * @deprecated
-     */
-    public static function make(string $fullyQualifiedName): self
+    public function getFullyQualifiedName(): FullyQualifiedName
     {
-        return new self($fullyQualifiedName);
+        return $this->fullyQualifiedName;
     }
 
-    public function getFullyQualifiedName(): string
+    public function getNamespace(): string
     {
-        return $this->fullyQualifiedName->getFullyQualifiedName();
+        return $this->fullyQualifiedName->namespace;
     }
 
     public function getName(): string
@@ -52,21 +49,14 @@ class Contract implements Structure
         return $this->fullyQualifiedName->getName();
     }
 
-    public function getNamespace(): string
-    {
-        return $this->fullyQualifiedName->getNamespace();
-    }
-
+    /**
+     * @api
+     */
     public function setPhpdoc(StructurePhpdoc $structurePhpdoc): self
     {
         $this->structurePhpdoc = $structurePhpdoc;
 
         return $this;
-    }
-
-    public function getPhpdoc()
-    {
-        return $this->structurePhpdoc;
     }
 
     /**
@@ -79,11 +69,6 @@ class Contract implements Structure
         return $this;
     }
 
-    public function allContracts(): array
-    {
-        return $this->contracts;
-    }
-
     /**
      * @api
      */
@@ -94,11 +79,6 @@ class Contract implements Structure
         return $this;
     }
 
-    public function allConstants(): array
-    {
-        return $this->constants;
-    }
-
     /**
      * @api
      */
@@ -107,10 +87,5 @@ class Contract implements Structure
         $this->methods[] = $method;
 
         return $this;
-    }
-
-    public function allMethods(): array
-    {
-        return $this->methods;
     }
 }

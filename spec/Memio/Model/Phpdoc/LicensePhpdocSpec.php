@@ -26,16 +26,16 @@ class LicensePhpdocSpec extends ObjectBehavior
 
     function it_has_project_name()
     {
-        $this->getProjectName()->shouldBe(self::PROJECT_NAME);
+        $this->projectName->shouldBe(self::PROJECT_NAME);
     }
 
     function it_has_author_name()
     {
-        $this->getAuthorName()->shouldBe(self::AUTHOR_NAME);
+        $this->authorName->shouldBe(self::AUTHOR_NAME);
     }
 
     function it_has_author_email()
     {
-        $this->getAuthorEmail()->shouldBe(self::AUTHOR_EMAIL);
+        $this->authorEmail->shouldBe(self::AUTHOR_EMAIL);
     }
 }

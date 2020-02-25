@@ -10,7 +10,7 @@ method arguments and even PHPdoc) by constructing "Model" objects.
 
 Install it using [Composer](https://getcomposer.org/download):
 
-    composer require memio/model:^2.0
+    composer require memio/model:^3.0
 
 ## Example
 
@@ -18,10 +18,6 @@ Let's say we want to describe the following method:
 
 ```php
     /**
-     * @param ValueObject $valueObject
-     * @param int         $type
-     * @param bool        $option
-     *
      * @api
      */
     public function doSomething(ValueObject $valueObject, int $type = self::TYPE_ONE, bool $option = true);

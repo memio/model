@@ -26,78 +26,78 @@ class MethodSpec extends ObjectBehavior
 
     function it_has_a_name()
     {
-        $this->getName()->shouldBe(self::NAME);
+        $this->name->shouldBe(self::NAME);
     }
 
     function it_can_have_phpdoc(MethodPhpdoc $phpdoc)
     {
-        $this->getPhpdoc()->shouldBe(null);
+        $this->methodPhpdoc->shouldBe(null);
         $this->setPhpdoc($phpdoc);
-        $this->getPhpdoc()->shouldBe($phpdoc);
+        $this->methodPhpdoc->shouldBe($phpdoc);
     }
 
     function it_can_be_abstract()
     {
-        $this->isAbstract()->shouldBe(false);
+        $this->isAbstract->shouldBe(false);
 
         $this->makeAbstract();
-        $this->isAbstract()->shouldBe(true);
+        $this->isAbstract->shouldBe(true);
 
         $this->removeAbstract();
-        $this->isAbstract()->shouldBe(false);
+        $this->isAbstract->shouldBe(false);
     }
 
     function it_can_be_final()
     {
-        $this->isFinal()->shouldBe(false);
+        $this->isFinal->shouldBe(false);
 
         $this->makeFinal();
-        $this->isFinal()->shouldBe(true);
+        $this->isFinal->shouldBe(true);
 
         $this->removeFinal();
-        $this->isFinal()->shouldBe(false);
+        $this->isFinal->shouldBe(false);
     }
 
     function it_can_have_visibility()
     {
-        $this->getVisibility()->shouldBe('public');
+        $this->visibility->shouldBe('public');
 
         $this->makePrivate();
-        $this->getVisibility()->shouldBe('private');
+        $this->visibility->shouldBe('private');
 
         $this->makeProtected();
-        $this->getVisibility()->shouldBe('protected');
+        $this->visibility->shouldBe('protected');
 
         $this->removeVisibility();
-        $this->getVisibility()->shouldBe('');
+        $this->visibility->shouldBe('');
 
         $this->makePublic();
-        $this->getVisibility()->shouldBe('public');
+        $this->visibility->shouldBe('public');
     }
 
     function it_can_have_staticness()
     {
-        $this->isStatic()->shouldBe(false);
+        $this->isStatic->shouldBe(false);
 
         $this->makeStatic();
-        $this->isStatic()->shouldBe(true);
+        $this->isStatic->shouldBe(true);
 
         $this->removeStatic();
-        $this->isStatic()->shouldBe(false);
+        $this->isStatic->shouldBe(false);
     }
 
     function it_can_have_arguments(Argument $argument)
     {
-        $this->allArguments()->shouldBe([]);
+        $this->arguments->shouldBe([]);
         $this->addArgument($argument);
-        $this->allArguments()->shouldBe([$argument]);
+        $this->arguments->shouldBe([$argument]);
     }
 
     function it_can_have_a_return_type()
     {
-        $this->getReturnType()->shouldBe(null);
+        $this->returnType->shouldBe(null);
         $this->setReturnType('array');
-        $this->getReturnType()->shouldBe('array');
+        $this->returnType->shouldBe('array');
     }
 
     function it_can_have_a_body()
@@ -106,6 +106,6 @@ class MethodSpec extends ObjectBehavior
         $length = strlen('Nobody expects the spanish inquisition');
 EOT;
         $this->setBody($body);
-        $this->getBody()->shouldBe($body);
+        $this->body->shouldBe($body);
     }
 }

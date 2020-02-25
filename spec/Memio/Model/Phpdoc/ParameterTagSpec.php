@@ -19,16 +19,16 @@ class ParameterTagSpec extends ObjectBehavior
     {
         $this->beConstructedWith('Vendor\Project\MyClass', 'myClass');
 
-        $this->getType()->shouldBe('Vendor\Project\MyClass');
-        $this->getName()->shouldBe('myClass');
+        $this->type->name->shouldBe('Vendor\Project\MyClass');
+        $this->name->shouldBe('myClass');
     }
 
     function it_can_have_a_description()
     {
         $this->beConstructedWith('Vendor\Project\MyClass', 'myClass', 'description');
 
-        $this->getType()->shouldBe('Vendor\Project\MyClass');
-        $this->getName()->shouldBe('myClass');
-        $this->getDescription()->shouldBe('description');
+        $this->type->name->shouldBe('Vendor\Project\MyClass');
+        $this->name->shouldBe('myClass');
+        $this->description->shouldBe('description');
     }
 }

@@ -16,13 +16,13 @@ namespace Memio\Model;
  */
 class FullyQualifiedName
 {
-    const NORMALIZATIONS = [
+    public const NORMALIZATIONS = [
         'float' => 'double',
     ];
-    private $fullyQualifiedName;
-    private $name;
-    private $namepace;
-    private $alias;
+    public $fullyQualifiedName;
+    public $name;
+    public $namespace;
+    public $alias;
 
     /**
      * @api
@@ -35,31 +35,18 @@ class FullyQualifiedName
         $namespaces = explode('\\', $fullyQualifiedName);
 
         $this->name = array_pop($namespaces);
-        $this->namepace = implode('\\', $namespaces);
+        $this->namespace = implode('\\', $namespaces);
         $this->fullyQualifiedName = trim($fullyQualifiedName, '\\');
-    }
-
-    /**
-     * @deprecated
-     */
-    public static function make(string $fullyQualifiedName): self
-    {
-        return new self($fullyQualifiedName);
-    }
-
-    public function getFullyQualifiedName(): string
-    {
-        return $this->fullyQualifiedName;
-    }
-
-    public function getName(): string
-    {
-        return (null === $this->alias) ? $this->name : $this->alias;
     }
 
     public function getNamespace(): string
     {
-        return $this->namepace;
+        return $this->namespace;
+    }
+
+    public function getName(): string
+    {
+        return $this->alias ?? $this->name;
     }
 
     /**
@@ -80,7 +67,7 @@ class FullyQualifiedName
     /**
      * @api
      */
-    public function removeAlias()
+    public function removeAlias(): void
     {
         $this->alias = null;
     }

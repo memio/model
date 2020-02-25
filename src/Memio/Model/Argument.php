@@ -16,10 +16,10 @@ namespace Memio\Model;
  */
 class Argument
 {
-    private $type;
-    private $name;
-    private $defaultValue;
-    private $isVariadic = false;
+    public $type;
+    public $name;
+    public $defaultValue;
+    public $isVariadic = false;
 
     /**
      * @api
@@ -31,24 +31,6 @@ class Argument
     }
 
     /**
-     * @deprecated
-     */
-    public static function make(string $type, string $name): self
-    {
-        return new self($type, $name);
-    }
-
-    public function getType(): string
-    {
-        return $this->type->getName();
-    }
-
-    public function getName(): string
-    {
-        return $this->name;
-    }
-
-    /**
      * @api
      */
     public function setDefaultValue(string $value): self
@@ -56,11 +38,6 @@ class Argument
         $this->defaultValue = $value;
 
         return $this;
-    }
-
-    public function getDefaultValue()
-    {
-        return $this->defaultValue;
     }
 
     /**

@@ -19,6 +19,6 @@ class ApiTagSpec extends ObjectBehavior
     {
         $this->beConstructedWith('v2.1');
 
-        $this->getSince()->shouldBe('v2.1');
+        $this->since->shouldBe('v2.1');
     }
 }

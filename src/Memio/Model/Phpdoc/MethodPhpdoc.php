@@ -16,20 +16,12 @@ namespace Memio\Model\Phpdoc;
  */
 class MethodPhpdoc
 {
-    private $apiTag;
-    private $deprecationTag;
-    private $returnTag;
-    private $description;
-    private $parameterTags = [];
-    private $throwTags = [];
-
-    /**
-     * @deprecated
-     */
-    public static function make(): self
-    {
-        return new self();
-    }
+    public $apiTag;
+    public $deprecationTag;
+    public $returnTag;
+    public $description;
+    public $parameterTags = [];
+    public $throwTags = [];
 
     /**
      * @api
@@ -71,26 +63,6 @@ class MethodPhpdoc
         return $this;
     }
 
-    public function getApiTag()
-    {
-        return $this->apiTag;
-    }
-
-    public function getReturnTag()
-    {
-        return $this->returnTag;
-    }
-
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    public function getDeprecationTag()
-    {
-        return $this->deprecationTag;
-    }
-
     /**
      * @api
      */
@@ -101,11 +73,6 @@ class MethodPhpdoc
         return $this;
     }
 
-    public function getParameterTags(): array
-    {
-        return $this->parameterTags;
-    }
-
     /**
      * @api
      */
@@ -114,11 +81,6 @@ class MethodPhpdoc
         $this->throwTags[] = $throwTag;
 
         return $this;
-    }
-
-    public function getThrowTags(): array
-    {
-        return $this->throwTags;
     }
 
     public function isEmpty(): bool

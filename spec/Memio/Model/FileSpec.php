@@ -29,18 +29,18 @@ class FileSpec extends ObjectBehavior
 
     function it_has_a_filename()
     {
-        $this->getFilename()->shouldBe(self::FILENAME);
+        $this->filename->shouldBe(self::FILENAME);
     }
 
     function it_can_have_license_phpdoc(LicensePhpdoc $licensePhpdoc)
     {
-        $this->getLicensePhpdoc()->shouldBe(null);
+        $this->licensePhpdoc->shouldBe(null);
 
         $this->setLicensePhpdoc($licensePhpdoc);
-        $this->getLicensePhpdoc()->shouldBe($licensePhpdoc);
+        $this->licensePhpdoc->shouldBe($licensePhpdoc);
 
         $this->removeLicensePhpdoc();
-        $this->getLicensePhpdoc()->shouldBe(null);
+        $this->licensePhpdoc->shouldBe(null);
     }
 
     function it_has_a_namespace(Structure $structure)
@@ -49,20 +49,20 @@ class FileSpec extends ObjectBehavior
 
         $this->setStructure($structure);
 
-        $this->getNamespace()->shouldBe(self::NAMESPACE_);
+        $this->structure->getNamespace()->shouldBe(self::NAMESPACE_);
     }
 
     function it_can_have_fully_qualified_names(FullyQualifiedName $fullyQualifiedName)
     {
-        $this->allFullyQualifiedNames()->shouldBe([]);
+        $this->fullyQualifiedNames->shouldBe([]);
         $this->addFullyQualifiedName($fullyQualifiedName);
-        $this->allFullyQualifiedNames()->shouldBe([$fullyQualifiedName]);
+        $this->fullyQualifiedNames->shouldBe([$fullyQualifiedName]);
     }
 
     function it_has_a_structure(Structure $structure)
     {
         $this->setStructure($structure);
 
-        $this->getStructure()->shouldBe($structure);
+        $this->structure->shouldBe($structure);
     }
 }

@@ -16,9 +16,9 @@ namespace Memio\Model\Phpdoc;
  */
 class LicensePhpdoc
 {
-    private $projectName;
-    private $authorName;
-    private $authorEmail;
+    public $projectName;
+    public $authorName;
+    public $authorEmail;
 
     /**
      * @api
@@ -31,31 +31,5 @@ class LicensePhpdoc
         $this->projectName = $projectName;
         $this->authorName = $authorName;
         $this->authorEmail = $authorEmail;
-    }
-
-    /**
-     * @deprecated
-     */
-    public static function make(
-        string $projectName,
-        string $authorName,
-        string $authorEmail
-    ): self {
-        return new self($projectName, $authorName, $authorEmail);
-    }
-
-    public function getProjectName(): string
-    {
-        return $this->projectName;
-    }
-
-    public function getAuthorName(): string
-    {
-        return $this->authorName;
-    }
-
-    public function getAuthorEmail(): string
-    {
-        return $this->authorEmail;
     }
 }

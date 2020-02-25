@@ -18,9 +18,9 @@ use Memio\Model\Type;
  */
 class ParameterTag
 {
-    private $type;
-    private $name;
-    private $description;
+    public $type;
+    public $name;
+    public $description;
 
     /**
      * @api
@@ -28,36 +28,10 @@ class ParameterTag
     public function __construct(
         string $type,
         string $name,
-        $description = null
+        ?string $description = null
     ) {
         $this->type = new Type($type);
         $this->name = $name;
         $this->description = $description;
-    }
-
-    /**
-     * @deprecated
-     */
-    public static function make(
-        string $type,
-        string $name,
-        $description = null
-    ): self {
-        return new self($type, $name, $description);
-    }
-
-    public function getType(): string
-    {
-        return $this->type->getName();
-    }
-
-    public function getName(): string
-    {
-        return $this->name;
-    }
-
-    public function getDescription()
-    {
-        return $this->description;
     }
 }

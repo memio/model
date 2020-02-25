@@ -18,11 +18,11 @@ use Memio\Model\Phpdoc\PropertyPhpdoc;
  */
 class Property
 {
-    private $name;
-    private $propertyPhpdoc;
-    private $isStatic = false;
-    private $visibility = 'private';
-    private $defaultValue;
+    public $name;
+    public $propertyPhpdoc;
+    public $isStatic = false;
+    public $visibility = 'private';
+    public $defaultValue;
 
     /**
      * @api
@@ -30,19 +30,6 @@ class Property
     public function __construct(string $name)
     {
         $this->name = $name;
-    }
-
-    /**
-     * @deprecated
-     */
-    public static function make(string $name): self
-    {
-        return new self($name);
-    }
-
-    public function getName(): string
-    {
-        return $this->name;
     }
 
     /**
@@ -55,11 +42,6 @@ class Property
         return $this;
     }
 
-    public function getPhpdoc()
-    {
-        return $this->propertyPhpdoc;
-    }
-
     /**
      * @api
      */
@@ -68,11 +50,6 @@ class Property
         $this->isStatic = true;
 
         return $this;
-    }
-
-    public function isStatic(): bool
-    {
-        return $this->isStatic;
     }
 
     /**
@@ -113,11 +90,6 @@ class Property
         return $this;
     }
 
-    public function getVisibility(): string
-    {
-        return $this->visibility;
-    }
-
     /**
      * @api
      */
@@ -126,10 +98,5 @@ class Property
         $this->defaultValue = $defaultValue;
 
         return $this;
-    }
-
-    public function getDefaultValue()
-    {
-        return $this->defaultValue;
     }
 }

@@ -16,15 +16,7 @@ namespace Memio\Model\Phpdoc;
  */
 class PropertyPhpdoc
 {
-    private $variableTag;
-
-    /**
-     * @deprecated
-     */
-    public static function make(): self
-    {
-        return new self();
-    }
+    public $variableTag;
 
     /**
      * @api
@@ -34,11 +26,6 @@ class PropertyPhpdoc
         $this->variableTag = $variableTag;
 
         return $this;
-    }
-
-    public function getVariableTag()
-    {
-        return $this->variableTag;
     }
 
     public function isEmpty(): bool

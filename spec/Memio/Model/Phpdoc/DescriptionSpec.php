@@ -24,14 +24,14 @@ class DescriptionSpec extends ObjectBehavior
 
     function it_has_a_short_description()
     {
-        $this->all()->shouldBe([self::SHORT_DESCRIPTION]);
+        $this->lines->shouldBe([self::SHORT_DESCRIPTION]);
     }
 
     function it_can_have_empty_lines()
     {
         $this->addEmptyLine();
 
-        $this->all()->shouldBe([self::SHORT_DESCRIPTION, '']);
+        $this->lines->shouldBe([self::SHORT_DESCRIPTION, '']);
     }
 
     function it_can_have_long_description()
@@ -46,6 +46,9 @@ class DescriptionSpec extends ObjectBehavior
             $this->addLine($line);
         }
 
-        $this->all()->shouldBe(array_merge([self::SHORT_DESCRIPTION], $longDescription));
+        $this->lines->shouldBe(array_merge(
+            [self::SHORT_DESCRIPTION],
+            $longDescription
+        ));
     }
 }

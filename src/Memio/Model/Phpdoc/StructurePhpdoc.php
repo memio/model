@@ -16,17 +16,9 @@ namespace Memio\Model\Phpdoc;
  */
 class StructurePhpdoc
 {
-    private $apiTag;
-    private $deprecationTag;
-    private $description;
-
-    /**
-     * @deprecated
-     */
-    public static function make(): self
-    {
-        return new self();
-    }
+    public $apiTag;
+    public $deprecationTag;
+    public $description;
 
     /**
      * @api
@@ -56,21 +48,6 @@ class StructurePhpdoc
         $this->deprecationTag = $deprecationTag;
 
         return $this;
-    }
-
-    public function getApiTag()
-    {
-        return $this->apiTag;
-    }
-
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    public function getDeprecationTag()
-    {
-        return $this->deprecationTag;
     }
 
     public function isEmpty(): bool

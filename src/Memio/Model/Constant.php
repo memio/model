@@ -16,8 +16,8 @@ namespace Memio\Model;
  */
 class Constant
 {
-    private $name;
-    private $value;
+    public $name;
+    public $value;
 
     /**
      * @api
@@ -26,23 +26,5 @@ class Constant
     {
         $this->name = $name;
         $this->value = $value;
-    }
-
-    /**
-     * @deprecated
-     */
-    public static function make(string $name, string $value): self
-    {
-        return new self($name, $value);
-    }
-
-    public function getName(): string
-    {
-        return $this->name;
-    }
-
-    public function getValue(): string
-    {
-        return $this->value;
     }
 }

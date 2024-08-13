@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 3.0.1: PHP 8 and phpspec 7 support
+
+* added PHP 8 support
+* added phpspec 7 support
+
 ## 3.0.0: PHP 7.2 requirement
 
 Dropped support for PHP <7.2

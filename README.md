@@ -88,8 +88,12 @@ Have a look at [the main respository](http://github.com/memio/memio) to discover
 Memio uses [phpspec](http://phpspec.net/), which means the tests also provide the documentation.
 Not convinced? Then clone this repository and run the following commands:
 
-    composer install
-    ./vendor/bin/phpspec run -n -f pretty
+```console
+make lib-init                        # Set up Docker environment
+make phpspec arg='--format pretty'   # Run the specifications
+```
+
+> **Note**: Run `make` or `make help` to see all available commands.
 
 You can see the current and past versions using one of the following:
 

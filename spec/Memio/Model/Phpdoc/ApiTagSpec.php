@@ -17,7 +17,7 @@ use PhpSpec\ObjectBehavior;
 
 class ApiTagSpec extends ObjectBehavior
 {
-    function it_can_have_a_since_version()
+    function it_can_have_a_since_version(): void
     {
         $this->beConstructedWith('v2.1');
 

@@ -20,17 +20,17 @@ class ConstantSpec extends ObjectBehavior
     const NAME = 'MY_CONSTANT';
     const VALUE = "'my string value'";
 
-    function let()
+    function let(): void
     {
         $this->beConstructedWith(self::NAME, self::VALUE);
     }
 
-    function it_has_a_name()
+    function it_has_a_name(): void
     {
         $this->name->shouldBe(self::NAME);
     }
 
-    function it_has_a_value()
+    function it_has_a_value(): void
     {
         $this->value->shouldBe(self::VALUE);
     }

@@ -27,39 +27,39 @@ class ObjektSpec extends ObjectBehavior
     const NAME = 'MyClass';
     const NAMESPACE_ = 'Vendor\Project';
 
-    function let()
+    function let(): void
     {
         $this->beConstructedWith(self::FULLY_QUALIFIED_NAME);
     }
 
-    function it_is_a_structure()
+    function it_is_a_structure(): void
     {
         $this->shouldImplement('Memio\Model\Structure');
     }
 
-    function it_has_a_fully_qualified_name()
+    function it_has_a_fully_qualified_name(): void
     {
         $this->getFullyQualifiedName()->fullyQualifiedName->shouldBe(self::FULLY_QUALIFIED_NAME);
     }
 
-    function it_has_a_name()
+    function it_has_a_name(): void
     {
         $this->getName()->shouldBe(self::NAME);
     }
 
-    function it_has_a_namespace()
+    function it_has_a_namespace(): void
     {
         $this->getNamespace()->shouldBe(self::NAMESPACE_);
     }
 
-    function it_can_have_phpdoc(StructurePhpdoc $phpdoc)
+    function it_can_have_phpdoc(StructurePhpdoc $phpdoc): void
     {
         $this->structurePhpdoc->shouldBe(null);
         $this->setPhpdoc($phpdoc);
         $this->structurePhpdoc->shouldBe($phpdoc);
     }
 
-    function it_can_be_abstract()
+    function it_can_be_abstract(): void
     {
         $this->isAbstract->shouldBe(false);
         $this->makeAbstract();
@@ -68,7 +68,7 @@ class ObjektSpec extends ObjectBehavior
         $this->isAbstract->shouldBe(false);
     }
 
-    function it_can_be_final()
+    function it_can_be_final(): void
     {
         $this->isFinal->shouldBe(false);
         $this->makeFinal();
@@ -77,7 +77,7 @@ class ObjektSpec extends ObjectBehavior
         $this->isFinal->shouldBe(false);
     }
 
-    function it_can_have_a_parent(Objekt $parent)
+    function it_can_have_a_parent(Objekt $parent): void
     {
         $this->hasParent()->shouldBe(false);
         $this->parent->shouldBe(null);
@@ -91,28 +91,28 @@ class ObjektSpec extends ObjectBehavior
         $this->parent->shouldBe(null);
     }
 
-    function it_can_implement_contracts(Contract $contract)
+    function it_can_implement_contracts(Contract $contract): void
     {
         $this->contracts->shouldBe([]);
         $this->implement($contract);
         $this->contracts->shouldBe([$contract]);
     }
 
-    function it_can_have_constants(Constant $constant)
+    function it_can_have_constants(Constant $constant): void
     {
         $this->constants->shouldBe([]);
         $this->addConstant($constant);
         $this->constants->shouldBe([$constant]);
     }
 
-    function it_can_have_properties(Property $property)
+    function it_can_have_properties(Property $property): void
     {
         $this->properties->shouldBe([]);
         $this->addProperty($property);
         $this->properties->shouldBe([$property]);
     }
 
-    function it_can_have_methods(Method $method)
+    function it_can_have_methods(Method $method): void
     {
         $this->methods->shouldBe([]);
         $this->addMethod($method);

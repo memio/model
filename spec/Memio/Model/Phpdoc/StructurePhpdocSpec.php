@@ -20,26 +20,26 @@ use PhpSpec\ObjectBehavior;
 
 class StructurePhpdocSpec extends ObjectBehavior
 {
-    function it_can_be_empty()
+    function it_can_be_empty(): void
     {
         $this->isEmpty()->shouldBe(true);
     }
 
-    function it_can_have_description(Description $description)
+    function it_can_have_description(Description $description): void
     {
         $this->setDescription($description);
         $this->description->shouldBe($description);
         $this->isEmpty(false);
     }
 
-    function it_can_be_tagged_as_api(ApiTag $apiTag)
+    function it_can_be_tagged_as_api(ApiTag $apiTag): void
     {
         $this->setApiTag($apiTag);
         $this->apiTag->shouldBe($apiTag);
         $this->isEmpty()->shouldBe(false);
     }
 
-    function it_can_be_tagged_as_deprecated(DeprecationTag $deprecationTag)
+    function it_can_be_tagged_as_deprecated(DeprecationTag $deprecationTag): void
     {
         $this->setDeprecationTag($deprecationTag);
         $this->deprecationTag->shouldBe($deprecationTag);

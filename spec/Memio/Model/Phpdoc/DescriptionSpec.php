@@ -19,24 +19,24 @@ class DescriptionSpec extends ObjectBehavior
 {
     const SHORT_DESCRIPTION = 'This is a short description';
 
-    function let()
+    function let(): void
     {
         $this->beConstructedWith(self::SHORT_DESCRIPTION);
     }
 
-    function it_has_a_short_description()
+    function it_has_a_short_description(): void
     {
         $this->lines->shouldBe([self::SHORT_DESCRIPTION]);
     }
 
-    function it_can_have_empty_lines()
+    function it_can_have_empty_lines(): void
     {
         $this->addEmptyLine();
 
         $this->lines->shouldBe([self::SHORT_DESCRIPTION, '']);
     }
 
-    function it_can_have_long_description()
+    function it_can_have_long_description(): void
     {
         $longDescription = [
             'Long descriptions can span on many lines',

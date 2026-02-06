@@ -17,14 +17,14 @@ use PhpSpec\ObjectBehavior;
 
 class VariableTagSpec extends ObjectBehavior
 {
-    function it_has_a_type()
+    function it_has_a_type(): void
     {
         $this->beConstructedWith('string');
 
         $this->type->name->shouldBe('string');
     }
 
-    function it_can_have_a_fully_qualified_name()
+    function it_can_have_a_fully_qualified_name(): void
     {
         $this->beConstructedWith('Vendor\Project\MyClass');
 

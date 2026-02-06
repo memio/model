@@ -18,12 +18,12 @@ use PhpSpec\ObjectBehavior;
 
 class PropertyPhpdocSpec extends ObjectBehavior
 {
-    function it_can_be_empty()
+    function it_can_be_empty(): void
     {
         $this->isEmpty()->shouldBe(true);
     }
 
-    function it_can_have_a_property_tag(VariableTag $variableTag)
+    function it_can_have_a_property_tag(VariableTag $variableTag): void
     {
         $this->setVariableTag($variableTag);
         $this->variableTag->shouldBe($variableTag);

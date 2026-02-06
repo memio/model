@@ -35,6 +35,8 @@ $finder = (new PhpCsFixer\Finder())
 return (new PhpCsFixer\Config())
     ->setRules([
         '@Symfony' => true,
+        '@PHP70Migration' => true,
+        '@PHP70Migration:risky' => true,
 
         // [Symfony] defaults to `camelCase`, we set it to `snake_case` (phpspec style)
         'php_unit_method_casing' => ['case' => 'snake_case'],
@@ -42,6 +44,7 @@ return (new PhpCsFixer\Config())
         // [Symfony] defaults to `true`, we set it to `false` for phpspec
         'visibility_required' => false,
     ])
+    ->setRiskyAllowed(true)
     ->setUsingCache(true)
     ->setFinder($finder)
 ;

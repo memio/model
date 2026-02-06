@@ -35,8 +35,8 @@ $finder = (new PhpCsFixer\Finder())
 return (new PhpCsFixer\Config())
     ->setRules([
         '@Symfony' => true,
-        '@PHP70Migration' => true,
-        '@PHP70Migration:risky' => true,
+        '@PHP71Migration' => true,
+        '@PHP71Migration:risky' => true,
 
         // [Symfony] defaults to `camelCase`, we set it to `snake_case` (phpspec style)
         'php_unit_method_casing' => ['case' => 'snake_case'],

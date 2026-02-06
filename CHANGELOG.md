@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 4.0.0: PHP 7.3 requirement
+
+Dropped support for PHP <7.3
+
 ## 3.0.2: Dockerised dev environment
 
 * setup Github Actions

@@ -57,7 +57,7 @@ class Property
     /**
      * @api
      */
-    public function removeStatic()
+    public function removeStatic(): void
     {
         $this->isStatic = false;
     }

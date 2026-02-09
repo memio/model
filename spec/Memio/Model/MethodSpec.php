@@ -105,8 +105,8 @@ class MethodSpec extends ObjectBehavior
     function it_can_have_a_body(): void
     {
         $body = <<<'EOT'
-        $length = strlen('Nobody expects the spanish inquisition');
-EOT;
+                    $length = strlen('Nobody expects the spanish inquisition');
+            EOT;
         $this->setBody($body);
         $this->body->shouldBe($body);
     }

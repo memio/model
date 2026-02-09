@@ -4,6 +4,10 @@
 
 Dropped support for PHP <7.4
 
+New features:
+
+* added support for class property types
+
 ## 3.0.2: Dockerised dev environment
 
 * setup Github Actions

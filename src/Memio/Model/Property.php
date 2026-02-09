@@ -21,6 +21,7 @@ use Memio\Model\Phpdoc\PropertyPhpdoc;
 class Property
 {
     public $name;
+    public $type;
     public $propertyPhpdoc;
     public $isStatic = false;
     public $visibility = 'private';
@@ -90,6 +91,24 @@ class Property
         $this->visibility = 'public';
 
         return $this;
+    }
+
+    /**
+     * @api
+     */
+    public function setType(string $type): self
+    {
+        $this->type = new Type($type);
+
+        return $this;
+    }
+
+    /**
+     * @api
+     */
+    public function removeType(): void
+    {
+        $this->type = null;
     }
 
     /**

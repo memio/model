@@ -62,6 +62,17 @@ class PropertySpec extends ObjectBehavior
         $this->isStatic->shouldBe(false);
     }
 
+    function it_can_have_a_type(): void
+    {
+        $this->type->shouldBe(null);
+
+        $this->setType('int');
+        $this->type->name->shouldBe('int');
+
+        $this->removeType();
+        $this->type->shouldBe(null);
+    }
+
     function it_can_have_a_default_value(): void
     {
         $this->defaultValue->shouldBe(null);

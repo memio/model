@@ -1,8 +1,8 @@
 # CHANGELOG
 
-## 4.0.0: PHP 7.3 requirement
+## 4.0.0: PHP 7.4 requirement
 
-Dropped support for PHP <7.3
+Dropped support for PHP <7.4
 
 ## 3.0.2: Dockerised dev environment
 

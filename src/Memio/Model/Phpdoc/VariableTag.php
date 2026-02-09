@@ -17,7 +17,7 @@ use Memio\Model\Type;
 
 class VariableTag
 {
-    public $type;
+    public Type $type;
 
     /**
      * @api

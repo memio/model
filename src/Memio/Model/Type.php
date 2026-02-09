@@ -44,9 +44,9 @@ class Type
         'string',
     ];
 
-    public $name;
-    public $isObject;
-    public $hasTypeHint;
+    public string $name;
+    public bool $isObject;
+    public bool $hasTypeHint;
 
     /**
      * @api

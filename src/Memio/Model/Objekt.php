@@ -22,15 +22,15 @@ use Memio\Model\Phpdoc\StructurePhpdoc;
  */
 class Objekt implements Structure
 {
-    public $fullyQualifiedName;
-    public $structurePhpdoc;
-    public $isAbstract = false;
-    public $isFinal = false;
-    public $parent;
-    public $contracts = [];
-    public $constants = [];
-    public $properties = [];
-    public $methods = [];
+    public FullyQualifiedName $fullyQualifiedName;
+    public ?StructurePhpdoc $structurePhpdoc = null;
+    public bool $isAbstract = false;
+    public bool $isFinal = false;
+    public ?Objekt $parent = null;
+    public array $contracts = [];
+    public array $constants = [];
+    public array $properties = [];
+    public array $methods = [];
 
     /**
      * @api

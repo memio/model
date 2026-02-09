@@ -15,7 +15,7 @@ namespace Memio\Model\Phpdoc;
 
 class ThrowTag
 {
-    public $exception;
+    public string $exception;
 
     /**
      * @api

@@ -20,15 +20,15 @@ use Memio\Model\Phpdoc\MethodPhpdoc;
  */
 class Method
 {
-    public $name;
-    public $methodPhpdoc;
-    public $isAbstract = false;
-    public $isFinal = false;
-    public $visibility = 'public';
-    public $isStatic = false;
-    public $arguments = [];
-    public $body = '';
-    public $returnType;
+    public string $name;
+    public ?MethodPhpdoc $methodPhpdoc = null;
+    public bool $isAbstract = false;
+    public bool $isFinal = false;
+    public string $visibility = 'public';
+    public bool $isStatic = false;
+    public array $arguments = [];
+    public string $body = '';
+    public ?string $returnType = null;
 
     /**
      * @api

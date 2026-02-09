@@ -15,7 +15,7 @@ namespace Memio\Model\Phpdoc;
 
 class ReturnTag
 {
-    public $type;
+    public string $type;
 
     /**
      * @api

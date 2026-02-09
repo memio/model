@@ -20,12 +20,12 @@ use Memio\Model\Phpdoc\PropertyPhpdoc;
  */
 class Property
 {
-    public $name;
-    public $type;
-    public $propertyPhpdoc;
-    public $isStatic = false;
-    public $visibility = 'private';
-    public $defaultValue;
+    public string $name;
+    public ?Type $type = null;
+    public ?PropertyPhpdoc $propertyPhpdoc = null;
+    public bool $isStatic = false;
+    public string $visibility = 'private';
+    public ?string $defaultValue = null;
 
     /**
      * @api

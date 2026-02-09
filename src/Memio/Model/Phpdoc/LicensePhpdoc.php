@@ -18,9 +18,9 @@ namespace Memio\Model\Phpdoc;
  */
 class LicensePhpdoc
 {
-    public $projectName;
-    public $authorName;
-    public $authorEmail;
+    public string $projectName;
+    public string $authorName;
+    public string $authorEmail;
 
     /**
      * @api

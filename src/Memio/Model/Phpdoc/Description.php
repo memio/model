@@ -15,7 +15,7 @@ namespace Memio\Model\Phpdoc;
 
 class Description
 {
-    public $lines = [];
+    public array $lines = [];
 
     /**
      * @api

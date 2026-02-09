@@ -18,8 +18,8 @@ namespace Memio\Model\Phpdoc;
  */
 class DeprecationTag
 {
-    public $version;
-    public $description;
+    public ?string $version;
+    public ?string $description;
 
     /**
      * @api

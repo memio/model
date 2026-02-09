@@ -22,11 +22,11 @@ use Memio\Model\Phpdoc\StructurePhpdoc;
  */
 class Contract implements Structure
 {
-    public $fullyQualifiedName;
-    public $structurePhpdoc;
-    public $contracts = [];
-    public $constants = [];
-    public $methods = [];
+    public FullyQualifiedName $fullyQualifiedName;
+    public ?StructurePhpdoc $structurePhpdoc = null;
+    public array $contracts = [];
+    public array $constants = [];
+    public array $methods = [];
 
     /**
      * @api

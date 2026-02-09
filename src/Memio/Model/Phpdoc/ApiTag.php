@@ -18,7 +18,7 @@ namespace Memio\Model\Phpdoc;
  */
 class ApiTag
 {
-    public $since;
+    public ?string $since;
 
     /**
      * @api

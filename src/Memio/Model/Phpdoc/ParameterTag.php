@@ -20,9 +20,9 @@ use Memio\Model\Type;
  */
 class ParameterTag
 {
-    public $type;
-    public $name;
-    public $description;
+    public Type $type;
+    public string $name;
+    public ?string $description;
 
     /**
      * @api

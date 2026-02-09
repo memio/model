@@ -21,10 +21,10 @@ class FullyQualifiedName
     public const NORMALIZATIONS = [
         'float' => 'double',
     ];
-    public $fullyQualifiedName;
-    public $name;
-    public $namespace;
-    public $alias;
+    public string $fullyQualifiedName;
+    public string $name;
+    public string $namespace;
+    public ?string $alias = null;
 
     /**
      * @api

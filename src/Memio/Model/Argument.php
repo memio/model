@@ -18,10 +18,10 @@ namespace Memio\Model;
  */
 class Argument
 {
-    public $type;
-    public $name;
-    public $defaultValue;
-    public $isVariadic = false;
+    public Type $type;
+    public string $name;
+    public ?string $defaultValue = null;
+    public bool $isVariadic = false;
 
     /**
      * @api

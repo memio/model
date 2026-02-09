@@ -18,7 +18,7 @@ namespace Memio\Model\Phpdoc;
  */
 class PropertyPhpdoc
 {
-    public $variableTag;
+    public ?VariableTag $variableTag = null;
 
     /**
      * @api

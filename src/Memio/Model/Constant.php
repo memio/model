@@ -18,8 +18,8 @@ namespace Memio\Model;
  */
 class Constant
 {
-    public $name;
-    public $value;
+    public string $name;
+    public string $value;
 
     /**
      * @api

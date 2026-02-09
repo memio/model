@@ -20,10 +20,10 @@ use Memio\Model\Phpdoc\LicensePhpdoc;
  */
 class File
 {
-    public $filename;
-    public $licensePhpdoc;
-    public $fullyQualifiedNames = [];
-    public $structure;
+    public string $filename;
+    public ?LicensePhpdoc $licensePhpdoc = null;
+    public array $fullyQualifiedNames = [];
+    public ?Structure $structure = null;
 
     /**
      * @api

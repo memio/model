@@ -18,9 +18,9 @@ namespace Memio\Model\Phpdoc;
  */
 class StructurePhpdoc
 {
-    public $apiTag;
-    public $deprecationTag;
-    public $description;
+    public ?ApiTag $apiTag = null;
+    public ?DeprecationTag $deprecationTag = null;
+    public ?Description $description = null;
 
     /**
      * @api

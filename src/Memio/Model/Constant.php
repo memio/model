@@ -18,15 +18,12 @@ namespace Memio\Model;
  */
 class Constant
 {
-    public string $name;
-    public string $value;
-
     /**
      * @api
      */
-    public function __construct(string $name, string $value)
-    {
-        $this->name = $name;
-        $this->value = $value;
+    public function __construct(
+        public string $name,
+        public string $value,
+    ) {
     }
 }

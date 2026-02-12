@@ -15,13 +15,10 @@ namespace Memio\Model\Phpdoc;
 
 class ReturnTag
 {
-    public string $type;
-
     /**
      * @api
      */
-    public function __construct(string $type)
+    public function __construct(public string $type)
     {
-        $this->type = $type;
     }
 }

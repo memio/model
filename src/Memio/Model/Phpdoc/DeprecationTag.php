@@ -18,17 +18,12 @@ namespace Memio\Model\Phpdoc;
  */
 class DeprecationTag
 {
-    public ?string $version;
-    public ?string $description;
-
     /**
      * @api
      */
     public function __construct(
-        ?string $version = null,
-        ?string $description = null
+        public ?string $version = null,
+        public ?string $description = null,
     ) {
-        $this->version = $version;
-        $this->description = $description;
     }
 }

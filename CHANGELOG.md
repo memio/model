@@ -1,8 +1,8 @@
 # CHANGELOG
 
-## 4.0.0: PHP 7.4 requirement
+## 4.0.0: PHP 8.0 requirement
 
-Dropped support for PHP <7.4
+Dropped support for PHP <8.0
 
 New features:
 

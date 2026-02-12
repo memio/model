@@ -15,13 +15,10 @@ namespace Memio\Model\Phpdoc;
 
 class ThrowTag
 {
-    public string $exception;
-
     /**
      * @api
      */
-    public function __construct(string $exception)
+    public function __construct(public string $exception)
     {
-        $this->exception = $exception;
     }
 }

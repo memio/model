@@ -19,17 +19,15 @@ namespace Memio\Model;
 class Argument
 {
     public Type $type;
-    public string $name;
     public ?string $defaultValue = null;
     public bool $isVariadic = false;
 
     /**
      * @api
      */
-    public function __construct(string $type, string $name)
+    public function __construct(string $type, public string $name)
     {
         $this->type = new Type($type);
-        $this->name = $name;
     }
 
     /**

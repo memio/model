@@ -20,7 +20,6 @@ use Memio\Model\Phpdoc\MethodPhpdoc;
  */
 class Method
 {
-    public string $name;
     public ?MethodPhpdoc $methodPhpdoc = null;
     public bool $isAbstract = false;
     public bool $isFinal = false;
@@ -33,9 +32,8 @@ class Method
     /**
      * @api
      */
-    public function __construct(string $name)
+    public function __construct(public string $name)
     {
-        $this->name = $name;
     }
 
     /**

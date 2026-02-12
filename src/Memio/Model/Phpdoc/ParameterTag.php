@@ -21,19 +21,15 @@ use Memio\Model\Type;
 class ParameterTag
 {
     public Type $type;
-    public string $name;
-    public ?string $description;
 
     /**
      * @api
      */
     public function __construct(
         string $type,
-        string $name,
-        ?string $description = null
+        public string $name,
+        public ?string $description = null,
     ) {
         $this->type = new Type($type);
-        $this->name = $name;
-        $this->description = $description;
     }
 }

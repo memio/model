@@ -18,13 +18,10 @@ namespace Memio\Model\Phpdoc;
  */
 class ApiTag
 {
-    public ?string $since;
-
     /**
      * @api
      */
-    public function __construct(?string $since = null)
+    public function __construct(public ?string $since = null)
     {
-        $this->since = $since;
     }
 }

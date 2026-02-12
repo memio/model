@@ -20,7 +20,6 @@ use Memio\Model\Phpdoc\PropertyPhpdoc;
  */
 class Property
 {
-    public string $name;
     public ?Type $type = null;
     public ?PropertyPhpdoc $propertyPhpdoc = null;
     public bool $isStatic = false;
@@ -30,9 +29,8 @@ class Property
     /**
      * @api
      */
-    public function __construct(string $name)
+    public function __construct(public string $name)
     {
-        $this->name = $name;
     }
 
     /**

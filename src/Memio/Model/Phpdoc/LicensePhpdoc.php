@@ -18,20 +18,13 @@ namespace Memio\Model\Phpdoc;
  */
 class LicensePhpdoc
 {
-    public string $projectName;
-    public string $authorName;
-    public string $authorEmail;
-
     /**
      * @api
      */
     public function __construct(
-        string $projectName,
-        string $authorName,
-        string $authorEmail
+        public string $projectName,
+        public string $authorName,
+        public string $authorEmail,
     ) {
-        $this->projectName = $projectName;
-        $this->authorName = $authorName;
-        $this->authorEmail = $authorEmail;
     }
 }

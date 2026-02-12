@@ -50,7 +50,7 @@ class DescriptionSpec extends ObjectBehavior
 
         $this->lines->shouldBe(array_merge(
             [self::SHORT_DESCRIPTION],
-            $longDescription
+            $longDescription,
         ));
     }
 }

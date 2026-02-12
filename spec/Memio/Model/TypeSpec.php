@@ -23,6 +23,7 @@ class TypeSpec extends ObjectBehavior
 
         $this->getName()->shouldBe('Vendor\Project\MyClass');
         $this->isObject()->shouldBe(true);
+        $this->isNullable()->shouldBe(false);
     }
 
     function it_can_have_a_type_hint_if_it_is_an_object(): void
@@ -204,5 +205,44 @@ class TypeSpec extends ObjectBehavior
 
         $this->getName()->shouldBe('mixed');
         $this->isObject()->shouldBe(false);
+    }
+
+    function it_can_be_a_nullable_object(): void
+    {
+        $this->beConstructedWith('?DateTime');
+
+        $this->getName()->shouldBe('DateTime');
+        $this->isObject()->shouldBe(true);
+        $this->hasTypeHint()->shouldBe(true);
+        $this->isNullable()->shouldBe(true);
+    }
+
+    function it_can_be_a_nullable_scalar(): void
+    {
+        $this->beConstructedWith('?string');
+
+        $this->getName()->shouldBe('string');
+        $this->isObject()->shouldBe(false);
+        $this->hasTypeHint()->shouldBe(true);
+        $this->isNullable()->shouldBe(true);
+    }
+
+    function it_can_be_a_nullable_array(): void
+    {
+        $this->beConstructedWith('?array');
+
+        $this->getName()->shouldBe('array');
+        $this->isObject()->shouldBe(false);
+        $this->hasTypeHint()->shouldBe(true);
+        $this->isNullable()->shouldBe(true);
+    }
+
+    function it_normalizes_nullable_names(): void
+    {
+        $this->beConstructedWith('?boolean');
+
+        $this->getName()->shouldBe('bool');
+        $this->isObject()->shouldBe(false);
+        $this->isNullable()->shouldBe(true);
     }
 }

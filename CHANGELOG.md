@@ -7,6 +7,7 @@ Dropped support for PHP <7.4
 New features:
 
 * added support for class property types
+* added support for nullable typehints
 
 ## 3.0.2: Dockerised dev environment
 

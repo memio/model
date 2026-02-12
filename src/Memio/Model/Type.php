@@ -47,12 +47,17 @@ class Type
     public string $name;
     public bool $isObject;
     public bool $hasTypeHint;
+    public bool $isNullable;
 
     /**
      * @api
      */
     public function __construct(string $name)
     {
+        $this->isNullable = str_starts_with($name, '?');
+        if ($this->isNullable) {
+            $name = substr($name, 1);
+        }
         if (isset(self::NORMALIZATIONS[$name])) {
             $name = self::NORMALIZATIONS[$name];
         }
@@ -86,5 +91,13 @@ class Type
     public function hasTypeHint(): bool
     {
         return $this->hasTypeHint;
+    }
+
+    /**
+     * @api
+     */
+    public function isNullable(): bool
+    {
+        return $this->isNullable;
     }
 }

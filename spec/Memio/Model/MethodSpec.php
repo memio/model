@@ -14,6 +14,7 @@ declare(strict_types=1);
 namespace spec\Memio\Model;
 
 use Memio\Model\Argument;
+use Memio\Model\Attribute;
 use Memio\Model\Phpdoc\MethodPhpdoc;
 use PhpSpec\ObjectBehavior;
 
@@ -109,5 +110,12 @@ class MethodSpec extends ObjectBehavior
             EOT;
         $this->setBody($body);
         $this->body->shouldBe($body);
+    }
+
+    function it_can_have_attributes(Attribute $attribute): void
+    {
+        $this->attributes->shouldBe([]);
+        $this->addAttribute($attribute);
+        $this->attributes->shouldBe([$attribute]);
     }
 }

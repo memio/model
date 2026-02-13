@@ -20,6 +20,7 @@ use Memio\Model\Phpdoc\PropertyPhpdoc;
  */
 class Property
 {
+    public array $attributes = [];
     public ?Type $type = null;
     public ?PropertyPhpdoc $propertyPhpdoc = null;
     public bool $isStatic = false;
@@ -31,6 +32,16 @@ class Property
      */
     public function __construct(public string $name)
     {
+    }
+
+    /**
+     * @api
+     */
+    public function addAttribute(Attribute $attribute): self
+    {
+        $this->attributes[] = $attribute;
+
+        return $this;
     }
 
     /**

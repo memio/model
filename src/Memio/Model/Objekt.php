@@ -28,6 +28,7 @@ class Objekt implements Structure
     public bool $isFinal = false;
     public ?Objekt $parent = null;
     public array $contracts = [];
+    public array $attributes = [];
     public array $constants = [];
     public array $properties = [];
     public array $methods = [];
@@ -126,6 +127,16 @@ class Objekt implements Structure
     public function removeParent(): self
     {
         $this->parent = null;
+
+        return $this;
+    }
+
+    /**
+     * @api
+     */
+    public function addAttribute(Attribute $attribute): self
+    {
+        $this->attributes[] = $attribute;
 
         return $this;
     }

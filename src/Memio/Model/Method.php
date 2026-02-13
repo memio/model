@@ -20,6 +20,7 @@ use Memio\Model\Phpdoc\MethodPhpdoc;
  */
 class Method
 {
+    public array $attributes = [];
     public ?MethodPhpdoc $methodPhpdoc = null;
     public bool $isAbstract = false;
     public bool $isFinal = false;
@@ -34,6 +35,16 @@ class Method
      */
     public function __construct(public string $name)
     {
+    }
+
+    /**
+     * @api
+     */
+    public function addAttribute(Attribute $attribute): self
+    {
+        $this->attributes[] = $attribute;
+
+        return $this;
     }
 
     /**

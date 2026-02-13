@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace spec\Memio\Model;
 
+use Memio\Model\Attribute;
 use PhpSpec\ObjectBehavior;
 
 class ConstantSpec extends ObjectBehavior
@@ -33,5 +34,12 @@ class ConstantSpec extends ObjectBehavior
     function it_has_a_value(): void
     {
         $this->value->shouldBe(self::VALUE);
+    }
+
+    function it_can_have_attributes(Attribute $attribute): void
+    {
+        $this->attributes->shouldBe([]);
+        $this->addAttribute($attribute);
+        $this->attributes->shouldBe([$attribute]);
     }
 }

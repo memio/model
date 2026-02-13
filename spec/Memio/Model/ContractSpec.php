@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace spec\Memio\Model;
 
+use Memio\Model\Attribute;
 use Memio\Model\Constant;
 use Memio\Model\Contract;
 use Memio\Model\Method;
@@ -76,5 +77,12 @@ class ContractSpec extends ObjectBehavior
         $this->methods->shouldBe([]);
         $this->addMethod($method);
         $this->methods->shouldBe([$method]);
+    }
+
+    function it_can_have_attributes(Attribute $attribute): void
+    {
+        $this->attributes->shouldBe([]);
+        $this->addAttribute($attribute);
+        $this->attributes->shouldBe([$attribute]);
     }
 }

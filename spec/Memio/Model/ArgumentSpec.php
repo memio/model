@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace spec\Memio\Model;
 
+use Memio\Model\Attribute;
 use PhpSpec\ObjectBehavior;
 
 class ArgumentSpec extends ObjectBehavior
@@ -52,5 +53,12 @@ class ArgumentSpec extends ObjectBehavior
 
         $this->removeVariadic();
         $this->isVariadic()->shouldBe(false);
+    }
+
+    function it_can_have_attributes(Attribute $attribute): void
+    {
+        $this->attributes->shouldBe([]);
+        $this->addAttribute($attribute);
+        $this->attributes->shouldBe([$attribute]);
     }
 }

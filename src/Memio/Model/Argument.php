@@ -18,6 +18,7 @@ namespace Memio\Model;
  */
 class Argument
 {
+    public array $attributes = [];
     public Type $type;
     public ?string $defaultValue = null;
     public bool $isVariadic = false;
@@ -28,6 +29,16 @@ class Argument
     public function __construct(string $type, public string $name)
     {
         $this->type = new Type($type);
+    }
+
+    /**
+     * @api
+     */
+    public function addAttribute(Attribute $attribute): self
+    {
+        $this->attributes[] = $attribute;
+
+        return $this;
     }
 
     /**

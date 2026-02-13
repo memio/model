@@ -16,25 +16,24 @@ namespace Memio\Model;
 /**
  * @api
  */
-class Constant
+class Attribute
 {
-    public array $attributes = [];
+    public ?string $arguments = null;
 
     /**
      * @api
      */
     public function __construct(
         public string $name,
-        public string $value,
     ) {
     }
 
     /**
      * @api
      */
-    public function addAttribute(Attribute $attribute): self
+    public function setArguments(string $arguments): self
     {
-        $this->attributes[] = $attribute;
+        $this->arguments = $arguments;
 
         return $this;
     }

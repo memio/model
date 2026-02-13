@@ -24,6 +24,7 @@ class Contract implements Structure
 {
     public FullyQualifiedName $fullyQualifiedName;
     public ?StructurePhpdoc $structurePhpdoc = null;
+    public array $attributes = [];
     public array $contracts = [];
     public array $constants = [];
     public array $methods = [];
@@ -57,6 +58,16 @@ class Contract implements Structure
     public function setPhpdoc(StructurePhpdoc $structurePhpdoc): self
     {
         $this->structurePhpdoc = $structurePhpdoc;
+
+        return $this;
+    }
+
+    /**
+     * @api
+     */
+    public function addAttribute(Attribute $attribute): self
+    {
+        $this->attributes[] = $attribute;
 
         return $this;
     }

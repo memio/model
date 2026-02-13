@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the memio/model package.
  *
@@ -16,12 +18,12 @@ namespace Memio\Model\Phpdoc;
  */
 class MethodPhpdoc
 {
-    public $apiTag;
-    public $deprecationTag;
-    public $returnTag;
-    public $description;
-    public $parameterTags = [];
-    public $throwTags = [];
+    public ?ApiTag $apiTag = null;
+    public ?DeprecationTag $deprecationTag = null;
+    public ?ReturnTag $returnTag = null;
+    public ?Description $description = null;
+    public array $parameterTags = [];
+    public array $throwTags = [];
 
     /**
      * @api
@@ -46,7 +48,7 @@ class MethodPhpdoc
     /**
      * @api
      */
-    public function setDescription($description): self
+    public function setDescription(Description $description): self
     {
         $this->description = $description;
 

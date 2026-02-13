@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the memio/model package.
  *
@@ -19,10 +21,10 @@ class FullyQualifiedName
     public const NORMALIZATIONS = [
         'float' => 'double',
     ];
-    public $fullyQualifiedName;
-    public $name;
-    public $namespace;
-    public $alias;
+    public string $fullyQualifiedName;
+    public string $name;
+    public string $namespace;
+    public ?string $alias = null;
 
     /**
      * @api

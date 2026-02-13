@@ -1,12 +1,26 @@
 # CHANGELOG
 
+## 4.0.0: PHP 8.0 requirement
+
+Dropped support for PHP <8.0
+
+New features:
+
+* added `Attribute` model (PHP 8.0 attributes)
+* added attributes support to `Objekt`, `Contract`, `Method`, `Property`, `Argument` and `Constant`
+* added union type support in `Type` (e.g. `string|int`, `DateTime|null`)
+* added `mixed` type hint support in `Type`
+* added support for class property types
+* added constructor property promotion support (visibility on `Argument`)
+* added support for nullable typehints
+
 ## 3.0.2: Dockerised dev environment
 
 * setup Github Actions
 * changed tooling from scripts to Makefile
-* installed phpstan as a dev depdendency
-* installed swiss-knife as a dev depdendency
-* installed rector as a dev depdendency
+* installed phpstan as a dev dependency
+* installed swiss-knife as a dev dependency
+* installed rector as a dev dependency
 * upgraded PHP CS fixer to v2.19.3
 * dockerized for local development
 
@@ -41,7 +55,7 @@ Normalization from float to double, thanks to @ItsKelsBoys
 
 Added support for PHP 7.2, thanks to @roukmoute
 
-BC break: Object has be renamed to Objekt, has it is a reserved keyword.
+BC break: Object has been renamed to Objekt, has it is a reserved keyword.
 
 ## 2.0.0: PHP 7 and Return type hints
 

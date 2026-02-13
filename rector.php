@@ -9,7 +9,7 @@ use Rector\Set\ValueObject\SetList;
 return RectorConfig::configure()
     ->withCache(
         '/tmp/rector',
-        FileCacheStorage::class
+        FileCacheStorage::class,
     )
     ->withPaths([
         __DIR__,
@@ -23,7 +23,7 @@ return RectorConfig::configure()
     ])
     ->withSets([
         // —— PHP ——————————————————————————————————————————————————————————————
-        SetList::PHP_72,
+        SetList::PHP_80,
     ])
     ->withRules([
     ]);

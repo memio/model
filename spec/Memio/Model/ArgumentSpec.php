@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the memio/model package.
  *
@@ -11,26 +13,27 @@
 
 namespace spec\Memio\Model;
 
+use Memio\Model\Attribute;
 use PhpSpec\ObjectBehavior;
 
 class ArgumentSpec extends ObjectBehavior
 {
-    function let()
+    function let(): void
     {
         $this->beConstructedWith('array', 'lines');
     }
 
-    function it_has_a_type()
+    function it_has_a_type(): void
     {
         $this->type->name->shouldBe('array');
     }
 
-    function it_has_a_name()
+    function it_has_a_name(): void
     {
         $this->name->shouldBe('lines');
     }
 
-    function it_can_have_default_value()
+    function it_can_have_default_value(): void
     {
         $this->defaultValue->shouldBe(null);
 
@@ -41,7 +44,7 @@ class ArgumentSpec extends ObjectBehavior
         $this->defaultValue->shouldBe(null);
     }
 
-    function it_can_be_variadic()
+    function it_can_be_variadic(): void
     {
         $this->isVariadic()->shouldBe(false);
 
@@ -50,5 +53,31 @@ class ArgumentSpec extends ObjectBehavior
 
         $this->removeVariadic();
         $this->isVariadic()->shouldBe(false);
+    }
+
+    function it_can_have_attributes(Attribute $attribute): void
+    {
+        $this->attributes->shouldBe([]);
+        $this->addAttribute($attribute);
+        $this->attributes->shouldBe([$attribute]);
+        $this->removeAttributes();
+        $this->attributes->shouldBe([]);
+    }
+
+    function it_can_have_visibility(): void
+    {
+        $this->visibility->shouldBe('');
+
+        $this->makePublic();
+        $this->visibility->shouldBe('public');
+
+        $this->makeProtected();
+        $this->visibility->shouldBe('protected');
+
+        $this->makePrivate();
+        $this->visibility->shouldBe('private');
+
+        $this->removeVisibility();
+        $this->visibility->shouldBe('');
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the memio/model package.
  *
@@ -30,4 +32,14 @@ interface Structure
      * @api
      */
     public function setPhpdoc(StructurePhpdoc $structurePhpdoc);
+
+    /**
+     * @api
+     */
+    public function addAttribute(Attribute $attribute);
+
+    /**
+     * @api
+     */
+    public function removeAttributes(): void;
 }

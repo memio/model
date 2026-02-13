@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the memio/model package.
  *
@@ -18,17 +20,15 @@ use Memio\Model\Phpdoc\LicensePhpdoc;
  */
 class File
 {
-    public $filename;
-    public $licensePhpdoc;
-    public $fullyQualifiedNames = [];
-    public $structure;
+    public ?LicensePhpdoc $licensePhpdoc = null;
+    public array $fullyQualifiedNames = [];
+    public ?Structure $structure = null;
 
     /**
      * @api
      */
-    public function __construct(string $filename)
+    public function __construct(public string $filename)
     {
-        $this->filename = $filename;
     }
 
     /**

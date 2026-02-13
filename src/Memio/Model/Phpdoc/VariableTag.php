@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the memio/model package.
  *
@@ -15,7 +17,7 @@ use Memio\Model\Type;
 
 class VariableTag
 {
-    public $type;
+    public Type $type;
 
     /**
      * @api

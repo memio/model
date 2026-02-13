@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the memio/model package.
  *
@@ -20,15 +22,16 @@ use Memio\Model\Phpdoc\StructurePhpdoc;
  */
 class Objekt implements Structure
 {
-    public $fullyQualifiedName;
-    public $structurePhpdoc;
-    public $isAbstract = false;
-    public $isFinal = false;
-    public $parent;
-    public $contracts = [];
-    public $constants = [];
-    public $properties = [];
-    public $methods = [];
+    public FullyQualifiedName $fullyQualifiedName;
+    public ?StructurePhpdoc $structurePhpdoc = null;
+    public bool $isAbstract = false;
+    public bool $isFinal = false;
+    public ?Objekt $parent = null;
+    public array $contracts = [];
+    public array $attributes = [];
+    public array $constants = [];
+    public array $properties = [];
+    public array $methods = [];
 
     /**
      * @api
@@ -126,6 +129,24 @@ class Objekt implements Structure
         $this->parent = null;
 
         return $this;
+    }
+
+    /**
+     * @api
+     */
+    public function addAttribute(Attribute $attribute): self
+    {
+        $this->attributes[] = $attribute;
+
+        return $this;
+    }
+
+    /**
+     * @api
+     */
+    public function removeAttributes(): void
+    {
+        $this->attributes = [];
     }
 
     /**

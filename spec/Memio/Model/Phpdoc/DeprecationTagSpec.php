@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the memio/model package.
  *
@@ -15,13 +17,13 @@ use PhpSpec\ObjectBehavior;
 
 class DeprecationTagSpec extends ObjectBehavior
 {
-    function it_can_be_just_a_tag()
+    function it_can_be_just_a_tag(): void
     {
         $this->version->shouldBe(null);
         $this->description->shouldBe(null);
     }
 
-    function it_can_have_a_version()
+    function it_can_have_a_version(): void
     {
         $this->beConstructedWith('v2.1');
 
@@ -29,7 +31,7 @@ class DeprecationTagSpec extends ObjectBehavior
         $this->description->shouldBe(null);
     }
 
-    function it_can_have_a_description()
+    function it_can_have_a_description(): void
     {
         $this->beConstructedWith('v2.1', 'Use Objekt#myMethod instead');
 

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the memio/model package.
  *
@@ -18,20 +20,16 @@ use Memio\Model\Type;
  */
 class ParameterTag
 {
-    public $type;
-    public $name;
-    public $description;
+    public Type $type;
 
     /**
      * @api
      */
     public function __construct(
         string $type,
-        string $name,
-        ?string $description = null
+        public string $name,
+        public ?string $description = null,
     ) {
         $this->type = new Type($type);
-        $this->name = $name;
-        $this->description = $description;
     }
 }

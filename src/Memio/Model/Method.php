@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the memio/model package.
  *
@@ -18,22 +20,39 @@ use Memio\Model\Phpdoc\MethodPhpdoc;
  */
 class Method
 {
-    public $name;
-    public $methodPhpdoc;
-    public $isAbstract = false;
-    public $isFinal = false;
-    public $visibility = 'public';
-    public $isStatic = false;
-    public $arguments = [];
-    public $body = '';
-    public $returnType;
+    public array $attributes = [];
+    public ?MethodPhpdoc $methodPhpdoc = null;
+    public bool $isAbstract = false;
+    public bool $isFinal = false;
+    public string $visibility = 'public';
+    public bool $isStatic = false;
+    public array $arguments = [];
+    public string $body = '';
+    public ?string $returnType = null;
 
     /**
      * @api
      */
-    public function __construct(string $name)
+    public function __construct(public string $name)
     {
-        $this->name = $name;
+    }
+
+    /**
+     * @api
+     */
+    public function addAttribute(Attribute $attribute): self
+    {
+        $this->attributes[] = $attribute;
+
+        return $this;
+    }
+
+    /**
+     * @api
+     */
+    public function removeAttributes(): void
+    {
+        $this->attributes = [];
     }
 
     /**

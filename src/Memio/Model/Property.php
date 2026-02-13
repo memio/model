@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the memio/model package.
  *
@@ -18,18 +20,36 @@ use Memio\Model\Phpdoc\PropertyPhpdoc;
  */
 class Property
 {
-    public $name;
-    public $propertyPhpdoc;
-    public $isStatic = false;
-    public $visibility = 'private';
-    public $defaultValue;
+    public array $attributes = [];
+    public ?Type $type = null;
+    public ?PropertyPhpdoc $propertyPhpdoc = null;
+    public bool $isStatic = false;
+    public string $visibility = 'private';
+    public ?string $defaultValue = null;
 
     /**
      * @api
      */
-    public function __construct(string $name)
+    public function __construct(public string $name)
     {
-        $this->name = $name;
+    }
+
+    /**
+     * @api
+     */
+    public function addAttribute(Attribute $attribute): self
+    {
+        $this->attributes[] = $attribute;
+
+        return $this;
+    }
+
+    /**
+     * @api
+     */
+    public function removeAttributes(): void
+    {
+        $this->attributes = [];
     }
 
     /**
@@ -55,7 +75,7 @@ class Property
     /**
      * @api
      */
-    public function removeStatic()
+    public function removeStatic(): void
     {
         $this->isStatic = false;
     }
@@ -88,6 +108,24 @@ class Property
         $this->visibility = 'public';
 
         return $this;
+    }
+
+    /**
+     * @api
+     */
+    public function setType(string $type): self
+    {
+        $this->type = new Type($type);
+
+        return $this;
+    }
+
+    /**
+     * @api
+     */
+    public function removeType(): void
+    {
+        $this->type = null;
     }
 
     /**

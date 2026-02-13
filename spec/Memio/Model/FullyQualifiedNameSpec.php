@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the memio/model package.
  *
@@ -15,27 +17,27 @@ use PhpSpec\ObjectBehavior;
 
 class FullyQualifiedNameSpec extends ObjectBehavior
 {
-    function let()
+    function let(): void
     {
         $this->beConstructedWith('Vendor\Project\MyClass');
     }
 
-    function it_has_fully_qualified_classname()
+    function it_has_fully_qualified_classname(): void
     {
         $this->fullyQualifiedName->shouldBe('Vendor\Project\MyClass');
     }
 
-    function it_has_name()
+    function it_has_name(): void
     {
         $this->getName()->shouldBe('MyClass');
     }
 
-    function it_has_namespace()
+    function it_has_namespace(): void
     {
         $this->namespace->shouldBe('Vendor\Project');
     }
 
-    function it_can_have_an_alias()
+    function it_can_have_an_alias(): void
     {
         $this->hasAlias()->shouldBe(false);
         $this->getName()->shouldBe('MyClass');
@@ -49,7 +51,7 @@ class FullyQualifiedNameSpec extends ObjectBehavior
         $this->getName()->shouldBe('MyClass');
     }
 
-    function it_normalizes_float_name()
+    function it_normalizes_float_name(): void
     {
         $this->beConstructedWith('float');
 

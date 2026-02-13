@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the memio/model package.
  *
@@ -15,7 +17,7 @@ use PhpSpec\ObjectBehavior;
 
 class ParameterTagSpec extends ObjectBehavior
 {
-    function it_has_a_type_and_a_name()
+    function it_has_a_type_and_a_name(): void
     {
         $this->beConstructedWith('Vendor\Project\MyClass', 'myClass');
 
@@ -23,7 +25,7 @@ class ParameterTagSpec extends ObjectBehavior
         $this->name->shouldBe('myClass');
     }
 
-    function it_can_have_a_description()
+    function it_can_have_a_description(): void
     {
         $this->beConstructedWith('Vendor\Project\MyClass', 'myClass', 'description');
 

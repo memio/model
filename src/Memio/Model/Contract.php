@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the memio/model package.
  *
@@ -20,11 +22,12 @@ use Memio\Model\Phpdoc\StructurePhpdoc;
  */
 class Contract implements Structure
 {
-    public $fullyQualifiedName;
-    public $structurePhpdoc;
-    public $contracts = [];
-    public $constants = [];
-    public $methods = [];
+    public FullyQualifiedName $fullyQualifiedName;
+    public ?StructurePhpdoc $structurePhpdoc = null;
+    public array $attributes = [];
+    public array $contracts = [];
+    public array $constants = [];
+    public array $methods = [];
 
     /**
      * @api
@@ -57,6 +60,24 @@ class Contract implements Structure
         $this->structurePhpdoc = $structurePhpdoc;
 
         return $this;
+    }
+
+    /**
+     * @api
+     */
+    public function addAttribute(Attribute $attribute): self
+    {
+        $this->attributes[] = $attribute;
+
+        return $this;
+    }
+
+    /**
+     * @api
+     */
+    public function removeAttributes(): void
+    {
+        $this->attributes = [];
     }
 
     /**

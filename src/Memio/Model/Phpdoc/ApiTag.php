@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the memio/model package.
  *
@@ -16,13 +18,10 @@ namespace Memio\Model\Phpdoc;
  */
 class ApiTag
 {
-    public $since;
-
     /**
      * @api
      */
-    public function __construct(?string $since = null)
+    public function __construct(public ?string $since = null)
     {
-        $this->since = $since;
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the memio/model package.
  *
@@ -11,6 +13,7 @@
 
 namespace spec\Memio\Model;
 
+use Memio\Model\Attribute;
 use Memio\Model\Phpdoc\PropertyPhpdoc;
 use PhpSpec\ObjectBehavior;
 
@@ -18,24 +21,24 @@ class PropertySpec extends ObjectBehavior
 {
     const NAME = 'dateTime';
 
-    function let()
+    function let(): void
     {
         $this->beConstructedWith(self::NAME);
     }
 
-    function it_has_a_name()
+    function it_has_a_name(): void
     {
         $this->name->shouldBe(self::NAME);
     }
 
-    function it_can_have_phpdoc(PropertyPhpdoc $phpdoc)
+    function it_can_have_phpdoc(PropertyPhpdoc $phpdoc): void
     {
         $this->propertyPhpdoc->shouldBe(null);
         $this->setPhpdoc($phpdoc);
         $this->propertyPhpdoc->shouldBe($phpdoc);
     }
 
-    function it_has_visibility()
+    function it_has_visibility(): void
     {
         $this->visibility->shouldBe('private');
 
@@ -49,7 +52,7 @@ class PropertySpec extends ObjectBehavior
         $this->visibility->shouldBe('private');
     }
 
-    function it_can_have_staticness()
+    function it_can_have_staticness(): void
     {
         $this->isStatic->shouldBe(false);
 
@@ -60,10 +63,30 @@ class PropertySpec extends ObjectBehavior
         $this->isStatic->shouldBe(false);
     }
 
-    function it_can_have_a_default_value()
+    function it_can_have_a_type(): void
+    {
+        $this->type->shouldBe(null);
+
+        $this->setType('int');
+        $this->type->name->shouldBe('int');
+
+        $this->removeType();
+        $this->type->shouldBe(null);
+    }
+
+    function it_can_have_a_default_value(): void
     {
         $this->defaultValue->shouldBe(null);
         $this->setDefaultValue('null');
         $this->defaultValue->shouldBe('null');
+    }
+
+    function it_can_have_attributes(Attribute $attribute): void
+    {
+        $this->attributes->shouldBe([]);
+        $this->addAttribute($attribute);
+        $this->attributes->shouldBe([$attribute]);
+        $this->removeAttributes();
+        $this->attributes->shouldBe([]);
     }
 }

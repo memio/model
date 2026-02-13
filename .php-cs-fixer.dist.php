@@ -35,13 +35,19 @@ $finder = (new PhpCsFixer\Finder())
 return (new PhpCsFixer\Config())
     ->setRules([
         '@Symfony' => true,
+        '@PHP80Migration' => true,
+        '@PHP80Migration:risky' => true,
 
         // [Symfony] defaults to `camelCase`, we set it to `snake_case` (phpspec style)
         'php_unit_method_casing' => ['case' => 'snake_case'],
 
+        // [Symfony] defaults to `['arrays']`, we add `arguments` and `parameters` (PHP 8.0)
+        'trailing_comma_in_multiline' => ['elements' => ['arrays', 'arguments', 'parameters']],
+
         // [Symfony] defaults to `true`, we set it to `false` for phpspec
         'visibility_required' => false,
     ])
+    ->setRiskyAllowed(true)
     ->setUsingCache(true)
     ->setFinder($finder)
 ;

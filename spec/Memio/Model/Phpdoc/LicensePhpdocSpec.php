@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the memio/model package.
  *
@@ -19,22 +21,22 @@ class LicensePhpdocSpec extends ObjectBehavior
     const AUTHOR_NAME = 'Loïc Faugeron';
     const AUTHOR_EMAIL = 'faugeron.loic@gmail.com';
 
-    function let()
+    function let(): void
     {
         $this->beConstructedWith(self::PROJECT_NAME, self::AUTHOR_NAME, self::AUTHOR_EMAIL);
     }
 
-    function it_has_project_name()
+    function it_has_project_name(): void
     {
         $this->projectName->shouldBe(self::PROJECT_NAME);
     }
 
-    function it_has_author_name()
+    function it_has_author_name(): void
     {
         $this->authorName->shouldBe(self::AUTHOR_NAME);
     }
 
-    function it_has_author_email()
+    function it_has_author_email(): void
     {
         $this->authorEmail->shouldBe(self::AUTHOR_EMAIL);
     }

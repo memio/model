@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the memio/model package.
  *
@@ -15,92 +17,65 @@ use PhpSpec\ObjectBehavior;
 
 class TypeSpec extends ObjectBehavior
 {
-    function it_can_be_an_object()
+    function it_can_be_an_object(): void
     {
         $this->beConstructedWith('Vendor\Project\MyClass');
 
         $this->getName()->shouldBe('Vendor\Project\MyClass');
         $this->isObject()->shouldBe(true);
+        $this->isNullable()->shouldBe(false);
     }
 
-    function it_can_have_a_type_hint_if_it_is_an_object()
+    function it_can_have_a_type_hint_if_it_is_an_object(): void
     {
         $this->beConstructedWith('DateTime');
 
         $this->hasTypeHint()->shouldBe(true);
     }
 
-    function it_can_have_a_type_hint_if_it_is_an_array()
+    function it_can_have_a_type_hint_if_it_is_an_array(): void
     {
         $this->beConstructedWith('array');
 
         $this->hasTypeHint()->shouldBe(true);
     }
 
-    function it_can_have_a_type_hint_if_it_is_a_callable()
+    function it_can_have_a_type_hint_if_it_is_a_callable(): void
     {
         $this->beConstructedWith('callable');
 
         $this->hasTypeHint()->shouldBe(true);
     }
 
-    function it_can_have_a_type_hint_if_it_is_a_string()
+    function it_can_have_a_type_hint_if_it_is_a_string(): void
     {
         $this->beConstructedWith('string');
 
         $this->hasTypeHint()->shouldBe(true);
     }
 
-    function it_can_have_a_type_hint_if_it_is_an_integer()
+    function it_can_have_a_type_hint_if_it_is_an_integer(): void
     {
         $this->beConstructedWith('int');
 
         $this->hasTypeHint()->shouldBe(true);
     }
 
-    function it_can_have_a_type_hint_if_it_is_a_float()
+    function it_can_have_a_type_hint_if_it_is_a_float(): void
     {
         $this->beconstructedwith('float');
 
         $this->hastypehint()->shouldbe(true);
     }
 
-    function it_can_have_a_type_hint_if_it_is_a_boolean()
+    function it_can_have_a_type_hint_if_it_is_a_boolean(): void
     {
         $this->beConstructedWith('bool');
 
         $this->hasTypeHint()->shouldBe(true);
     }
 
-    function it_can_have_a_type_hint_if_it_is_a_string_from_php_7_0()
-    {
-        $this->beConstructedWith('string');
-
-        $this->hasTypeHint()->shouldBe(version_compare(PHP_VERSION, '7.0.0') >= 0);
-    }
-
-    function it_can_have_a_type_hint_if_it_is_an_integer_from_php_7_0()
-    {
-        $this->beConstructedWith('int');
-
-        $this->hasTypeHint()->shouldBe(version_compare(PHP_VERSION, '7.0.0') >= 0);
-    }
-
-    function it_can_have_a_type_hint_if_it_is_a_float_from_php_7_0()
-    {
-        $this->beConstructedWith('float');
-
-        $this->hasTypeHint()->shouldBe(version_compare(PHP_VERSION, '7.0.0') >= 0);
-    }
-
-    function it_can_have_a_type_hint_if_it_is_a_boolean_from_php_7_0()
-    {
-        $this->beConstructedWith('bool');
-
-        $this->hasTypeHint()->shouldBe(version_compare(PHP_VERSION, '7.0.0') >= 0);
-    }
-
-    function it_can_be_an_array()
+    function it_can_be_an_array(): void
     {
         $this->beConstructedWith('array');
 
@@ -108,7 +83,7 @@ class TypeSpec extends ObjectBehavior
         $this->isObject()->shouldBe(false);
     }
 
-    function it_can_be_a_callable()
+    function it_can_be_a_callable(): void
     {
         $this->beConstructedWith('callable');
 
@@ -116,7 +91,7 @@ class TypeSpec extends ObjectBehavior
         $this->isObject()->shouldBe(false);
     }
 
-    function it_can_be_a_string()
+    function it_can_be_a_string(): void
     {
         $this->beConstructedWith('string');
 
@@ -124,7 +99,7 @@ class TypeSpec extends ObjectBehavior
         $this->isObject()->shouldBe(false);
     }
 
-    function it_can_be_a_boolean()
+    function it_can_be_a_boolean(): void
     {
         $this->beConstructedWith('bool');
 
@@ -132,7 +107,7 @@ class TypeSpec extends ObjectBehavior
         $this->isObject()->shouldBe(false);
     }
 
-    function it_normalizes_boolean_name()
+    function it_normalizes_boolean_name(): void
     {
         $this->beConstructedWith('boolean');
 
@@ -140,7 +115,7 @@ class TypeSpec extends ObjectBehavior
         $this->isObject()->shouldBe(false);
     }
 
-    function it_can_be_a_resource()
+    function it_can_be_a_resource(): void
     {
         $this->beConstructedWith('resource');
 
@@ -148,7 +123,7 @@ class TypeSpec extends ObjectBehavior
         $this->isObject()->shouldBe(false);
     }
 
-    function it_can_be_an_integer()
+    function it_can_be_an_integer(): void
     {
         $this->beConstructedWith('int');
 
@@ -156,7 +131,7 @@ class TypeSpec extends ObjectBehavior
         $this->isObject()->shouldBe(false);
     }
 
-    function it_normalizes_integer_name()
+    function it_normalizes_integer_name(): void
     {
         $this->beConstructedWith('integer');
 
@@ -164,7 +139,7 @@ class TypeSpec extends ObjectBehavior
         $this->isObject()->shouldBe(false);
     }
 
-    function it_can_be_a_float()
+    function it_can_be_a_float(): void
     {
         $this->beConstructedWith('float');
 
@@ -172,7 +147,7 @@ class TypeSpec extends ObjectBehavior
         $this->isObject()->shouldBe(false);
     }
 
-    function it_normalizes_float_name()
+    function it_normalizes_float_name(): void
     {
         $this->beConstructedWith('double');
 
@@ -180,7 +155,7 @@ class TypeSpec extends ObjectBehavior
         $this->isObject()->shouldBe(false);
     }
 
-    function it_can_be_null()
+    function it_can_be_null(): void
     {
         $this->beConstructedWith('null');
 
@@ -188,7 +163,7 @@ class TypeSpec extends ObjectBehavior
         $this->isObject()->shouldBe(false);
     }
 
-    function it_normalizes_null_name()
+    function it_normalizes_null_name(): void
     {
         $this->beConstructedWith('NULL');
 
@@ -196,11 +171,87 @@ class TypeSpec extends ObjectBehavior
         $this->isObject()->shouldBe(false);
     }
 
-    function it_can_be_unknown()
+    function it_can_be_unknown(): void
     {
         $this->beConstructedWith('mixed');
 
         $this->getName()->shouldBe('mixed');
         $this->isObject()->shouldBe(false);
+        $this->hasTypeHint()->shouldBe(true);
+    }
+
+    function it_can_be_a_nullable_object(): void
+    {
+        $this->beConstructedWith('?DateTime');
+
+        $this->getName()->shouldBe('DateTime');
+        $this->isObject()->shouldBe(true);
+        $this->hasTypeHint()->shouldBe(true);
+        $this->isNullable()->shouldBe(true);
+    }
+
+    function it_can_be_a_nullable_scalar(): void
+    {
+        $this->beConstructedWith('?string');
+
+        $this->getName()->shouldBe('string');
+        $this->isObject()->shouldBe(false);
+        $this->hasTypeHint()->shouldBe(true);
+        $this->isNullable()->shouldBe(true);
+    }
+
+    function it_can_be_a_nullable_array(): void
+    {
+        $this->beConstructedWith('?array');
+
+        $this->getName()->shouldBe('array');
+        $this->isObject()->shouldBe(false);
+        $this->hasTypeHint()->shouldBe(true);
+        $this->isNullable()->shouldBe(true);
+    }
+
+    function it_normalizes_nullable_names(): void
+    {
+        $this->beConstructedWith('?boolean');
+
+        $this->getName()->shouldBe('bool');
+        $this->isObject()->shouldBe(false);
+        $this->isNullable()->shouldBe(true);
+    }
+
+    function it_can_be_a_union_type(): void
+    {
+        $this->beConstructedWith('string|int');
+
+        $this->getName()->shouldBe('string|int');
+        $this->isUnionType->shouldBe(true);
+        $this->hasTypeHint()->shouldBe(true);
+        $this->types->shouldHaveCount(2);
+    }
+
+    function it_can_be_a_nullable_union_type(): void
+    {
+        $this->beConstructedWith('string|null');
+
+        $this->getName()->shouldBe('string|null');
+        $this->isUnionType->shouldBe(true);
+        $this->isNullable()->shouldBe(true);
+    }
+
+    function it_normalizes_union_type_names(): void
+    {
+        $this->beConstructedWith('boolean|integer');
+
+        $this->getName()->shouldBe('bool|int');
+        $this->isUnionType->shouldBe(true);
+    }
+
+    function it_can_be_a_union_type_with_object(): void
+    {
+        $this->beConstructedWith('DateTime|string');
+
+        $this->getName()->shouldBe('DateTime|string');
+        $this->isUnionType->shouldBe(true);
+        $this->types[0]->isObject->shouldBe(true);
     }
 }

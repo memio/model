@@ -10,17 +10,21 @@ method arguments and even PHPdoc) by constructing "Model" objects.
 
 Install it using [Composer](https://getcomposer.org/download):
 
-    composer require memio/model:^3.0
+```console
+composer require memio/model:^4.0
+```
 
 ## Example
 
-Let's say we want to describe the following method:
+Let's say we want to describe the following constructor:
 
 ```php
-    /**
-     * @api
-     */
-    public function doSomething(ValueObject $valueObject, int $type = self::TYPE_ONE, bool $option = true);
+    public function __construct(
+        private ValueObject $valueObject,
+        private string|int $type = self::TYPE_ONE,
+        private ?bool $option = true,
+    ) {
+    }
 ```
 
 In order to do so, we'd need to write the following:
@@ -32,56 +36,53 @@ require __DIR__.'/vendor/autoload.php';
 
 use Memio\Model\Argument;
 use Memio\Model\Method;
-use Memio\Model\Phpdoc\ApiTag;
-use Memio\Model\Phpdoc\MethodPhpdoc;
-use Memio\Model\Phpdoc\ParameterTag;
 
-$method = (new Method('doSomething'))
-    ->setPhpdoc((new MethodPhpdoc())
-        ->addParameterTag(new ParameterTag('Vendor\Project\ValueObject', 'valueObject'))
-        ->addParameterTag(new ParameterTag('int', 'type'))
-        ->addParameterTag(new ParameterTag('bool', 'option'))
-
-        ->addApiTag(new ApiTag())
+$method = (new Method('__construct'))
+    ->addArgument((new Argument('Vendor\Project\ValueObject', 'valueObject'))
+        ->makePrivate()
     )
-    ->addArgument(new Argument('Vendor\Project\ValueObject', 'valueObject'))
-    ->addArgument((new Argument('int', 'type'))
+    ->addArgument((new Argument('string|int', 'type'))
+        ->makePrivate()
         ->setDefaultValue('self::TYPE_ONE')
     )
-    ->addArgument((new Argument('bool', 'option'))
+    ->addArgument((new Argument('?bool', 'option'))
+        ->makePrivate()
         ->setDefaultValue('true')
     )
 ;
 ```
 
+This example showcases constructor property promotion, union types and nullable types.
+
 Usually models aren't described manually like this, they would be built dynamically:
 
 ```php
-// Let's say we've received the following two parameters:
-$methodName = 'doSomething';
-$arguments = [new \Vendor\Project\ValueObject(), ValueObject::TYPE_ONE, true];
+// Let's say we've received the following parameters:
+$parameters = [
+    ['type' => 'Vendor\Project\ValueObject', 'name' => 'valueObject'],
+    ['type' => 'string|int', 'name' => 'type', 'default' => 'self::TYPE_ONE'],
+    ['type' => '?bool', 'name' => 'option', 'default' => 'true'],
+];
 
-$method = new Method($methodName);
-$phpdoc = (new MethodPhpdoc())->setApiTag(new ApiTag());
-$index = 1;
-foreach ($arguments as $rawArgument) {
-    $type = is_object($rawArgument) ? get_class($argument) : gettype($rawArgument);
-    $name = 'argument'.$index++;
-    $argument = new Argument($type, $name);
-
+$method = new Method('__construct');
+foreach ($parameters as $parameter) {
+    $argument = (new Argument($parameter['type'], $parameter['name']))
+        ->makePrivate()
+    ;
+    if (isset($parameter['default'])) {
+        $argument->setDefaultValue($parameter['default']);
+    }
     $method->addArgument($argument);
-    $phpdoc->addParameterTag(new ParameterTag($type, $name));
 }
-$method->setPhpdoc($phpdoc);
 ```
 
 We can build dynamically the models using a configuration file, user input, existing
-source code... Possibilities are endless!
+source code, etc. Possibilities are endless!
 
-Once built these models can be further tweaked, and converted to another format:
-an array, source code, etc... Again, the possibilities are endless!
+Once built, these models can be further tweaked and converted to another format:
+an array, source code, etc.
 
-Have a look at [the main respository](http://github.com/memio/memio) to discover the full power of Medio.
+Have a look at [the main repository](http://github.com/memio/memio) to discover the full power of Memio.
 
 ## Want to know more?
 
@@ -98,7 +99,7 @@ make phpspec arg='--format pretty'   # Run the specifications
 You can see the current and past versions using one of the following:
 
 * the `git tag` command
-* the [releases page on Github](https://github.com/memio/memio/releases)
+* the [releases page on Github](https://github.com/memio/model/releases)
 * the file listing the [changes between versions](CHANGELOG.md)
 
 And finally some meta documentation:
@@ -113,4 +114,3 @@ And finally some meta documentation:
 * extract `Import` (use statement) from `FullyQualifiedName`
 * get rid of `FullyQualifiedName`
 * support more PHPdoc stuff
-* support annotations

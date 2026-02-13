@@ -11,20 +11,30 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Memio\Model\Phpdoc;
+namespace Memio\Model;
 
 /**
  * @api
  */
-class LicensePhpdoc
+class Attribute
 {
+    public ?string $arguments = null;
+
     /**
      * @api
      */
     public function __construct(
-        public string $projectName,
-        public string $authorName,
-        public string $authorEmail,
+        public string $name,
     ) {
+    }
+
+    /**
+     * @api
+     */
+    public function setArguments(string $arguments): self
+    {
+        $this->arguments = $arguments;
+
+        return $this;
     }
 }

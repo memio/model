@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the memio/model package.
  *
@@ -16,15 +18,32 @@ namespace Memio\Model;
  */
 class Constant
 {
-    public $name;
-    public $value;
+    public array $attributes = [];
 
     /**
      * @api
      */
-    public function __construct(string $name, string $value)
+    public function __construct(
+        public string $name,
+        public string $value,
+    ) {
+    }
+
+    /**
+     * @api
+     */
+    public function addAttribute(Attribute $attribute): self
     {
-        $this->name = $name;
-        $this->value = $value;
+        $this->attributes[] = $attribute;
+
+        return $this;
+    }
+
+    /**
+     * @api
+     */
+    public function removeAttributes(): void
+    {
+        $this->attributes = [];
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the memio/model package.
  *
@@ -22,17 +24,17 @@ class FileSpec extends ObjectBehavior
     const NAMESPACE_ = 'Vendor\Project';
     const CLASSNAME = 'MyClass';
 
-    function let()
+    function let(): void
     {
         $this->beConstructedWith(self::FILENAME);
     }
 
-    function it_has_a_filename()
+    function it_has_a_filename(): void
     {
         $this->filename->shouldBe(self::FILENAME);
     }
 
-    function it_can_have_license_phpdoc(LicensePhpdoc $licensePhpdoc)
+    function it_can_have_license_phpdoc(LicensePhpdoc $licensePhpdoc): void
     {
         $this->licensePhpdoc->shouldBe(null);
 
@@ -43,7 +45,7 @@ class FileSpec extends ObjectBehavior
         $this->licensePhpdoc->shouldBe(null);
     }
 
-    function it_has_a_namespace(Structure $structure)
+    function it_has_a_namespace(Structure $structure): void
     {
         $structure->getNamespace()->willReturn(self::NAMESPACE_);
 
@@ -52,14 +54,14 @@ class FileSpec extends ObjectBehavior
         $this->structure->getNamespace()->shouldBe(self::NAMESPACE_);
     }
 
-    function it_can_have_fully_qualified_names(FullyQualifiedName $fullyQualifiedName)
+    function it_can_have_fully_qualified_names(FullyQualifiedName $fullyQualifiedName): void
     {
         $this->fullyQualifiedNames->shouldBe([]);
         $this->addFullyQualifiedName($fullyQualifiedName);
         $this->fullyQualifiedNames->shouldBe([$fullyQualifiedName]);
     }
 
-    function it_has_a_structure(Structure $structure)
+    function it_has_a_structure(Structure $structure): void
     {
         $this->setStructure($structure);
 

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the memio/model package.
  *
@@ -13,13 +15,10 @@ namespace Memio\Model\Phpdoc;
 
 class ThrowTag
 {
-    public $exception;
-
     /**
      * @api
      */
-    public function __construct(string $exception)
+    public function __construct(public string $exception)
     {
-        $this->exception = $exception;
     }
 }

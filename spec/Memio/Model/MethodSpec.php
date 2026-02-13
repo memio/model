@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the memio/model package.
  *
@@ -12,6 +14,7 @@
 namespace spec\Memio\Model;
 
 use Memio\Model\Argument;
+use Memio\Model\Attribute;
 use Memio\Model\Phpdoc\MethodPhpdoc;
 use PhpSpec\ObjectBehavior;
 
@@ -19,24 +22,24 @@ class MethodSpec extends ObjectBehavior
 {
     const NAME = '__construct';
 
-    function let()
+    function let(): void
     {
         $this->beConstructedWith(self::NAME);
     }
 
-    function it_has_a_name()
+    function it_has_a_name(): void
     {
         $this->name->shouldBe(self::NAME);
     }
 
-    function it_can_have_phpdoc(MethodPhpdoc $phpdoc)
+    function it_can_have_phpdoc(MethodPhpdoc $phpdoc): void
     {
         $this->methodPhpdoc->shouldBe(null);
         $this->setPhpdoc($phpdoc);
         $this->methodPhpdoc->shouldBe($phpdoc);
     }
 
-    function it_can_be_abstract()
+    function it_can_be_abstract(): void
     {
         $this->isAbstract->shouldBe(false);
 
@@ -47,7 +50,7 @@ class MethodSpec extends ObjectBehavior
         $this->isAbstract->shouldBe(false);
     }
 
-    function it_can_be_final()
+    function it_can_be_final(): void
     {
         $this->isFinal->shouldBe(false);
 
@@ -58,7 +61,7 @@ class MethodSpec extends ObjectBehavior
         $this->isFinal->shouldBe(false);
     }
 
-    function it_can_have_visibility()
+    function it_can_have_visibility(): void
     {
         $this->visibility->shouldBe('public');
 
@@ -75,7 +78,7 @@ class MethodSpec extends ObjectBehavior
         $this->visibility->shouldBe('public');
     }
 
-    function it_can_have_staticness()
+    function it_can_have_staticness(): void
     {
         $this->isStatic->shouldBe(false);
 
@@ -86,26 +89,35 @@ class MethodSpec extends ObjectBehavior
         $this->isStatic->shouldBe(false);
     }
 
-    function it_can_have_arguments(Argument $argument)
+    function it_can_have_arguments(Argument $argument): void
     {
         $this->arguments->shouldBe([]);
         $this->addArgument($argument);
         $this->arguments->shouldBe([$argument]);
     }
 
-    function it_can_have_a_return_type()
+    function it_can_have_a_return_type(): void
     {
         $this->returnType->shouldBe(null);
         $this->setReturnType('array');
         $this->returnType->shouldBe('array');
     }
 
-    function it_can_have_a_body()
+    function it_can_have_a_body(): void
     {
         $body = <<<'EOT'
-        $length = strlen('Nobody expects the spanish inquisition');
-EOT;
+                    $length = strlen('Nobody expects the spanish inquisition');
+            EOT;
         $this->setBody($body);
         $this->body->shouldBe($body);
+    }
+
+    function it_can_have_attributes(Attribute $attribute): void
+    {
+        $this->attributes->shouldBe([]);
+        $this->addAttribute($attribute);
+        $this->attributes->shouldBe([$attribute]);
+        $this->removeAttributes();
+        $this->attributes->shouldBe([]);
     }
 }

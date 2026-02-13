@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the memio/model package.
  *
@@ -16,17 +18,12 @@ namespace Memio\Model\Phpdoc;
  */
 class DeprecationTag
 {
-    public $version;
-    public $description;
-
     /**
      * @api
      */
     public function __construct(
-        ?string $version = null,
-        ?string $description = null
+        public ?string $version = null,
+        public ?string $description = null,
     ) {
-        $this->version = $version;
-        $this->description = $description;
     }
 }

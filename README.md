@@ -10,7 +10,7 @@ method arguments and even PHPdoc) by constructing "Model" objects.
 
 Install it using [Composer](https://getcomposer.org/download):
 
-    composer require memio/model:^3.0
+    composer require memio/model:^4.0
 
 ## Example
 
@@ -113,4 +113,3 @@ And finally some meta documentation:
 * extract `Import` (use statement) from `FullyQualifiedName`
 * get rid of `FullyQualifiedName`
 * support more PHPdoc stuff
-* support annotations

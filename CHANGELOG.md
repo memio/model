@@ -6,6 +6,10 @@ Dropped support for PHP <8.0
 
 New features:
 
+* added `Attribute` model (PHP 8.0 attributes)
+* added attributes support to `Objekt`, `Contract`, `Method`, `Property`, `Argument` and `Constant`
+* added union type support in `Type` (e.g. `string|int`, `DateTime|null`)
+* added `mixed` type hint support in `Type`
 * added support for class property types
 * added support for nullable typehints
 

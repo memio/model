@@ -48,6 +48,9 @@ class Type
     public bool $isObject;
     public bool $hasTypeHint;
     public bool $isNullable;
+    public bool $isUnionType = false;
+    /** @var Type[] */
+    public array $types = [];
 
     /**
      * @api
@@ -57,6 +60,24 @@ class Type
         $this->isNullable = str_starts_with($name, '?');
         if ($this->isNullable) {
             $name = substr($name, 1);
+        }
+        if (str_contains($name, '|')) {
+            $this->isUnionType = true;
+            $this->hasTypeHint = true;
+            $this->isObject = false;
+            $parts = explode('|', $name);
+            $normalizedParts = [];
+            foreach ($parts as $part) {
+                $type = new self($part);
+                $this->types[] = $type;
+                $normalizedParts[] = $type->name;
+                if ('null' === $type->name) {
+                    $this->isNullable = true;
+                }
+            }
+            $this->name = implode('|', $normalizedParts);
+
+            return;
         }
         if (isset(self::NORMALIZATIONS[$name])) {
             $name = self::NORMALIZATIONS[$name];

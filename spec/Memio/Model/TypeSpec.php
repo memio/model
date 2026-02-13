@@ -245,4 +245,40 @@ class TypeSpec extends ObjectBehavior
         $this->isObject()->shouldBe(false);
         $this->isNullable()->shouldBe(true);
     }
+
+    function it_can_be_a_union_type(): void
+    {
+        $this->beConstructedWith('string|int');
+
+        $this->getName()->shouldBe('string|int');
+        $this->isUnionType->shouldBe(true);
+        $this->hasTypeHint()->shouldBe(true);
+        $this->types->shouldHaveCount(2);
+    }
+
+    function it_can_be_a_nullable_union_type(): void
+    {
+        $this->beConstructedWith('string|null');
+
+        $this->getName()->shouldBe('string|null');
+        $this->isUnionType->shouldBe(true);
+        $this->isNullable()->shouldBe(true);
+    }
+
+    function it_normalizes_union_type_names(): void
+    {
+        $this->beConstructedWith('boolean|integer');
+
+        $this->getName()->shouldBe('bool|int');
+        $this->isUnionType->shouldBe(true);
+    }
+
+    function it_can_be_a_union_type_with_object(): void
+    {
+        $this->beConstructedWith('DateTime|string');
+
+        $this->getName()->shouldBe('DateTime|string');
+        $this->isUnionType->shouldBe(true);
+        $this->types[0]->isObject->shouldBe(true);
+    }
 }

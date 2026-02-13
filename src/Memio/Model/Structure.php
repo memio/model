@@ -32,4 +32,14 @@ interface Structure
      * @api
      */
     public function setPhpdoc(StructurePhpdoc $structurePhpdoc);
+
+    /**
+     * @api
+     */
+    public function addAttribute(Attribute $attribute);
+
+    /**
+     * @api
+     */
+    public function removeAttributes(): void;
 }

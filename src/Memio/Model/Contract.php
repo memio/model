@@ -75,6 +75,14 @@ class Contract implements Structure
     /**
      * @api
      */
+    public function removeAttributes(): void
+    {
+        $this->attributes = [];
+    }
+
+    /**
+     * @api
+     */
     public function extend(Contract $contract): self
     {
         $this->contracts[] = $contract;

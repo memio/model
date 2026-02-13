@@ -44,6 +44,14 @@ class Argument
     /**
      * @api
      */
+    public function removeAttributes(): void
+    {
+        $this->attributes = [];
+    }
+
+    /**
+     * @api
+     */
     public function setDefaultValue(string $value): self
     {
         $this->defaultValue = $value;

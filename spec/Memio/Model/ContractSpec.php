@@ -84,5 +84,7 @@ class ContractSpec extends ObjectBehavior
         $this->attributes->shouldBe([]);
         $this->addAttribute($attribute);
         $this->attributes->shouldBe([$attribute]);
+        $this->removeAttributes();
+        $this->attributes->shouldBe([]);
     }
 }

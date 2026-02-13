@@ -38,4 +38,12 @@ class Constant
 
         return $this;
     }
+
+    /**
+     * @api
+     */
+    public function removeAttributes(): void
+    {
+        $this->attributes = [];
+    }
 }

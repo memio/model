@@ -50,6 +50,14 @@ class Method
     /**
      * @api
      */
+    public function removeAttributes(): void
+    {
+        $this->attributes = [];
+    }
+
+    /**
+     * @api
+     */
     public function setPhpdoc(MethodPhpdoc $methodPhpdoc): self
     {
         $this->methodPhpdoc = $methodPhpdoc;

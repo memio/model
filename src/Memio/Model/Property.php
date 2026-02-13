@@ -47,6 +47,14 @@ class Property
     /**
      * @api
      */
+    public function removeAttributes(): void
+    {
+        $this->attributes = [];
+    }
+
+    /**
+     * @api
+     */
     public function setPhpdoc(PropertyPhpdoc $propertyPhpdoc): self
     {
         $this->propertyPhpdoc = $propertyPhpdoc;

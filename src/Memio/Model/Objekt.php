@@ -144,6 +144,14 @@ class Objekt implements Structure
     /**
      * @api
      */
+    public function removeAttributes(): void
+    {
+        $this->attributes = [];
+    }
+
+    /**
+     * @api
+     */
     public function implement(Contract $contract): self
     {
         $this->contracts[] = $contract;

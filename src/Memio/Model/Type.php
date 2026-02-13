@@ -35,7 +35,7 @@ class Type
         'null',
         'mixed',
     ];
-    const HAS_TYPE_HINT = [
+    public const HAS_TYPE_HINT = [
         'array',
         'callable',
         'bool',

@@ -205,6 +205,7 @@ class TypeSpec extends ObjectBehavior
 
         $this->getName()->shouldBe('mixed');
         $this->isObject()->shouldBe(false);
+        $this->hasTypeHint()->shouldBe(true);
     }
 
     function it_can_be_a_nullable_object(): void

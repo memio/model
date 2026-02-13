@@ -42,6 +42,7 @@ class Type
         'float',
         'int',
         'string',
+        'mixed',
     ];
 
     public string $name;

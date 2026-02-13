@@ -18,9 +18,9 @@ New features:
 
 * setup Github Actions
 * changed tooling from scripts to Makefile
-* installed phpstan as a dev depdendency
-* installed swiss-knife as a dev depdendency
-* installed rector as a dev depdendency
+* installed phpstan as a dev dependency
+* installed swiss-knife as a dev dependency
+* installed rector as a dev dependency
 * upgraded PHP CS fixer to v2.19.3
 * dockerized for local development
 
@@ -55,7 +55,7 @@ Normalization from float to double, thanks to @ItsKelsBoys
 
 Added support for PHP 7.2, thanks to @roukmoute
 
-BC break: Object has be renamed to Objekt, has it is a reserved keyword.
+BC break: Object has been renamed to Objekt, has it is a reserved keyword.
 
 ## 2.0.0: PHP 7 and Return type hints
 

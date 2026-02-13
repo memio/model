@@ -30,7 +30,7 @@ make lib-init
 
 ## Standard code
 
-Use [PHP CS fixer](http://cs.sensiolabs.org/) to make your code compliant with
+Use [PHP CS Fixer](https://github.com/PHP-CS-Fixer/PHP-CS-Fixer) to make your code compliant with
 Memio's coding standards:
 
 ```console
@@ -87,7 +87,7 @@ To keep your fork up-to-date, you should track the upstream (original) one
 using the following command:
 
 ```console
-$ git remote add upstream https://github.com/memio/model.git
+git remote add upstream https://github.com/memio/model.git
 ```
 
 Then get the upstream changes:
@@ -103,7 +103,7 @@ git rebase main
 Finally, publish your changes:
 
 ```console
-$ git push -f origin <your-branch>
+git push -f origin <your-branch>
 ```
 
 Your pull request will be automatically updated.

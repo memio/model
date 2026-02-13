@@ -19,6 +19,7 @@ namespace Memio\Model;
 class Argument
 {
     public array $attributes = [];
+    public string $visibility = '';
     public Type $type;
     public ?string $defaultValue = null;
     public bool $isVariadic = false;
@@ -93,6 +94,46 @@ class Argument
     public function removeVariadic(): self
     {
         $this->isVariadic = false;
+
+        return $this;
+    }
+
+    /**
+     * @api
+     */
+    public function makePublic(): self
+    {
+        $this->visibility = 'public';
+
+        return $this;
+    }
+
+    /**
+     * @api
+     */
+    public function makeProtected(): self
+    {
+        $this->visibility = 'protected';
+
+        return $this;
+    }
+
+    /**
+     * @api
+     */
+    public function makePrivate(): self
+    {
+        $this->visibility = 'private';
+
+        return $this;
+    }
+
+    /**
+     * @api
+     */
+    public function removeVisibility(): self
+    {
+        $this->visibility = '';
 
         return $this;
     }

@@ -11,6 +11,7 @@ New features:
 * added union type support in `Type` (e.g. `string|int`, `DateTime|null`)
 * added `mixed` type hint support in `Type`
 * added support for class property types
+* added constructor property promotion support (visibility on `Argument`)
 * added support for nullable typehints
 
 ## 3.0.2: Dockerised dev environment

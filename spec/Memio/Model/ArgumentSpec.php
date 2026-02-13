@@ -63,4 +63,21 @@ class ArgumentSpec extends ObjectBehavior
         $this->removeAttributes();
         $this->attributes->shouldBe([]);
     }
+
+    function it_can_have_visibility(): void
+    {
+        $this->visibility->shouldBe('');
+
+        $this->makePublic();
+        $this->visibility->shouldBe('public');
+
+        $this->makeProtected();
+        $this->visibility->shouldBe('protected');
+
+        $this->makePrivate();
+        $this->visibility->shouldBe('private');
+
+        $this->removeVisibility();
+        $this->visibility->shouldBe('');
+    }
 }
